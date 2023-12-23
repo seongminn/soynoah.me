@@ -1,4 +1,4 @@
-import type { Config } from 'tailwindcss'
+import type { Config } from 'tailwindcss';
 
 const config: Config = {
   content: [
@@ -7,14 +7,57 @@ const config: Config = {
     './src/app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   theme: {
+    fontFamily: {
+      sans: ['var(--font-sans)', 'sans'],
+      serif: ['var(--font-serif)', 'sans-serif'],
+      mono: ['var(--font-mono)', 'monospace'],
+    },
+    screens: {
+      lg: { max: '1074px' },
+      md: { max: '768px' },
+      sm: { max: '640px' },
+    },
+    colors: {
+      transparent: 'transparent',
+      gray: {
+        50: 'var(--gray-50)',
+        75: 'var(--gray-75)',
+        100: 'var(--gray-100)',
+        200: 'var(--gray-200)',
+        300: 'var(--gray-300)',
+        400: 'var(--gray-400)',
+        500: 'var(--gray-500)',
+        600: 'var(--gray-600)',
+        700: 'var(--gray-700)',
+        800: 'var(--gray-800)',
+        900: 'var(--gray-900)',
+      },
+      selection: 'var(--selection)',
+      border: 'var(--border)',
+    },
     extend: {
-      backgroundImage: {
-        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-        'gradient-conic':
-          'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
+      textColor: {
+        heading: 'var(--heading)',
+        body: 'var(--text-body)',
+        second: 'var(--text-second)',
+        disabled: 'var(--text-disabled)',
+      },
+      backgroundColor: {
+        page: 'var(--page-background)',
+      },
+      maxWidth: {
+        page: 'var(--page-width)',
+        content: 'var(--content-width)',
+      },
+      width: {
+        page: 'var(--page-width)',
+        content: 'var(--content-width)',
+      },
+      spacing: {
+        page: 'var(--page-top)',
       },
     },
   },
   plugins: [],
-}
-export default config
+};
+export default config;
