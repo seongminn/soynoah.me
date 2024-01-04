@@ -18,8 +18,7 @@
     "simple-import-sort",
     "@typescript-eslint",
     "prettier",
-    "jsx-a11y",
-    "react-refresh"
+    "jsx-a11y"
   ],
   "settings": {
     "import/resolver": {
@@ -32,10 +31,7 @@
     }
   },
   "rules": {
-    "react-refresh/only-export-components": [
-      "warn",
-      { "allowConstantExport": true }
-    ],
+    "@typescript-eslint/no-var-requires": "off",
 
     // react
     "react/prop-types": 0,
