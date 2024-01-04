@@ -65,7 +65,6 @@
   }
 }
 
-
 /* ---- space ---- */
 @layer base {
   :root {
@@ -73,6 +72,7 @@
     --md: 768px;
     --sm: 640px;
 
+    --blur-height: 32px;
     --page-top: 64px;
     --page-width: 1072px;
     --content-width: 640px;
@@ -110,19 +110,19 @@
   }
 
   .container {
+    padding-top: calc(var(--page-top) + var(--blur-height));
     padding-right: var(--body-margin-right);
     padding-left: var(--body-margin-left);
   }
 
   .header {
-    position: relative;
     height: var(--page-top);
     padding-right: var(--body-margin-right);
     padding-left: var(--body-margin-left);
   }
 
-  main > .container {
-    @apply mx-auto max-w-content py-page;
+  body > .container {
+    @apply mx-auto max-w-content;
   }
 
   * {
@@ -228,6 +228,17 @@
   ::-webkit-resizer {
     display: none;
   }
+
+  .blur-layer {
+    position: absolute;
+    width: 100%;
+    height: var(--blur-height);
+    bottom: calc((var(--blur-height)  - 1)* -1)px;
+    background: linear-gradient(var(--page-background), transparent 70%);
+    user-select: none;
+    pointer-events: none;
+  }
 }
 
-@layer components {}
+@layer components {
+}

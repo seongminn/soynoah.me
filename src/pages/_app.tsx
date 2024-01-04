@@ -2,11 +2,13 @@ import '~/styles/globals.css';
 
 import type { AppProps } from 'next/app';
 
+import Header from '~/components/Header';
+
 export default function App({ Component, pageProps }: AppProps) {
   return (
     <>
-      <header className="header mx-auto max-w-page">header</header>
-      <main className="container mx-auto max-w-page">
+      <Header />
+      <main className="container mx-auto h-[5000px] max-w-page">
         <Component {...pageProps} />
       </main>
     </>
