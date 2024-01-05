@@ -1,10 +1,9 @@
-@import "pretendard/dist/web/static/pretendard.css";
+@import 'pretendard/dist/web/static/pretendard.css';
 @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&family=Noto+Sans+KR:wght@400;700&display=swap');
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
 
 /* -- colors --- */
 @layer base {
@@ -107,22 +106,22 @@
     @apply m-0 min-h-screen p-0;
     @apply font-sans text-base leading-7 tracking-normal antialiased;
     @apply bg-page text-second;
+    padding-left: var(--body-margin-left);
+    padding-right: var(--body-margin-right);
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+
+  .header {
+    position: fixed;
+    width: 100%;
+    height: var(--page-top);
+    margin: 0 auto;
+    left: 0;
+    background-color: var(--page-background);
   }
 
   .container {
     padding-top: calc(var(--page-top) + var(--blur-height));
-    padding-right: var(--body-margin-right);
-    padding-left: var(--body-margin-left);
-  }
-
-  .header {
-    height: var(--page-top);
-    padding-right: var(--body-margin-right);
-    padding-left: var(--body-margin-left);
-  }
-
-  body > .container {
-    @apply mx-auto max-w-content;
   }
 
   * {
@@ -233,7 +232,7 @@
     position: absolute;
     width: 100%;
     height: var(--blur-height);
-    bottom: calc((var(--blur-height)  - 1)* -1)px;
+    bottom: calc((var(--blur-height) - 1) * -1) px;
     background: linear-gradient(var(--page-background), transparent 70%);
     user-select: none;
     pointer-events: none;
