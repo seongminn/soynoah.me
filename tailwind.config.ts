@@ -9,7 +9,7 @@ const config: Config = {
     fontFamily: {
       sans: ['var(--font-sans)', 'sans'],
       serif: ['var(--font-serif)', 'sans-serif'],
-      mono: ['var(--font-mono)', 'monospace'],
+      mono: ['var(--font-geist-mono)', 'ui-monospace'],
     },
     screens: {
       lg: { max: '1074px' },

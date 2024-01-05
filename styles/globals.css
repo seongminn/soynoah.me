@@ -27,7 +27,7 @@
 
     --heading: var(--gray-900);
     --text-body: var(--gray-800);
-    --text-second: var(--gray-700);
+    --text-second: var(--gray-600);
     --text-disabled: var(--gray-500);
   }
 
@@ -60,7 +60,6 @@
 @layer base {
   :root {
     --font-sans: 'Pretendard';
-    --font-mono: 'Fira Code';
   }
 }
 
@@ -68,13 +67,13 @@
 @layer base {
   :root {
     --lg: 1024px;
-    --md: 768px;
-    --sm: 640px;
+    --md: 964px;
+    --sm: 768px;
 
     --blur-height: 32px;
     --page-top: 64px;
     --page-width: 1072px;
-    --content-width: 640px;
+    --content-width: 768px;
     --body-margin-left: max(24px, env(safe-area-inset-left));
     --body-margin-right: max(24px, env(safe-area-inset-right));
   }
@@ -113,11 +112,14 @@
 
   .header {
     position: fixed;
+    left: 0;
     width: 100%;
     height: var(--page-top);
+    padding-left: var(--body-margin-left);
+    padding-right: var(--body-margin-right);
     margin: 0 auto;
-    left: 0;
     background-color: var(--page-background);
+    z-index: 10;
   }
 
   .container {
@@ -132,8 +134,16 @@
     @apply bg-selection shadow-none;
   }
 
-  h1 {
-    @apply font-serif font-bold text-heading;
+  h1 a {
+    @apply font-serif text-3xl font-bold text-heading;
+  }
+
+  h2 a {
+    @apply font-serif text-2xl font-bold text-heading;
+  }
+
+  h3 a {
+    @apply font-serif text-lg font-bold text-heading;
   }
 
   b,
@@ -151,9 +161,9 @@
 
   mark {
     @apply rounded-sm bg-selection font-medium text-body;
+    margin: 0 2px;
     padding: 3px 5px;
     border-radius: 4px;
-    margin: 0 2px;
   }
 
   a.link,
@@ -174,16 +184,16 @@
   }
   a.external-link::after {
     @apply m-0 inline-block h-3.5 w-3.5;
+    content: '';
     background: url('data:image/svg+xml;utf8,<svg color="%23464646" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M6 18L18 6m0 0H9m9 0v9"/></svg>');
     background-repeat: no-repeat;
     background-size: cover;
-    content: '';
   }
   .dark a.external-link::after {
+    content: '';
     background: url('data:image/svg+xml;utf8,<svg color="%23B0B0B0" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M6 18L18 6m0 0H9m9 0v9"/></svg>');
     background-repeat: no-repeat;
     background-size: cover;
-    content: '';
   }
 
   /* ---- scrollbar ---- */

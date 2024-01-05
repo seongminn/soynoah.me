@@ -51,9 +51,13 @@
         "newlines-between": "always",
         "pathGroups": [
           {
-            "pattern": "@/**",
+            "pattern": "~/**",
             "group": "internal",
             "position": "after"
+          },
+          {
+            "pattern": "contentlayer/**",
+            "group": "external"
           }
         ]
       }

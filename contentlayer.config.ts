@@ -4,7 +4,7 @@ import {
   FieldDefs,
   makeSource,
 } from 'contentlayer/source-files';
-import rehypeAutoLinkHeadings from 'rehype-autolink-headings';
+import rehypeAutolinkHeadings from 'rehype-autolink-headings';
 import rehypePrettyCode from 'rehype-pretty-code';
 import rehypeSlug from 'rehype-slug';
 import remarkBreaks from 'remark-breaks';
@@ -42,7 +42,7 @@ export default makeSource({
     rehypePlugins: [
       rehypeSlug,
       [
-        rehypeAutoLinkHeadings,
+        rehypeAutolinkHeadings,
         {
           behavior: 'wrap',
           properties: {
@@ -50,12 +50,12 @@ export default makeSource({
             ariaLabel: 'anchor',
           },
         },
-        [
-          rehypePrettyCode,
-          {
-            highlightStyle: 'github',
-          },
-        ],
+      ],
+      [
+        rehypePrettyCode,
+        {
+          theme: 'css-variables',
+        },
       ],
     ],
   },
