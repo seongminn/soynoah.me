@@ -5,6 +5,7 @@ import {
   makeSource,
 } from 'contentlayer/source-files';
 import rehypeAutolinkHeadings from 'rehype-autolink-headings';
+import rehypeExternalLinks from 'rehype-external-links';
 import rehypePrettyCode from 'rehype-pretty-code';
 import rehypeSlug from 'rehype-slug';
 import remarkBreaks from 'remark-breaks';
@@ -49,6 +50,14 @@ export default makeSource({
             className: ['anchor'],
             ariaLabel: 'anchor',
           },
+        },
+      ],
+      [
+        rehypeExternalLinks,
+        {
+          target: '_blank',
+          rel: ['noopener noreferrer'],
+          class: 'external-link',
         },
       ],
       [

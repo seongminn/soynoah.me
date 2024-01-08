@@ -1,6 +1,7 @@
 import '~/styles/mdx.css';
 
 import { allPosts } from 'contentlayer/generated';
+import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { useMDXComponent } from 'next-contentlayer/hooks';
 
@@ -34,3 +35,23 @@ function getPostsByParams({ params }: PageProps) {
 
   return post;
 }
+
+export const generateMetadata = ({ params }: PageProps): Metadata => {
+  const post = getPostsByParams({ params });
+
+  if (!post) return {};
+
+  return {
+    title: {
+      absolute: post.title,
+    },
+    description: post.description,
+    openGraph: {
+      title: post.title,
+      description: post.description,
+      images: [post.image || ''],
+      locale: 'ko_KR',
+      type: 'website',
+    },
+  };
+};
