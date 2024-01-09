@@ -1,7 +1,7 @@
 .mdx {
   @apply w-full max-w-content text-second;
 
-  --shiki-color-text: #171717;
+  --shiki-color-text: var(--text-second);
   --shiki-color-background: var(--gray-100);
   --shiki-token-constant: #0068d6;
   --shiki-token-string: #297a3a;

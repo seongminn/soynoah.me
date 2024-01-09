@@ -2,7 +2,9 @@ import '~/styles/globals.css';
 
 import { GeistMono } from 'geist/font/mono';
 
-import Header from '~/components/Header';
+import Header from '~/components/site-header';
+
+import Providers from './providers';
 
 export default function RootLayout({
   children,
@@ -10,12 +12,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={GeistMono.variable}>
+    <html lang="ko" className={GeistMono.variable} suppressHydrationWarning>
       <body>
-        <Header />
-        <main className="container mx-auto h-[5000px] max-w-content">
-          {children}
-        </main>
+        <Providers storageKey="seongmin-theme" attribute="class">
+          <Header />
+          <main className="container mx-auto h-[5000px] max-w-content">
+            {children}
+          </main>
+        </Providers>
       </body>
     </html>
   );
