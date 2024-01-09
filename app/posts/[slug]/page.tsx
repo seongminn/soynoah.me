@@ -3,7 +3,8 @@ import '~/styles/mdx.css';
 import { allPosts } from 'contentlayer/generated';
 import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
-import { useMDXComponent } from 'next-contentlayer/hooks';
+
+import Mdx from '~/components/mdx-component';
 
 type PageProps = {
   params: {
@@ -16,11 +17,9 @@ export default function Page({ params }: PageProps) {
 
   if (!post) notFound();
 
-  const MDXComponent = useMDXComponent(post.body.code);
-
   return (
     <article className="mdx">
-      <MDXComponent />
+      <Mdx code={post.body.code} />
     </article>
   );
 }

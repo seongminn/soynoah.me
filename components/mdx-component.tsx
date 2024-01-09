@@ -1,19 +1,33 @@
-import { useMDXComponent } from 'next-contentlayer/hooks';
+'use client';
 
-import { cn } from '~/libs/utils';
+import { useMDXComponent } from 'next-contentlayer/hooks';
+import { ComponentProps } from 'react';
+
+import { cn } from '../libs/utils';
+import CopyButton from './copy-button';
 
 interface MDXProps {
   code: string;
 }
 
 const components = {
-  hr: ({ ...props }: React.HTMLAttributes<HTMLHRElement>) => (
+  hr: ({ ...props }: ComponentProps<'hr'>) => (
     <hr className="my-4 md:my-8" {...props} />
   ),
-  table: ({ className, ...props }: React.HTMLAttributes<HTMLTableElement>) => (
+  table: ({ className, ...props }: ComponentProps<'table'>) => (
     <div className="my-6 w-full overflow-y-auto">
       <table className={cn('w-full', className)} {...props} />
     </div>
+  ),
+  pre: ({
+    children,
+    __rawstring__,
+    ...props
+  }: ComponentProps<'pre'> & { __rawstring__?: string }) => (
+    <pre {...props}>
+      {children}
+      {__rawstring__ && <CopyButton text={__rawstring__} />}
+    </pre>
   ),
 };
 

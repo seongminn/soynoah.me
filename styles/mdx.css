@@ -29,6 +29,14 @@
   tab-size: 4;
 }
 
+.mdx pre button {
+  @apply opacity-0 transition-opacity duration-200 ease-[ease];
+}
+
+.mdx pre:hover button {
+  @apply opacity-100;
+}
+
 .mdx [data-rehype-pretty-code-figure] pre {
   @apply px-0;
 }

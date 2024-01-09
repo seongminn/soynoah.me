@@ -10,6 +10,7 @@ import rehypePrettyCode from 'rehype-pretty-code';
 import rehypeSlug from 'rehype-slug';
 import remarkBreaks from 'remark-breaks';
 import remarkGfm from 'remark-gfm';
+import { visit } from 'unist-util-visit';
 
 const fields: FieldDefs = {
   title: { type: 'string', required: true },
@@ -42,6 +43,28 @@ export default makeSource({
     remarkPlugins: [remarkGfm, remarkBreaks],
     rehypePlugins: [
       rehypeSlug,
+      () => tree => {
+        visit(tree, node => {
+          if (node?.type === 'element' && node?.tagName === 'pre') {
+            const [codeEl] = node.children;
+            if (codeEl.tagName !== 'code') {
+              return;
+            }
+
+            if (codeEl.data?.meta) {
+              // Extract event from meta and pass it down the tree.
+              const regex = /event="([^"]*)"/;
+              const match = codeEl.data?.meta.match(regex);
+              if (match) {
+                node.__event__ = match ? match[1] : null;
+                codeEl.data.meta = codeEl.data.meta.replace(regex, '');
+              }
+            }
+
+            node.__rawstring__ = codeEl.children?.[0].value;
+          }
+        });
+      },
       [
         rehypeAutolinkHeadings,
         {
@@ -66,6 +89,24 @@ export default makeSource({
           theme: 'css-variables',
         },
       ],
+      () => tree => {
+        visit(tree, node => {
+          if (node?.type === 'element' && node?.tagName === 'div') {
+            if (!('data-rehype-pretty-code-fragment' in node.properties)) {
+              return;
+            }
+
+            const preElement = node.children.at(-1);
+            if (preElement.tagName !== 'pre') {
+              return;
+            }
+
+            preElement.properties['__withMeta__'] =
+              node.children.at(0).tagName === 'div';
+            preElement.properties['__rawstring__'] = node.__rawstring__;
+          }
+        });
+      },
     ],
   },
 });
