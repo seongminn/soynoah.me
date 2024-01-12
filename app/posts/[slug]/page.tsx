@@ -5,6 +5,9 @@ import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 
 import Mdx from '~/components/mdx-component';
+import ScrollTopButton from '~/components/scroll-top-button';
+import Toc from '~/components/toc';
+import getTableOfContents from '~/libs/toc';
 
 type PageProps = {
   params: {
@@ -17,10 +20,18 @@ export default function Page({ params }: PageProps) {
 
   if (!post) notFound();
 
+  const toc = getTableOfContents({ content: post.body.raw });
+
   return (
-    <article className="mdx">
-      <Mdx code={post.body.code} />
-    </article>
+    <>
+      <nav className="fixed top-page max-w-[190px] -translate-x-[260px] xl:relative xl:top-0 xl:mb-7 xl:inline-block xl:max-w-full xl:translate-x-0">
+        <Toc toc={toc} />
+        <ScrollTopButton className="float-right" />
+      </nav>
+      <article className="mdx">
+        <Mdx code={post.body.code} />
+      </article>
+    </>
   );
 }
 

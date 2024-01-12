@@ -13,6 +13,7 @@ const config: Config = {
       mono: ['var(--font-geist-mono)', 'ui-monospace'],
     },
     screens: {
+      xl: { max: '1280px' },
       lg: { max: '1074px' },
       md: { max: '768px' },
       sm: { max: '640px' },
@@ -57,6 +58,7 @@ const config: Config = {
       },
       spacing: {
         page: 'var(--page-top)',
+        content: 'var(--content-width)',
       },
     },
   },

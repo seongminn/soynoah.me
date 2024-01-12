@@ -32,9 +32,10 @@ export default function CopyButton({
     <Button
       onClick={copy}
       className={cn(
-        'bg-gray-150 absolute right-3 top-3 z-10 h-6 w-6 border border-gray-200 p-1 hover:bg-gray-200 [&>svg]:text-second',
+        'absolute right-3 top-3 z-10 h-6 w-6 border border-gray-200 bg-gray-150 p-1 hover:bg-gray-200 [&>svg]:text-second',
         className,
       )}
+      aria-label="copy contents"
       {...props}
     >
       {!hasCopied ? (

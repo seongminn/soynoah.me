@@ -16,9 +16,7 @@ export default function RootLayout({
       <body>
         <Providers storageKey="seongmin-theme" attribute="class">
           <Header />
-          <main className="container mx-auto h-[5000px] max-w-content">
-            {children}
-          </main>
+          <main className="container mx-auto max-w-content">{children}</main>
         </Providers>
       </body>
     </html>

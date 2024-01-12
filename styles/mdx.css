@@ -21,9 +21,8 @@
 }
 
 .mdx pre {
-  @apply relative grid overflow-x-auto rounded-lg bg-gray-100 px-4
-    py-4 text-[13px]
-    leading-6;
+  @apply grid overflow-x-auto rounded-lg 
+  bg-gray-100 px-4 py-4 text-[13px] leading-6;
   -moz-tab-size: 4;
   -o-tab-size: 4;
   tab-size: 4;
@@ -37,8 +36,12 @@
   @apply opacity-100;
 }
 
-.mdx [data-rehype-pretty-code-figure] pre {
-  @apply px-0;
+.mdx [data-rehype-pretty-code-fragment] {
+  @apply relative;
+}
+
+.mdx [data-rehype-pretty-code-fragment] pre {
+  @apply px-2;
 }
 
 [data-rehype-pretty-code-title] {

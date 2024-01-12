@@ -34,9 +34,5 @@ const components = {
 export default function Mdx({ code }: MDXProps) {
   const MDXComponent = useMDXComponent(code);
 
-  return (
-    <article className="mdx">
-      <MDXComponent components={components} />
-    </article>
-  );
+  return <MDXComponent components={components} />;
 }
