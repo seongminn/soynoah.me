@@ -1,12 +1,14 @@
 import '~/styles/mdx.css';
 
-import { allPosts } from 'contentlayer/generated';
+import { allPosts, Post } from 'contentlayer/generated';
 import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 
 import Mdx from '~/components/mdx-component';
+import Pager, { TPager } from '~/components/pager';
 import ScrollTopButton from '~/components/scroll-top-button';
 import Toc from '~/components/toc';
+import { compareAsc } from '~/libs/pager';
 import getTableOfContents from '~/libs/toc';
 
 type PageProps = {
@@ -21,16 +23,21 @@ export default function Page({ params }: PageProps) {
   if (!post) notFound();
 
   const toc = getTableOfContents({ content: post.body.raw });
+  const pager = getPager(post);
 
   return (
     <>
-      <nav className="fixed top-page max-w-[190px] -translate-x-[260px] xl:relative xl:top-0 xl:mb-7 xl:inline-block xl:max-w-full xl:translate-x-0">
+      <nav className="fixed top-page max-w-[190px] -translate-x-[260px] transition-opacity duration-100 xl:opacity-0">
         <Toc toc={toc} />
-        <ScrollTopButton className="float-right" />
+        <ScrollTopButton className="float-right xl:float-none" />
       </nav>
       <article className="mdx">
         <Mdx code={post.body.code} />
       </article>
+      <footer>
+        <hr className="mb-7 mt-4" />
+        <Pager pager={pager} />
+      </footer>
     </>
   );
 }
@@ -44,6 +51,22 @@ function getPostsByParams({ params }: PageProps) {
   const post = allPosts.find(post => post.slug === slug);
 
   return post;
+}
+
+function getPager(post: Post) {
+  return allPosts
+    .sort((a, b) => compareAsc(new Date(a.date), new Date(b.date)))
+    .reduce<TPager>((ac, v, index, list) => {
+      if (post.slug !== v.slug) return ac;
+
+      const prev = list[index - 1];
+      const next = list[index + 1];
+
+      ac.prev = prev && { title: prev.title, slug: prev.slug };
+      ac.next = next && { title: next.title, slug: next.slug };
+
+      return ac;
+    }, {});
 }
 
 export const generateMetadata = ({ params }: PageProps): Metadata => {

@@ -16,7 +16,7 @@ export default function ScrollTopButton({
   return (
     <Button
       onClick={scrollToTop}
-      className={cn('mt-2 h-6 w-6', className)}
+      className={cn('mt-2 h-6 w-6 p-1', className)}
       aria-label="scroll to top"
       {...props}
     >

@@ -193,7 +193,7 @@ code[data-line-numbers-max-digits='3'] > [data-line]::before {
 }
 
 .mdx blockquote:before {
-  @apply absolute -translate-x-full text-second;
+  @apply absolute -translate-x-full text-gray-500;
   content: open-quote;
   left: calc(-1 * var(--quote-offset));
 }
@@ -226,7 +226,7 @@ code[data-line-numbers-max-digits='3'] > [data-line]::before {
 }
 
 .mdx li::marker {
-  @apply text-second;
+  @apply text-gray-300;
 }
 
 .mdx li + li,
