@@ -130,6 +130,7 @@
 
   .container {
     padding-top: var(--page-top);
+    padding-bottom: calc(var(--page-top) * 3 / 2);
   }
 
   * {

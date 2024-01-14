@@ -4,6 +4,7 @@ import { allPosts, Post } from 'contentlayer/generated';
 import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 
+import Giscus from '~/components/giscus';
 import Mdx from '~/components/mdx-component';
 import Pager, { TPager } from '~/components/pager';
 import ScrollTopButton from '~/components/scroll-top-button';
@@ -37,6 +38,7 @@ export default function Page({ params }: PageProps) {
       <footer>
         <hr className="mb-7 mt-4" />
         <Pager pager={pager} />
+        <Giscus />
       </footer>
     </>
   );

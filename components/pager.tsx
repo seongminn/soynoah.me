@@ -17,7 +17,7 @@ interface PagerProps {
 
 export default function Pager({ pager }: PagerProps) {
   return (
-    <div className="text-tx grid grid-cols-2 justify-between gap-1 text-sm">
+    <div className="text-tx mb-24 grid grid-cols-2 justify-between gap-1 text-sm">
       {pager.prev && (
         <Link
           scroll={false}
