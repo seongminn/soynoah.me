@@ -73,13 +73,13 @@
     --xl: 1350px;
     --lg: 1024px;
     --md: 964px;
-    --sm: 768px;
+    --sm: 700px;
 
     --blur-height: 32px;
     --page-header: 64px;
     --page-top: calc(var(--blur-height) + (var(--page-header)));
     --page-width: 1200px;
-    --content-width: 768px;
+    --content-width: 700px;
     --body-margin-left: max(24px, env(safe-area-inset-left));
     --body-margin-right: max(24px, env(safe-area-inset-right));
   }

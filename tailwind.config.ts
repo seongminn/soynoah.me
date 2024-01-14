@@ -15,7 +15,7 @@ const config: Config = {
     screens: {
       xl: { max: '1280px' },
       lg: { max: '1074px' },
-      md: { max: '768px' },
+      md: { max: '700px' },
       sm: { max: '640px' },
     },
     colors: {
