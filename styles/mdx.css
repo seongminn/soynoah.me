@@ -187,7 +187,7 @@ code[data-line-numbers-max-digits='3'] > [data-line]::before {
 }
 
 .mdx blockquote {
-  @apply relative font-serif text-second;
+  @apply relative font-sans text-second;
   quotes: '“' '”' '‘' '’';
   --quote-offset: 2px;
 }

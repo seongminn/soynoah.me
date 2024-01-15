@@ -1,4 +1,5 @@
 import '~/styles/mdx.css';
+import 'dayjs/locale/ko';
 
 import { allPosts, Post } from 'contentlayer/generated';
 import { Metadata } from 'next';
@@ -6,8 +7,8 @@ import { notFound } from 'next/navigation';
 
 import Giscus from '~/components/giscus';
 import Mdx from '~/components/mdx-component';
+import PageHeader from '~/components/page-header';
 import Pager, { TPager } from '~/components/pager';
-import ScrollTopButton from '~/components/scroll-top-button';
 import Toc from '~/components/toc';
 import { compareAsc } from '~/libs/pager';
 import getTableOfContents from '~/libs/toc';
@@ -28,13 +29,16 @@ export default function Page({ params }: PageProps) {
 
   return (
     <>
-      <nav className="fixed top-page max-w-[190px] -translate-x-[260px] transition-opacity duration-100 xl:opacity-0">
+      <nav className="fixed top-page max-w-[190px] -translate-x-[260px] transition-opacity duration-100 xl:pointer-events-none xl:opacity-0">
         <Toc toc={toc} />
-        <ScrollTopButton className="float-right xl:float-none" />
       </nav>
+
+      <PageHeader {...post} />
+
       <article className="mdx">
         <Mdx code={post.body.code} />
       </article>
+
       <footer>
         <hr className="mb-7 mt-4" />
         <Pager pager={pager} />

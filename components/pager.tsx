@@ -1,5 +1,7 @@
 import Link from 'next/link';
 
+import { Icons } from './icons';
+
 export type TPager = {
   prev?: {
     title: string;
@@ -22,11 +24,9 @@ export default function Pager({ pager }: PagerProps) {
         <Link
           scroll={false}
           href={pager.prev.slug}
-          className="group line-clamp-1 flex flex-col gap-1"
+          className="group line-clamp-1 inline-flex items-center px-4 py-2"
         >
-          <div className="text-disabled transition-colors group-hover:text-second">
-            Prev
-          </div>
+          <Icons.left className="mr-2 h-5 w-5 text-disabled transition-colors group-hover:text-heading" />
           <span className="line-clamp-1 overflow-hidden text-ellipsis text-second transition-colors group-hover:text-heading">
             {pager.prev.title}
           </span>
@@ -36,14 +36,12 @@ export default function Pager({ pager }: PagerProps) {
         <Link
           scroll={false}
           href={pager.next.slug}
-          className="group ml-auto flex flex-col gap-1 text-right text-second hover:text-body"
+          className="group ml-auto inline-flex items-center text-right text-second hover:text-body"
         >
-          <div className="text-disabled transition-colors group-hover:text-second">
-            Next
-          </div>
           <span className="line-clamp-1 overflow-hidden text-ellipsis text-second transition-colors group-hover:text-heading">
             {pager.next.title}
           </span>
+          <Icons.right className="ml-2 h-5 w-5 text-disabled transition-colors group-hover:text-heading" />
         </Link>
       )}
     </div>

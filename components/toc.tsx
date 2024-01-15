@@ -1,5 +1,6 @@
 'use client';
 
+import Link from 'next/link';
 import { useEffect, useMemo, useState } from 'react';
 
 import { TableOfContents } from '~/libs/toc';
@@ -61,7 +62,8 @@ function Tree({ toc, level = 1, activeId }: TreeProps) {
       >
         {toc.map(item => (
           <li key={item.url}>
-            <a
+            <Link
+              scroll={true}
               href={`#${item.url}`}
               className={cn(
                 'line-clamp-1 overflow-hidden text-ellipsis text-sm leading-7 text-disabled no-underline transition-colors duration-200 hover:text-second',
@@ -69,7 +71,7 @@ function Tree({ toc, level = 1, activeId }: TreeProps) {
               )}
             >
               {item.title}
-            </a>
+            </Link>
             {item.items.length ? (
               <Tree toc={item.items} level={level + 1} activeId={activeId} />
             ) : null}
