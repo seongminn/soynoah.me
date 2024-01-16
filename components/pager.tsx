@@ -19,12 +19,12 @@ interface PagerProps {
 
 export default function Pager({ pager }: PagerProps) {
   return (
-    <div className="text-tx mb-24 grid grid-cols-2 justify-between gap-1 text-sm">
+    <div className="text-tx mb-24 flex items-center justify-between gap-1 text-sm">
       {pager.prev && (
         <Link
           scroll={false}
           href={pager.prev.slug}
-          className="group line-clamp-1 inline-flex items-center px-4 py-2"
+          className="group line-clamp-1 inline-flex items-center"
         >
           <Icons.left className="mr-2 h-5 w-5 text-disabled transition-colors group-hover:text-heading" />
           <span className="line-clamp-1 overflow-hidden text-ellipsis text-second transition-colors group-hover:text-heading">
@@ -36,7 +36,7 @@ export default function Pager({ pager }: PagerProps) {
         <Link
           scroll={false}
           href={pager.next.slug}
-          className="group ml-auto inline-flex items-center text-right text-second hover:text-body"
+          className="group ml-auto inline-flex items-center text-right"
         >
           <span className="line-clamp-1 overflow-hidden text-ellipsis text-second transition-colors group-hover:text-heading">
             {pager.next.title}

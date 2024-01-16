@@ -18,7 +18,13 @@ export default function Toc({ toc }: TocProps) {
 
   const activeHeading = useActiveHeading(itemIds);
 
-  return <Tree toc={toc} activeId={activeHeading} />;
+  return (
+    <aside className="absolute -top-page left-full h-full w-full max-w-[190px] translate-x-20 transition-opacity duration-100 lg:pointer-events-none lg:opacity-0">
+      <nav className="sticky top-0 pt-page">
+        <Tree toc={toc} activeId={activeHeading} />
+      </nav>
+    </aside>
+  );
 }
 
 function useActiveHeading(itemIds: string[]) {

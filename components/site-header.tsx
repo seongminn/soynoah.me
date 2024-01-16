@@ -8,13 +8,13 @@ export default function Header() {
       <header className="header">
         <div className="mx-auto flex h-full max-w-content items-center">
           <nav className="mr-2 flex flex-1 items-center gap-2 pr-2">
-            <Link href="posts" className="flex items-center font-serif">
+            <Link href="posts" className="font-serif text-lg">
               기록
             </Link>
-            <Link href="posts" className="align-middle font-serif">
+            <Link href="posts" className="font-serif text-lg">
               메모
             </Link>
-            <Link href="posts" className="align-middle font-serif">
+            <Link href="posts" className="font-serif text-lg">
               프로젝트
             </Link>
           </nav>

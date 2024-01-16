@@ -29,15 +29,15 @@ export default function Page({ params }: PageProps) {
 
   return (
     <>
-      <nav className="fixed top-page max-w-[190px] -translate-x-[260px] transition-opacity duration-100 xl:pointer-events-none xl:opacity-0">
-        <Toc toc={toc} />
-      </nav>
-
       <PageHeader {...post} />
 
-      <article className="mdx">
+      <hr className="mb-7 mt-4" />
+
+      <section className="relative">
         <Mdx code={post.body.code} />
-      </article>
+
+        <Toc toc={toc} />
+      </section>
 
       <footer>
         <hr className="mb-7 mt-4" />
