@@ -1,7 +1,6 @@
 @import 'pretendard/dist/web/static/pretendard.css';
 @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&family=Noto+Sans+KR:wght@400;700&display=swap');
 @import url('https://webfontworld.github.io/amore/AritaBuri.css');
-/* @import url('https://webfontworld.github.io/gangwon/GangwonEduAll.css'); */
 
 @font-face {
   font-family: 'GangwonEduAll';
@@ -74,7 +73,7 @@
 @layer base {
   :root {
     --font-sans: 'Pretendard';
-    --font-serif: 'GangwonEduAll';
+    --font-serif: 'AritaBuri';
   }
 }
 
@@ -153,15 +152,15 @@
   }
 
   h1 a {
-    @apply font-serif text-lg text-heading;
+    @apply font-serif text-heading;
   }
 
   h2 a {
-    @apply font-serif text-lg text-heading;
+    @apply font-serif text-heading;
   }
 
   h3 a {
-    @apply font-serif text-lg text-heading;
+    @apply font-serif text-heading;
   }
 
   b,
@@ -214,7 +213,7 @@
 
   /* ---- scrollbar ---- */
   * {
-    --scrollbar-size: 16px;
+    --scrollbar-size: 0;
     --scrollbar-size-min: 44px;
     --scrollbar-color: var(--gray-200);
     scrollbar-color: var(--scrollbar-color) transparent;

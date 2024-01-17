@@ -81,16 +81,21 @@ export const generateMetadata = ({ params }: PageProps): Metadata => {
   if (!post) return {};
 
   return {
-    title: {
-      absolute: post.title,
-    },
+    title: post.title,
     description: post.description,
     openGraph: {
       title: post.title,
       description: post.description,
-      images: [post.image || ''],
+      type: 'article',
+      images: [
+        {
+          url: post.image || '',
+          alt: `${post.title} thumbnail`,
+          width: 400,
+          height: 300,
+        },
+      ],
       locale: 'ko_KR',
-      type: 'website',
     },
   };
 };
