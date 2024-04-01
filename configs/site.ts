@@ -17,15 +17,15 @@ export const site = {
   menus: [
     {
       label: '기록',
-      path: './posts',
+      path: '/posts',
     },
     {
       label: '소개',
-      path: './about',
+      path: '/about',
     },
     {
       label: '경험',
-      path: './experience',
+      path: '/experience',
     },
   ],
   keywords: ['Next.js'],
