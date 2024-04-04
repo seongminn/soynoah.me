@@ -17,8 +17,10 @@ export default function RootLayout({
     <html lang="ko" className={GeistMono.variable} suppressHydrationWarning>
       <body>
         <Providers storageKey="seongmin-theme" attribute="class">
-          <Header />
-          <main className="container mx-auto max-w-content">{children}</main>
+          <div className="relative flex min-h-dvh flex-col">
+            <Header />
+            <main className="container mx-auto max-w-content">{children}</main>
+          </div>
         </Providers>
       </body>
     </html>

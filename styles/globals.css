@@ -121,26 +121,36 @@
     @apply m-0 min-h-screen p-0;
     @apply font-sans text-base leading-7 tracking-normal antialiased;
     @apply bg-page text-second;
-    padding-left: var(--body-margin-left);
-    padding-right: var(--body-margin-right);
     padding-bottom: env(safe-area-inset-bottom);
   }
 
   .header {
-    position: fixed;
+    position: sticky;
+    top: 0;
     left: 0;
     width: 100%;
     height: var(--page-header);
-    padding-left: var(--body-margin-left);
-    padding-right: var(--body-margin-right);
     margin: 0 auto;
     background-color: var(--page-background);
     z-index: 10;
   }
 
   .container {
-    padding-top: var(--page-top);
+    padding-left: var(--body-margin-left);
+    padding-right: var(--body-margin-right);
+    padding-top: var(--blur-height);
     padding-bottom: calc(var(--page-top) * 3 / 2);
+  }
+
+  .blur-layer {
+    position: absolute;
+    width: 100%;
+    max-width: var(--content-width);
+    height: var(--blur-height);
+    bottom: calc((var(--blur-height) - 1) * -1) px;
+    background: linear-gradient(var(--page-background), transparent 70%);
+    user-select: none;
+    pointer-events: none;
   }
 
   * {
@@ -251,16 +261,6 @@
   ::-webkit-scrollbar-corner,
   ::-webkit-resizer {
     display: none;
-  }
-
-  .blur-layer {
-    position: absolute;
-    width: 100%;
-    height: var(--blur-height);
-    bottom: calc((var(--blur-height) - 1) * -1) px;
-    background: linear-gradient(var(--page-background), transparent 70%);
-    user-select: none;
-    pointer-events: none;
   }
 }
 
