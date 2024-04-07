@@ -1,4 +1,5 @@
 import dayjs from 'dayjs';
+import { Metadata } from 'next';
 import Link from 'next/link';
 
 import { allPosts } from '~/.contentlayer/generated';
@@ -43,7 +44,7 @@ export default function Page() {
   );
 }
 
-export function getSortedPostsByYears(posts: typeof allPosts) {
+function getSortedPostsByYears(posts: typeof allPosts) {
   const sortedPosts = posts.sort((a, b) => {
     return dayjs(a.date).isAfter(dayjs(b.date)) ? -1 : 1;
   });
@@ -65,3 +66,16 @@ export function getSortedPostsByYears(posts: typeof allPosts) {
 
   return postsByYears;
 }
+
+export const generateMetadata = (): Metadata => {
+  return {
+    title: '기록',
+    description: '기록을 보관하는 공간',
+    openGraph: {
+      title: '기록',
+      description: '기록을 보관하는 공간',
+      type: 'website',
+      locale: 'ko_KR',
+    },
+  };
+};
