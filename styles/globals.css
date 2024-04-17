@@ -145,7 +145,6 @@
   .blur-layer {
     position: absolute;
     width: 100%;
-    max-width: var(--content-width);
     height: var(--blur-height);
     bottom: calc((var(--blur-height) - 1) * -1) px;
     background: linear-gradient(var(--page-background), transparent 70%);
