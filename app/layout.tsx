@@ -5,6 +5,7 @@ import { Metadata } from 'next';
 
 import Header from '~/components/site-header';
 import { site } from '~/configs/site';
+import GoogleAnalytics from '~/libs/google-analytics';
 
 import Providers from './providers';
 
@@ -15,6 +16,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="ko" className={GeistMono.variable} suppressHydrationWarning>
+      <head>
+        {process.env.NODE_ENV === 'production' && <GoogleAnalytics />}
+      </head>
       <body>
         <Providers storageKey="seongmin-theme" attribute="class">
           <div className="relative flex min-h-dvh flex-col">
