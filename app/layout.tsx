@@ -20,7 +20,7 @@ export default function RootLayout({
         {process.env.NODE_ENV === 'production' && <GoogleAnalytics />}
       </head>
       <body>
-        <Providers storageKey="seongmin-theme" attribute="class">
+        <Providers storageKey="comoluna-theme" attribute="class">
           <div className="relative flex min-h-dvh flex-col">
             <Header />
             <main className="container mx-auto max-w-content">{children}</main>

@@ -1,8 +1,7 @@
+import { allPosts } from 'contentlayer/generated';
 import dayjs from 'dayjs';
 import { Metadata } from 'next';
 import Link from 'next/link';
-
-import { allPosts } from '~/.contentlayer/generated';
 
 export default function Page() {
   const posts = getSortedPostsByYears(allPosts);

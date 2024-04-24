@@ -1,7 +1,7 @@
 export const site = {
   title: `comoluna`,
   description: `배운 것을 기록하고 생각을 공유하는 공간입니다.`,
-  url: `https://comoluna.me/`,
+  url: `https://comoluna.me`,
   author: {
     name: `Seongmin Choi`,
     bio: '세상을 은은하게 비추는 달빛처럼,',
