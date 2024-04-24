@@ -3,15 +3,15 @@ import { allPosts } from 'contentlayer/generated';
 import { site } from '~/configs/site';
 
 export default function sitemap() {
+  const routes = ['', 'posts'].map(route => ({
+    url: `${site.url}/${route}`,
+    lastModified: new Date().toISOString().split('T')[0],
+  }));
+
   const posts = allPosts.map(post => ({
-    url: `${site.url}/${post.slug}`,
+    url: `${site.url}/posts/${post.slug}`,
     lastModified: post.date,
   }));
 
-  const routes = ['', '/posts'].map(route => ({
-    url: `${site.url}/${route}`,
-    lastModified: new Date().toISOString().split('T').shift(),
-  }));
-
-  return [...posts, ...routes];
+  return [...routes, ...posts];
 }
