@@ -8,7 +8,7 @@ export default function Page() {
 
   return (
     <main>
-      <ul>
+      <ul className="-translate-y-2">
         {Object.entries(posts)
           .reverse()
           .map(([year, posts]) => (
