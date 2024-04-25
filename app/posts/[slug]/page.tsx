@@ -5,6 +5,7 @@ import { allPosts, Post } from 'contentlayer/generated';
 import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 
+import BackButton from '~/components/back-button';
 import Giscus from '~/components/giscus';
 import Mdx from '~/components/mdx-component';
 import PageHeader from '~/components/page-header';
@@ -36,6 +37,7 @@ export default function Page({ params }: PageProps) {
       <section className="relative">
         <Mdx code={post.body.code} />
 
+        <BackButton />
         <Toc toc={toc} />
       </section>
 
