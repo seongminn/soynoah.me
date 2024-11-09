@@ -1,16 +1,21 @@
 'use client';
 
 import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 import { useEffect, useMemo, useState } from 'react';
 
 import { TableOfContents } from '~/libs/toc';
 import { cn } from '~/libs/utils';
+
+import { Icons } from './icons';
+import Button from './ui/button';
 
 interface TocProps {
   toc: TableOfContents;
 }
 
 export default function Toc({ toc }: TocProps) {
+  const router = useRouter();
   const itemIds = useMemo(
     () => toc.flatMap(item => [item.url, ...item.items.map(id => id.url)]),
     [toc],
@@ -19,8 +24,15 @@ export default function Toc({ toc }: TocProps) {
   const activeHeading = useActiveHeading(itemIds);
 
   return (
-    <aside className="absolute -top-page left-full h-full w-full max-w-[190px] translate-x-20 transition-opacity duration-100 lg:pointer-events-none lg:hidden lg:opacity-0">
+    <aside className="absolute -top-page left-0 h-[calc(100%+var(--page-top))] max-w-[10rem] -translate-x-52 transition-opacity duration-100 lg:pointer-events-none lg:hidden lg:opacity-0">
       <nav className="sticky top-0 pt-page">
+        <Button
+          onClick={() => router.replace('/posts')}
+          className={cn('mb-4 h-6 w-6 p-1')}
+        >
+          <Icons.back className="h-4 w-4" />
+        </Button>
+
         <Tree toc={toc} activeId={activeHeading} />
       </nav>
     </aside>

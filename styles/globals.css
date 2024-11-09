@@ -1,4 +1,4 @@
-@import 'pretendard/dist/web/static/pretendard.css';
+@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css');
 @import url('https://webfontworld.github.io/amore/AritaBuri.css');
 
 @tailwind base;
@@ -110,7 +110,7 @@
 
   body {
     @apply m-0 min-h-screen p-0;
-    @apply font-sans text-base leading-7 tracking-normal antialiased;
+    @apply font-sans text-sm leading-7 tracking-normal antialiased;
     @apply bg-page text-second;
     padding-bottom: env(safe-area-inset-bottom);
   }
