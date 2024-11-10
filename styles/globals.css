@@ -106,6 +106,8 @@
     scroll-behavior: smooth;
     scroll-padding-top: var(--header-height);
     -webkit-tap-highlight-color: transparent;
+
+    scrollbar-gutter: stable;
   }
 
   body {
