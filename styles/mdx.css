@@ -144,17 +144,17 @@ code[data-line-numbers-max-digits='3'] > [data-line]::before {
 }
 
 .mdx > :where(h1, h2, h3, h4) {
-  @apply text-base font-semibold leading-7;
+  @apply font-semibold leading-7;
   scroll-margin-top: calc(var(--page-top) + var(--blur-height));
   /* font-feature-settings: 'kern', 'calt', 'case'; */
 }
 
 .mdx > :where(h1, h2) {
-  @apply mt-page;
+  @apply mt-page text-base;
 }
 
 .mdx > :where(h3, h4) {
-  @apply mt-16;
+  @apply mt-16 text-sm;
 }
 
 .mdx > :where(h1, h2) + :where(h3, h4) {
