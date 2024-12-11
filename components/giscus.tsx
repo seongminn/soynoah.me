@@ -16,7 +16,7 @@ export default function Giscus(props: HTMLAttributes<HTMLElement>) {
 
     const giscusAttributes = {
       src: 'https://giscus.app/client.js',
-      'data-repo': 'seongminn/comoluna.me',
+      'data-repo': 'seongminn/soynoah.me',
       'data-repo-id': 'R_kgDOK8xLvQ',
       'data-category': 'Announcements',
       'data-category-id': 'DIC_kwDOK8xLvc4CcZnK',
