@@ -11,11 +11,7 @@ interface CopyButtonProps extends ComponentProps<'button'> {
   text: string;
 }
 
-export default function CopyButton({
-  text,
-  className,
-  ...props
-}: CopyButtonProps) {
+export default function CopyButton({ text, className, ...props }: CopyButtonProps) {
   const [hasCopied, setHasCopied] = useState(false);
 
   async function copy() {
@@ -38,11 +34,7 @@ export default function CopyButton({
       aria-label="copy contents"
       {...props}
     >
-      {!hasCopied ? (
-        <Icons.copy className="h-4 w-4" />
-      ) : (
-        <Icons.check className="h-4 w-4" />
-      )}
+      {!hasCopied ? <Icons.copy className="h-4 w-4" /> : <Icons.check className="h-4 w-4" />}
     </Button>
   );
 }

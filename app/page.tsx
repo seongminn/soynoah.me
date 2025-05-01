@@ -14,24 +14,18 @@ export default function Page() {
         priority={true}
         className="mb-10 h-40 w-40 rounded-full object-cover"
       />
-      <h1 className="mb-3 font-serif font-semibold">
-        안녕하세요. 신입 프론트엔드 개발자 최성민입니다.
-      </h1>
+      <h1 className="mb-3 font-sans">안녕하세요. 신입 프론트엔드 개발자 최성민입니다.</h1>
 
-      <div className="mb-2 font-serif">
-        내가 만든 웹사이트가 사용자들에게 편리함을 제공하고, 나아가 행복을
-        전달할 수 있다는 점에 보람을 느껴 프론트엔드 개발자의 꿈을 갖게
-        되었습니다.
+      <div className="mb-2 font-sans">
+        내가 만든 웹사이트가 사용자들에게 편리함을 제공하고, 나아가 행복을 전달할 수 있다는 점에
+        보람을 느껴 프론트엔드 개발자의 꿈을 갖게 되었습니다.
       </div>
 
       <ul className="mb-5 list-outside list-disc pl-4">
         <li className="list-item leading-7 marker:text-gray-300">
-          기술적으로 고민하는 것을 즐거워하고, 이를 통해 성능을 개선하기 위해
-          노력합니다.
+          기술적으로 고민하는 것을 즐거워하고, 이를 통해 성능을 개선하기 위해 노력합니다.
         </li>
-        <li className="list-item leading-7 marker:text-gray-300">
-          지식을 나누는 것을 좋아합니다.
-        </li>
+        <li className="list-item leading-7 marker:text-gray-300">지식을 나누는 것을 좋아합니다.</li>
         <li className="list-item leading-7 marker:text-gray-300">
           상호존중하며 원활하게 소통하는 방법에 대해 고민하는 것을 좋아합니다.
         </li>
@@ -39,10 +33,10 @@ export default function Page() {
 
       <Link
         href="posts"
-        className="inline-flex items-center gap-1 font-serif text-gray-800 underline decoration-gray-600 underline-offset-4 opacity-60 transition-opacity hover:opacity-100"
+        className="group inline-flex items-center gap-1 font-sans text-gray-800 underline decoration-gray-600 underline-offset-4 transition-colors duration-150 ease-in hover:decoration-gray-900"
       >
         게시물 보러 가기
-        <Icons.link className="h-4 w-4 underline" />
+        <Icons.link className="h-4 w-4 fill-gray-800 decoration-gray-800 duration-150 ease-in group-hover:decoration-gray-900" />
       </Link>
     </>
   );

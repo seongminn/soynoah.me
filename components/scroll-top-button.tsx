@@ -7,10 +7,7 @@ import { cn } from '~/libs/utils';
 import { Icons } from './icons';
 import Button from './ui/button';
 
-export default function ScrollTopButton({
-  className,
-  ...props
-}: ComponentProps<'button'>) {
+export default function ScrollTopButton({ className, ...props }: ComponentProps<'button'>) {
   const scrollToTop = () => window.scrollTo({ top: 0, behavior: 'smooth' });
 
   return (

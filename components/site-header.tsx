@@ -14,22 +14,27 @@ export default function Header() {
   return (
     <header className="header">
       <div className="container mx-auto grid h-full max-w-content grid-cols-[1fr,auto] items-center py-0">
-        <nav className="mr-2 flex flex-1 items-center gap-4 pr-2">
-          <Link href="/" className="font-serif font-semibold text-gray-700">
+        <nav className="mr-2 flex flex-1 items-center gap-4 pr-2" aria-label="Main">
+          <Link href="/" className="font-sans font-semibold text-gray-900">
             {site.title}
           </Link>
-          {site.menus.map(menu => (
-            <Link
-              key={menu.path}
-              href={menu.path}
-              className={cn(
-                'text-nowrap font-serif text-gray-800 transition-opacity hover:opacity-80',
-                pathname.startsWith(menu.path) ? 'opacity-100' : 'opacity-60',
-              )}
-            >
-              {menu.label}
-            </Link>
-          ))}
+          {site.menus.map(menu => {
+            const isCurrentPath = pathname.startsWith(menu.path);
+
+            return (
+              <Link
+                key={menu.path}
+                href={menu.path}
+                className={cn(
+                  'text-nowrap transition-colors hover:text-gray-900',
+                  isCurrentPath ? 'text-gray-900' : 'text-gray-800',
+                )}
+                aria-current={isCurrentPath ? 'page' : undefined}
+              >
+                {menu.label}
+              </Link>
+            );
+          })}
         </nav>
         <ThemeToggle />
       </div>

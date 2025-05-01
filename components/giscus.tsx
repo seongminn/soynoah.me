@@ -47,13 +47,8 @@ export default function Giscus(props: HTMLAttributes<HTMLElement>) {
   useEffect(() => {
     if (!mounted) return;
 
-    const iframe = document.querySelector<HTMLIFrameElement>(
-      'iframe.giscus-frame',
-    );
-    iframe?.contentWindow?.postMessage(
-      { giscus: { setConfig: { theme } } },
-      'https://giscus.app',
-    );
+    const iframe = document.querySelector<HTMLIFrameElement>('iframe.giscus-frame');
+    iframe?.contentWindow?.postMessage({ giscus: { setConfig: { theme } } }, 'https://giscus.app');
   }, [theme, mounted]);
 
   return <section {...props} ref={ref} />;
