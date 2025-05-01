@@ -8,62 +8,58 @@
 /* -- colors --- */
 @layer base {
   :root {
-    --gray-50: #ffffff;
-    --gray-75: #fdfdfd;
-    --gray-100: #f8f8f8;
-    --gray-150: #f2f2f2;
-    --gray-200: #e6e6e6;
-    --gray-250: #dadada;
-    --gray-300: #d5d5d5;
-    --gray-400: #b1b1b1;
-    --gray-500: #909090;
-    --gray-600: #6d6d6d;
-    --gray-700: #464646;
-    --gray-800: #222222;
-    --gray-900: #000000;
+    --colors-gray-50: hsl(0 0% 99%);
+    --colors-gray-100: hsl(0 0% 97.3%);
+    --colors-gray-150: hsl(0 0% 95.1%);
+    --colors-gray-200: hsl(0 0% 93%);
+    --colors-gray-250: hsl(0 0% 90.9%);
+    --colors-gray-300: hsl(0 0% 88.7%);
+    --colors-gray-400: hsl(0 0% 85.8%);
+    --colors-gray-500: hsl(0 0% 78%);
+    --colors-gray-600: hsl(0 0% 56.1%);
+    --colors-gray-700: hsl(0 0% 52.3%);
+    --colors-gray-800: hsl(0 0% 43.5%);
+    --colors-gray-900: hsl(0 0% 9%);
 
     --selection: hsla(0, 0%, 0%, 0.075);
     --border: hsla(0, 0%, 0%, 0.09);
 
-    --page-background: var(--gray-50);
+    --page-background: var(--colors-gray-50);
 
-    --heading: var(--gray-900);
-    --text-body: var(--gray-800);
-    --text-second: var(--gray-700);
-    --text-disabled: var(--gray-500);
+    --text-body: var(--colors-gray-900);
+    --text-second: var(--colors-gray-800);
+    --text-disabled: var(--colors-gray-600);
   }
 
   .dark {
-    --gray-50: #000;
-    --gray-75: #141414;
-    --gray-100: #1d1d1d;
-    --gray-150: #262626;
-    --gray-200: #303030;
-    --gray-250: #3b3b3b;
-    --gray-300: #4b4b4b;
-    --gray-400: #6a6a6a;
-    --gray-500: #8d8d8d;
-    --gray-600: #b0b0b0;
-    --gray-700: #d0d0d0;
-    --gray-800: #ebebeb;
-    --gray-900: #fff;
+    --colors-gray-50: hsl(0 0% 8.5%);
+    --colors-gray-100: hsl(0 0% 11%);
+    --colors-gray-150: hsl(0 0% 13.6%);
+    --colors-gray-200: hsl(0 0% 15.8%);
+    --colors-gray-250: hsl(0 0% 17.9%);
+    --colors-gray-300: hsl(0 0% 20.5%);
+    --colors-gray-400: hsl(0 0% 24.3%);
+    --colors-gray-500: hsl(0 0% 31.2%);
+    --colors-gray-600: hsl(0 0% 43.9%);
+    --colors-gray-700: hsl(0 0% 49.4%);
+    --colors-gray-800: hsl(0 0% 62.8%);
+    --colors-gray-900: hsl(0 0% 93%);
 
     --selection: hsla(0, 0%, 100%, 0.077);
     --border: hsla(0, 0%, 100%, 0.1);
 
-    --page-background: var(--gray-75);
+    --page-background: var(--colors-gray-75);
 
-    --heading: var(--gray-900);
-    --text-body: var(--gray-800);
-    --text-second: var(--gray-600);
-    --text-disabled: var(--gray-500);
+    --text-body: var(--colors-gray-900);
+    --text-second: var(--colors-gray-800);
+    --text-disabled: var(--colors-gray-600);
   }
 }
 
 /* ---- font ---- */
 @layer base {
   :root {
-    --font-sans: 'Pretendard';
+    --font-sans: 'Pretendard Variable';
     --font-serif: 'AritaBuri';
   }
 }
@@ -146,32 +142,20 @@
   }
 
   * {
-    @apply box-border border-border;
+    @apply box-border border-border text-body;
   }
 
   ::selection {
     @apply bg-selection shadow-none;
   }
 
-  h1 a {
-    @apply font-serif text-heading;
-  }
-
-  h2 a {
-    @apply font-serif text-heading;
-  }
-
-  h3 a {
-    @apply font-serif text-heading;
-  }
-
   b,
   strong {
-    @apply font-bold text-body;
+    @apply font-semibold text-body;
   }
 
   em {
-    @apply font-serif font-bold not-italic text-body;
+    @apply font-sans font-bold not-italic text-body;
   }
 
   del {
@@ -187,9 +171,9 @@
 
   a[rel='noopener noreferrer'][target='_blank'],
   .mdx a[rel='noopener noreferrer'][target='_blank'] {
-    @apply relative inline-block break-all text-second hover:text-heading;
-    @apply underline decoration-gray-400 decoration-1 underline-offset-4 hover:decoration-gray-600;
-    @apply duration-200 ease-in-out hover:duration-100;
+    @apply relative inline-block break-all text-second;
+    @apply underline decoration-gray-400 decoration-1 underline-offset-4 duration-200 ease-in-out;
+    @apply hover:decoration-gray-600 hover:duration-100;
   }
   a[rel='noopener noreferrer'][target='_blank']::before,
   .mdx a[rel='noopener noreferrer'][target='_blank']::before {
@@ -217,7 +201,7 @@
   * {
     --scrollbar-size: 0;
     --scrollbar-size-min: 44px;
-    --scrollbar-color: var(--gray-200);
+    --scrollbar-color: var(--colors-gray-200);
     scrollbar-color: var(--scrollbar-color) transparent;
     /* firefox */
     scrollbar-width: thin;
@@ -238,11 +222,11 @@
   }
 
   ::-webkit-scrollbar-thumb:hover {
-    --scrollbar-color: var(--gray-300);
+    --scrollbar-color: var(--colors-gray-300);
   }
 
   ::-webkit-scrollbar-thumb:active {
-    --scrollbar-color: var(--gray-300);
+    --scrollbar-color: var(--colors-gray-300);
   }
 
   ::-webkit-scrollbar-track {

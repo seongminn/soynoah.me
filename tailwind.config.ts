@@ -2,10 +2,7 @@ import type { Config } from 'tailwindcss';
 
 const config: Config = {
   darkMode: ['class'],
-  content: [
-    './components/**/*.{js,ts,jsx,tsx,mdx}',
-    './app/**/*.{js,ts,jsx,tsx,mdx}',
-  ],
+  content: ['./components/**/*.{js,ts,jsx,tsx,mdx}', './app/**/*.{js,ts,jsx,tsx,mdx}'],
   theme: {
     fontFamily: {
       sans: ['var(--font-sans)', 'sans'],
@@ -21,26 +18,24 @@ const config: Config = {
     colors: {
       transparent: 'transparent',
       gray: {
-        50: 'var(--gray-50)',
-        75: 'var(--gray-75)',
-        100: 'var(--gray-100)',
-        150: 'var(--gray-150)',
-        200: 'var(--gray-200)',
-        250: 'var(--gray-250)',
-        300: 'var(--gray-300)',
-        400: 'var(--gray-400)',
-        500: 'var(--gray-500)',
-        600: 'var(--gray-600)',
-        700: 'var(--gray-700)',
-        800: 'var(--gray-800)',
-        900: 'var(--gray-900)',
+        50: 'var(--colors-gray-50)',
+        100: 'var(--colors-gray-100)',
+        150: 'var(--colors-gray-150)',
+        200: 'var(--colors-gray-200)',
+        250: 'var(--colors-gray-250)',
+        300: 'var(--colors-gray-300)',
+        400: 'var(--colors-gray-400)',
+        500: 'var(--colors-gray-500)',
+        600: 'var(--colors-gray-600)',
+        700: 'var(--colors-gray-700)',
+        800: 'var(--colors-gray-800)',
+        900: 'var(--colors-gray-900)',
       },
       selection: 'var(--selection)',
       border: 'var(--border)',
     },
     extend: {
       textColor: {
-        heading: 'var(--heading)',
         body: 'var(--text-body)',
         second: 'var(--text-second)',
         disabled: 'var(--text-disabled)',
