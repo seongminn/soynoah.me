@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@radix-ui/react-slot": "^1.2.0",
     "clsx": "^2.1.0",
     "dayjs": "^1.11.10",
     "geist": "^1.2.0",
