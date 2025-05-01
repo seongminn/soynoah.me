@@ -2,10 +2,10 @@
   @apply w-full max-w-content text-second;
 
   --shiki-color-text: var(--text-second);
-  --shiki-color-background: var(--gray-100);
+  --shiki-color-background: var(--colors-gray-100);
   --shiki-token-constant: #0068d6;
   --shiki-token-string: #297a3a;
-  --shiki-token-comment: var(--gray-400);
+  --shiki-token-comment: var(--colors-gray-800);
   --shiki-token-keyword: #bd2864;
   --shiki-token-parameter: #a35200;
   --shiki-token-function: #7820bc;
@@ -41,6 +41,8 @@
 }
 
 .mdx [data-rehype-pretty-code-fragment] pre {
+  box-shadow: 0 0 0 1px var(--colors-gray-200);
+
   @apply px-2;
 }
 
@@ -144,13 +146,13 @@ code[data-line-numbers-max-digits='3'] > [data-line]::before {
 }
 
 .mdx > :where(h1, h2, h3, h4) {
-  @apply font-semibold leading-7;
+  @apply font-medium leading-7;
   scroll-margin-top: calc(var(--page-top) + var(--blur-height));
   /* font-feature-settings: 'kern', 'calt', 'case'; */
 }
 
 .mdx > :where(h1, h2) {
-  @apply mt-page text-base;
+  @apply mt-page text-sm;
 }
 
 .mdx > :where(h3, h4) {
@@ -172,18 +174,18 @@ code[data-line-numbers-max-digits='3'] > [data-line]::before {
 }
 
 .mdx em {
-  @apply font-serif not-italic;
+  @apply font-sans not-italic;
 }
 
 .mdx del {
-  @apply italic !text-gray-400;
+  @apply italic text-gray-700;
 }
 
 .mdx a {
   @apply relative break-all
     underline decoration-gray-800 decoration-1 underline-offset-[2.5px]
     transition-[color,text-decoration-color] duration-200 ease-[ease]
-    hover:text-second hover:decoration-gray-800 hover:duration-200;
+    hover:text-body hover:decoration-gray-800;
 }
 
 .mdx blockquote {
