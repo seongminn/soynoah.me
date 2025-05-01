@@ -26,8 +26,8 @@ export default function Pager({ pager }: PagerProps) {
           href={pager.prev.slug}
           className="group line-clamp-1 inline-flex items-center"
         >
-          <Icons.left className="mr-2 h-5 w-5 text-disabled transition-colors group-hover:text-heading" />
-          <span className="line-clamp-1 overflow-hidden text-ellipsis text-second transition-colors group-hover:text-heading">
+          <Icons.left className="group-hover: mr-2 h-5 w-5 text-disabled transition-colors" />
+          <span className="group-hover: line-clamp-1 overflow-hidden text-ellipsis text-second transition-colors">
             {pager.prev.title}
           </span>
         </Link>
@@ -38,10 +38,10 @@ export default function Pager({ pager }: PagerProps) {
           href={pager.next.slug}
           className="group ml-auto inline-flex items-center text-right"
         >
-          <span className="line-clamp-1 overflow-hidden text-ellipsis text-second transition-colors group-hover:text-heading">
+          <span className="group-hover: line-clamp-1 overflow-hidden text-ellipsis text-second transition-colors">
             {pager.next.title}
           </span>
-          <Icons.right className="ml-2 h-5 w-5 text-disabled transition-colors group-hover:text-heading" />
+          <Icons.right className="group-hover: ml-2 h-5 w-5 text-disabled transition-colors" />
         </Link>
       )}
     </div>

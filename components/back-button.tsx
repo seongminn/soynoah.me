@@ -8,10 +8,7 @@ import { cn } from '~/libs/utils';
 import { Icons } from './icons';
 import Button from './ui/button';
 
-export default function BackButton({
-  className,
-  ...props
-}: ComponentProps<'button'>) {
+export default function BackButton({ className, ...props }: ComponentProps<'button'>) {
   const router = useRouter();
 
   return (

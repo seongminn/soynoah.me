@@ -26,10 +26,7 @@ export default function Toc({ toc }: TocProps) {
   return (
     <aside className="absolute -top-page left-0 h-[calc(100%+var(--page-top))] max-w-[10rem] -translate-x-52 transition-opacity duration-100 lg:pointer-events-none lg:hidden lg:opacity-0">
       <nav className="sticky top-0 pt-page">
-        <Button
-          onClick={() => router.replace('/posts')}
-          className={cn('mb-4 h-6 w-6 p-1')}
-        >
+        <Button onClick={() => router.replace('/posts')} className={cn('mb-4 h-6 w-6 p-1')}>
           <Icons.back className="h-4 w-4" />
         </Button>
 
@@ -85,7 +82,7 @@ function Tree({ toc, level = 1, activeId }: TreeProps) {
               href={`#${item.url}`}
               className={cn(
                 'line-clamp-1 overflow-hidden text-ellipsis text-sm leading-7 text-disabled no-underline transition-colors duration-200 hover:text-second',
-                item.url === activeId && 'text-heading hover:text-heading',
+                item.url === activeId && ' hover:',
               )}
             >
               {item.title}

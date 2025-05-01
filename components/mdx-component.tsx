@@ -11,9 +11,7 @@ interface MDXProps {
 }
 
 const components = {
-  hr: ({ ...props }: ComponentProps<'hr'>) => (
-    <hr className="my-4 md:my-8" {...props} />
-  ),
+  hr: ({ ...props }: ComponentProps<'hr'>) => <hr className="my-4 md:my-8" {...props} />,
   table: ({ className, ...props }: ComponentProps<'table'>) => (
     <div className="my-6 w-full overflow-y-auto">
       <table className={cn('w-full', className)} {...props} />

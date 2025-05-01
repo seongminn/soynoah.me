@@ -9,16 +9,10 @@ import GoogleAnalytics from '~/libs/google-analytics';
 
 import Providers from './providers';
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="ko" className={GeistMono.variable} suppressHydrationWarning>
-      <head>
-        {process.env.NODE_ENV === 'production' && <GoogleAnalytics />}
-      </head>
+      <head>{process.env.NODE_ENV === 'production' && <GoogleAnalytics />}</head>
       <body>
         <Providers storageKey="soynoah-theme" attribute="class">
           <div className="relative flex min-h-dvh flex-col">

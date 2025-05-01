@@ -12,8 +12,8 @@ export default function Page() {
         {Object.entries(posts)
           .reverse()
           .map(([year, posts]) => (
-            <li key={year} className="flex justify-between gap-8 font-serif">
-              <h2 className="pt-2">{year}</h2>
+            <li key={year} className="flex justify-between gap-8 font-sans">
+              <span className="pt-2">{year}</span>
               <ul className="flex-1">
                 {posts.map(post => (
                   <li key={post.slug}>
@@ -22,14 +22,12 @@ export default function Page() {
                       className="flex flex-1 items-center border-b border-gray-200 py-2"
                     >
                       <div className="flex w-full flex-col justify-between">
-                        <h2 className="flex-1 transition-colors hover:text-gray-900">
+                        <span className="flex-1 font-medium transition-colors hover:text-gray-900">
                           {post.title}
-                        </h2>
-                        <p className="line-clamp-2 text-sm text-gray-500">
-                          {post.description}
-                        </p>
+                        </span>
+                        <span className="line-clamp-2 text-sm text-second">{post.description}</span>
                       </div>
-                      <time className="text-sm text-gray-500">
+                      <time className="text-sm text-second">
                         {dayjs(post.date).format('MM.DD')}
                       </time>
                     </Link>
