@@ -9,5 +9,5 @@ interface IconButtonProps extends ComponentPropsWithoutRef<typeof Button> {
 }
 
 export default function IconButton({ label, className, ...props }: IconButtonProps) {
-  return <Button aria-label={label} className={cn('h-6 w-6 p-1', className)} {...props} />;
+  return <Button aria-label={label} className={cn('h-7 w-7 p-0', className)} {...props} />;
 }

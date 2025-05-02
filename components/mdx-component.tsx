@@ -5,6 +5,7 @@ import { ComponentProps } from 'react';
 
 import { cn } from '../libs/utils';
 import CopyButton from './copy-button';
+import Link, { LinkProps } from './ui/link';
 
 interface MDXProps {
   code: string;
@@ -22,10 +23,13 @@ const components = {
     __rawstring__,
     ...props
   }: ComponentProps<'pre'> & { __rawstring__?: string }) => (
-    <pre {...props}>
+    <pre className="font-mono" {...props}>
       {children}
       {__rawstring__ && <CopyButton text={__rawstring__} />}
     </pre>
+  ),
+  a: ({ target, className, ...props }: LinkProps) => (
+    <Link target={target} className={cn(!target && 'text-body', className)} {...props} />
   ),
 };
 

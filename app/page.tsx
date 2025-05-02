@@ -1,7 +1,7 @@
 import Image from 'next/image';
-import Link from 'next/link';
 
 import { Icons } from '~/components/icons';
+import Link from '~/components/ui/link';
 
 export default function Page() {
   return (
@@ -31,12 +31,9 @@ export default function Page() {
         </li>
       </ul>
 
-      <Link
-        href="posts"
-        className="group inline-flex items-center gap-1 font-sans text-gray-800 underline decoration-gray-600 underline-offset-4 transition-colors duration-150 ease-in hover:decoration-gray-900"
-      >
+      <Link href="posts" className="inline-flex items-center gap-1">
         게시물 보러 가기
-        <Icons.link className="h-4 w-4 fill-gray-800 decoration-gray-800 duration-150 ease-in group-hover:decoration-gray-900" />
+        <Icons.link className="h-4 w-4 fill-gray-800 duration-150 ease-in" />
       </Link>
     </>
   );

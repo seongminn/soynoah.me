@@ -1,6 +1,6 @@
 'use client';
 
-import Link from 'next/link';
+import NextLink from 'next/link';
 import { useRouter } from 'next/navigation';
 import { useEffect, useMemo, useState } from 'react';
 
@@ -8,7 +8,8 @@ import { TableOfContents } from '~/libs/toc';
 import { cn } from '~/libs/utils';
 
 import { Icons } from './icons';
-import Button from './ui/button';
+import IconButton from './ui/icon-button';
+import Link from './ui/link';
 
 interface TocProps {
   toc: TableOfContents;
@@ -26,9 +27,13 @@ export default function Toc({ toc }: TocProps) {
   return (
     <aside className="absolute -top-page left-0 h-[calc(100%+var(--page-top))] max-w-[10rem] -translate-x-52 transition-opacity duration-100 lg:pointer-events-none lg:hidden lg:opacity-0">
       <nav className="sticky top-0 pt-page">
-        <Button onClick={() => router.replace('/posts')} className={cn('mb-4 h-6 w-6 p-1')}>
+        <IconButton
+          label="Back to posts"
+          onClick={() => router.replace('/posts')}
+          className={'mb-4'}
+        >
           <Icons.back className="h-4 w-4" />
-        </Button>
+        </IconButton>
 
         <Tree toc={toc} activeId={activeHeading} />
       </nav>
@@ -71,21 +76,23 @@ function Tree({ toc, level = 1, activeId }: TreeProps) {
     toc.length > 0 &&
     level < 3 && (
       <ul
-        className={cn('m-0 list-none text-ellipsis', {
+        className={cn('m-0 flex list-none flex-col gap-1 text-ellipsis', {
           'pl-4': level !== 1,
         })}
       >
         {toc.map(item => (
           <li key={item.url}>
-            <Link
-              scroll={true}
-              href={`#${item.url}`}
-              className={cn(
-                'line-clamp-1 overflow-hidden text-ellipsis text-sm leading-7 text-disabled no-underline transition-colors duration-200 hover:text-second',
-                item.url === activeId && ' hover:',
-              )}
-            >
-              {item.title}
+            <Link asChild>
+              <NextLink
+                scroll={true}
+                href={`#${item.url}`}
+                className={cn(
+                  'line-clamp-1 overflow-hidden text-ellipsis text-sm no-underline',
+                  item.url === activeId && 'text-body',
+                )}
+              >
+                {item.title}
+              </NextLink>
             </Link>
             {item.items.length ? (
               <Tree toc={item.items} level={level + 1} activeId={activeId} />
