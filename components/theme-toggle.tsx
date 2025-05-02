@@ -11,7 +11,8 @@ export default function ThemeToggle() {
   return (
     <div>
       <IconButton
-        label={`Toggle ${theme === 'light' ? 'dark' : 'light'} theme`}
+        // label={`Toggle ${theme === 'light' ? 'dark' : 'light'} theme`}
+        label="Toggle theme"
         aria-live="polite"
         onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')}
       >

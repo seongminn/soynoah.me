@@ -12,6 +12,7 @@ import Pager, { TPager } from '~/components/pager';
 import Toc from '~/components/toc';
 import { compareAsc } from '~/libs/pager';
 import getTableOfContents from '~/libs/toc';
+import BackButton from '~/components/back-button';
 
 type PageProps = {
   params: {
@@ -29,6 +30,9 @@ export default function Page({ params }: PageProps) {
 
   return (
     <>
+      <div className="blur-layer"></div>
+      <BackButton className="mb-8 hidden lg:inline-flex" />
+
       <PageHeader {...post} />
 
       <hr className="mb-7 mt-4" />
