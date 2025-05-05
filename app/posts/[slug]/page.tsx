@@ -2,16 +2,15 @@ import '~/styles/mdx.css';
 
 import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
-import { allPosts, Post } from 'contentlayer/generated';
+import { allPosts } from 'contentlayer/generated';
 
 import BackButton from '~/components/back-button';
 import Giscus from '~/components/giscus';
 import Mdx from '~/components/mdx-component';
 import PageHeader from '~/components/page-header';
-import Pager, { TPager } from '~/components/pager';
+import Pager, { getPager } from '~/components/pager';
 import Toc from '~/components/toc';
-import * as time from '~/libs/time';
-import getTableOfContents from '~/libs/toc';
+import getTableOfContents from '~/utils/toc';
 
 type PageProps = {
   params: {
@@ -60,22 +59,6 @@ function getPostsByParams({ params }: PageProps) {
   const post = allPosts.find(post => post.slug === slug);
 
   return post;
-}
-
-function getPager(post: Post) {
-  return allPosts
-    .sort((a, b) => (time.isBefore(a.date, b.date) ? -1 : 1))
-    .reduce<TPager>((ac, v, index, list) => {
-      if (post.slug !== v.slug) return ac;
-
-      const prev = list[index - 1];
-      const next = list[index + 1];
-
-      ac.prev = prev && { title: prev.title, slug: prev.slug };
-      ac.next = next && { title: next.title, slug: next.slug };
-
-      return ac;
-    }, {});
 }
 
 export const generateMetadata = ({ params }: PageProps): Metadata => {

@@ -4,13 +4,14 @@ import { useEffect, useMemo, useState } from 'react';
 import NextLink from 'next/link';
 import { useRouter } from 'next/navigation';
 
-import { TableOfContents } from '~/libs/toc';
 import { cn } from '~/libs/utils';
+import { Items } from '~/utils/toc';
 
 import IconButton from './ui/icon-button';
 import Link from './ui/link';
 import { Icons } from './icons';
 
+type TableOfContents = Items[];
 interface TocProps {
   toc: TableOfContents;
 }
@@ -41,6 +42,8 @@ export default function Toc({ toc }: TocProps) {
   );
 }
 
+/* ---- hooks ---- */
+
 function useActiveHeading(itemIds: string[]) {
   const [activeId, setActiveId] = useState<string>('');
 
@@ -65,6 +68,8 @@ function useActiveHeading(itemIds: string[]) {
 
   return activeId;
 }
+
+/* ---- toc tree ---- */
 
 interface TreeProps extends TocProps {
   level?: number;
