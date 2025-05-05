@@ -1,17 +1,22 @@
 'use client';
 
-import { ComponentProps } from 'react';
+import { ComponentPropsWithoutRef, forwardRef } from 'react';
 import { useRouter } from 'next/navigation';
 
-import IconButton from './ui/icon-button';
+import { IconButton } from './ui/icon-button';
 import { Icons } from './icons';
 
-export default function BackButton(props: ComponentProps<'button'>) {
-  const router = useRouter();
+interface BackButtonProps extends Partial<ComponentPropsWithoutRef<typeof IconButton>> {}
 
-  return (
-    <IconButton label="Back to posts" onClick={() => router.push('/posts')} {...props}>
-      <Icons.back className="h-4 w-4" />
-    </IconButton>
-  );
-}
+export const BackButton = forwardRef<HTMLButtonElement, BackButtonProps>(
+  ({ label = 'Back to previous page', ...props }, ref) => {
+    const router = useRouter();
+    const back = () => router.back();
+
+    return (
+      <IconButton ref={ref} label={label} onClick={back} {...props}>
+        <Icons.back className="h-4 w-4" />
+      </IconButton>
+    );
+  },
+);

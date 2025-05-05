@@ -17,7 +17,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <Providers storageKey="soynoah-theme" attribute="class">
           <div className="relative flex min-h-dvh flex-col">
             {/* <Header /> */}
-            <main className="container mx-auto max-w-content">{children}</main>
+            <div className="blur-layer"></div>
+
+            <main className="container relative mx-auto max-w-content">{children}</main>
           </div>
         </Providers>
       </body>

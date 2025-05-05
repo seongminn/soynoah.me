@@ -6,7 +6,7 @@ import { useMDXComponent } from 'next-contentlayer/hooks';
 import { cn } from '~//libs/utils';
 
 import Link, { LinkProps } from './ui/link';
-import CopyButton from './copy-button';
+import { CopyButton } from './copy-button';
 
 interface MDXProps {
   code: string;

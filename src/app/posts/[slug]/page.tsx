@@ -4,18 +4,18 @@ import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { allPosts } from 'contentlayer/generated';
 
-import BackButton from '~//components/back-button';
-import Giscus from '~//components/giscus';
-import Mdx from '~//components/mdx-component';
-import PageHeader from '~//components/page-header';
-import Pager, { getPager } from '~//components/pager';
-import Toc from '~//components/toc';
-import getTableOfContents from '~//utils/toc';
+import { BackButton } from '~/components/back-button';
+import Giscus from '~/components/giscus';
+import Mdx from '~/components/mdx-component';
+import { PageHeader } from '~/components/page-header';
+import Pager, { getPager } from '~/components/pager';
+import Toc from '~/components/toc';
+import getTableOfContents from '~/utils/toc';
+
+import * as time from '~//libs/time';
 
 type PageProps = {
-  params: {
-    slug: string;
-  };
+  params: { slug: string };
 };
 
 export default function Page({ params }: PageProps) {
@@ -24,14 +24,16 @@ export default function Page({ params }: PageProps) {
   if (!post) notFound();
 
   const toc = getTableOfContents({ content: post.body.raw });
-  const pager = getPager(post);
+  const pager = getPager({ post });
 
   return (
     <>
-      <div className="blur-layer"></div>
       <BackButton className="mb-8 hidden lg:inline-flex" />
 
-      <PageHeader {...post} />
+      <PageHeader>
+        <PageHeader.Title>{post.title}</PageHeader.Title>
+        <PageHeader.Date date={post.date} />
+      </PageHeader>
 
       <hr className="mb-7 mt-4" />
 
