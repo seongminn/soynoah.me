@@ -2,7 +2,6 @@ import * as time from '~/libs/time';
 
 export const Footer = () => {
   const currentYear = getCurrentYear();
-  console.log('currentYear', currentYear);
 
   return (
     <footer className="container mx-auto my-14 flex max-w-content items-center justify-between bg-page !py-0">
