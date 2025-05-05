@@ -1,9 +1,9 @@
 import '~/styles/globals.css';
 
-import { GeistMono } from 'geist/font/mono';
 import { Metadata } from 'next';
+import { GeistMono } from 'geist/font/mono';
 
-import Header from '~/components/site-header';
+// import Header from '~/components/site-header';
 import { site } from '~/configs/site';
 import GoogleAnalytics from '~/libs/google-analytics';
 

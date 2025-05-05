@@ -1,10 +1,11 @@
 import '~/styles/mdx.css';
 import 'dayjs/locale/ko';
 
-import { allPosts, Post } from 'contentlayer/generated';
 import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
+import { allPosts, Post } from 'contentlayer/generated';
 
+import BackButton from '~/components/back-button';
 import Giscus from '~/components/giscus';
 import Mdx from '~/components/mdx-component';
 import PageHeader from '~/components/page-header';
@@ -12,7 +13,6 @@ import Pager, { TPager } from '~/components/pager';
 import Toc from '~/components/toc';
 import { compareAsc } from '~/libs/pager';
 import getTableOfContents from '~/libs/toc';
-import BackButton from '~/components/back-button';
 
 type PageProps = {
   params: {

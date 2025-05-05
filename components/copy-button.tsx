@@ -4,8 +4,8 @@ import { ComponentProps, useEffect, useState } from 'react';
 
 import { cn } from '~/libs/utils';
 
-import { Icons } from './icons';
 import Button from './ui/button';
+import { Icons } from './icons';
 
 interface CopyButtonProps extends ComponentProps<'button'> {
   text: string;

@@ -1,11 +1,12 @@
 'use client';
 
-import { useMDXComponent } from 'next-contentlayer/hooks';
 import { ComponentProps } from 'react';
+import { useMDXComponent } from 'next-contentlayer/hooks';
 
-import { cn } from '../libs/utils';
-import CopyButton from './copy-button';
+import { cn } from '~/libs/utils';
+
 import Link, { LinkProps } from './ui/link';
+import CopyButton from './copy-button';
 
 interface MDXProps {
   code: string;

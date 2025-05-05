@@ -1,15 +1,15 @@
 'use client';
 
+import { useEffect, useMemo, useState } from 'react';
 import NextLink from 'next/link';
 import { useRouter } from 'next/navigation';
-import { useEffect, useMemo, useState } from 'react';
 
 import { TableOfContents } from '~/libs/toc';
 import { cn } from '~/libs/utils';
 
-import { Icons } from './icons';
 import IconButton from './ui/icon-button';
 import Link from './ui/link';
+import { Icons } from './icons';
 
 interface TocProps {
   toc: TableOfContents;
