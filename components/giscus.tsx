@@ -1,7 +1,7 @@
 'use client';
 
-import { useTheme } from 'next-themes';
 import { HTMLAttributes, useEffect, useRef, useState } from 'react';
+import { useTheme } from 'next-themes';
 
 export default function Giscus(props: HTMLAttributes<HTMLElement>) {
   const ref = useRef<HTMLIFrameElement>(null);
