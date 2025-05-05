@@ -1,5 +1,4 @@
 import '~/styles/mdx.css';
-import 'dayjs/locale/ko';
 
 import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
@@ -11,7 +10,7 @@ import Mdx from '~/components/mdx-component';
 import PageHeader from '~/components/page-header';
 import Pager, { TPager } from '~/components/pager';
 import Toc from '~/components/toc';
-import { compareAsc } from '~/libs/pager';
+import * as time from '~/libs/time';
 import getTableOfContents from '~/libs/toc';
 
 type PageProps = {
@@ -65,7 +64,7 @@ function getPostsByParams({ params }: PageProps) {
 
 function getPager(post: Post) {
   return allPosts
-    .sort((a, b) => compareAsc(new Date(a.date), new Date(b.date)))
+    .sort((a, b) => (time.isBefore(a.date, b.date) ? -1 : 1))
     .reduce<TPager>((ac, v, index, list) => {
       if (post.slug !== v.slug) return ac;
 
