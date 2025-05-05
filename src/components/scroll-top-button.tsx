@@ -26,3 +26,4 @@ export const ScrollTopButton = forwardRef<HTMLButtonElement, ScrollTopButtonProp
     );
   },
 );
+ScrollTopButton.displayName = 'ScrollTopButton';

@@ -1,5 +1,5 @@
-import { Slot } from '@radix-ui/react-slot';
 import { ComponentPropsWithoutRef, forwardRef } from 'react';
+import { Slot } from '@radix-ui/react-slot';
 
 import { cn } from '~//libs/utils';
 
@@ -23,3 +23,4 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
     );
   },
 );
+Button.displayName = 'Button';

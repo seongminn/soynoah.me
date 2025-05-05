@@ -4,9 +4,8 @@ import { ComponentPropsWithoutRef, forwardRef, useEffect, useState } from 'react
 
 import { cn } from '~//libs/utils';
 
-import { Button } from './ui/button';
-import { Icons } from './icons';
 import { IconButton } from './ui/icon-button';
+import { Icons } from './icons';
 
 interface CopyButtonProps extends Partial<ComponentPropsWithoutRef<typeof IconButton>> {
   text: string;
@@ -42,3 +41,4 @@ export const CopyButton = forwardRef<HTMLButtonElement, CopyButtonProps>(
     );
   },
 );
+CopyButton.displayName = 'CopyButton';

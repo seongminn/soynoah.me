@@ -20,3 +20,4 @@ export const BackButton = forwardRef<HTMLButtonElement, BackButtonProps>(
     );
   },
 );
+BackButton.displayName = 'BackButton';
