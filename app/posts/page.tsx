@@ -1,54 +1,66 @@
 import { Metadata } from 'next';
-import Link from 'next/link';
+import NextLink from 'next/link';
 import { allPosts } from 'contentlayer/generated';
-import dayjs from 'dayjs';
+
+import Link from '~/components/ui/link';
+import * as time from '~/libs/time';
 
 export default function Page() {
   const posts = getSortedPostsByYears(allPosts);
 
   return (
-    <main>
-      <ul className="-translate-y-2">
-        {Object.entries(posts)
-          .reverse()
-          .map(([year, posts]) => (
-            <li key={year} className="flex justify-between gap-8 font-sans">
-              <span className="pt-2">{year}</span>
-              <ul className="flex-1">
-                {posts.map(post => (
-                  <li key={post.slug}>
-                    <Link
-                      href={`posts/${post.slug}`}
-                      className="flex flex-1 items-center border-b border-gray-200 py-2"
-                    >
-                      <div className="flex w-full flex-col justify-between">
-                        <span className="flex-1 font-medium transition-colors hover:text-gray-900">
-                          {post.title}
-                        </span>
-                        <span className="line-clamp-2 text-sm text-second">{post.description}</span>
-                      </div>
-                      <time className="text-sm text-second">
-                        {dayjs(post.date).format('MM.DD')}
-                      </time>
+    <ul className="flex flex-col gap-2">
+      {Object.entries(posts)
+        .reverse()
+        .map(([year, posts]) => (
+          <li key={year} className="flex justify-between gap-8 font-sans">
+            <time dateTime={year}>{year}</time>
+            <ul className="flex flex-1 flex-col gap-2">
+              {posts.map(post => (
+                <>
+                  <li
+                    key={post.slug}
+                    className="relative pb-2 after:absolute after:bottom-0 after:left-0 after:h-px after:w-full after:bg-border"
+                  >
+                    <Link asChild>
+                      <NextLink
+                        href={`posts/${post.slug}`}
+                        className="flex flex-1 items-center no-underline"
+                      >
+                        <div className="flex w-full flex-col justify-between">
+                          <span className="flex-1 font-medium transition-colors hover:text-gray-900">
+                            {post.title}
+                          </span>
+                          <span className="line-clamp-2 text-sm text-second">
+                            {post.description}
+                          </span>
+                        </div>
+                        <time
+                          dateTime={time.format(post.date, 'YYYY-MM-DD')}
+                          className="shrink-0 text-sm text-second"
+                        >
+                          {time.format(post.date, 'MM.DD')}
+                        </time>
+                      </NextLink>
                     </Link>
                   </li>
-                ))}
-              </ul>
-            </li>
-          ))}
-      </ul>
-    </main>
+                </>
+              ))}
+            </ul>
+          </li>
+        ))}
+    </ul>
   );
 }
 
 function getSortedPostsByYears(posts: typeof allPosts) {
   const sortedPosts = posts.sort((a, b) => {
-    return dayjs(a.date).isAfter(dayjs(b.date)) ? -1 : 1;
+    return time.isAfter(a.date, b.date) ? -1 : 1;
   });
 
   const postsByYears = sortedPosts.reduce(
     (acc, post) => {
-      const year = dayjs(post.date).year();
+      const year = time.getYear(post.date);
 
       if (!acc[year]) {
         acc[year] = [];
