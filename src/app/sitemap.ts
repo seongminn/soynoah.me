@@ -1,6 +1,6 @@
 import { allPosts } from 'contentlayer/generated';
 
-import { site } from '~/configs/site';
+import { site } from '~/site';
 
 export default function sitemap() {
   const routes = ['', 'posts'].map(route => ({

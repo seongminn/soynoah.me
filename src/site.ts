@@ -4,7 +4,7 @@ export const site = {
   url: `https://soynoah.me`,
   author: {
     name: `Seongmin Choi`,
-    bio: '세상을 은은하게 비추는 달빛처럼,',
+    bio: '',
     contact: {
       email: `mailto:berry9901@gmail.com`,
       github: `https://github.com/seongminn`,

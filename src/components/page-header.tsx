@@ -1,6 +1,6 @@
 import { Post } from 'contentlayer/generated';
 
-import * as time from '~/libs/time';
+import * as time from '~//libs/time';
 
 import Heading from './ui/heading';
 

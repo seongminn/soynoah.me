@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import { allPosts, Post } from 'contentlayer/generated';
 
-import * as time from '~/libs/time';
+import * as time from '~//libs/time';
 
 import { Icons } from './icons';
 
