@@ -71,7 +71,6 @@ export default makeSource({
           behavior: 'wrap',
           properties: {
             className: ['anchor'],
-            ariaLabel: 'anchor',
           },
         },
       ],
