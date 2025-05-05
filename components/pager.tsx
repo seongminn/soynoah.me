@@ -1,4 +1,7 @@
 import Link from 'next/link';
+import { allPosts, Post } from 'contentlayer/generated';
+
+import * as time from '~/libs/time';
 
 import { Icons } from './icons';
 
@@ -46,4 +49,20 @@ export default function Pager({ pager }: PagerProps) {
       )}
     </div>
   );
+}
+
+export function getPager(post: Post) {
+  return allPosts
+    .sort((a, b) => (time.isBefore(a.date, b.date) ? -1 : 1))
+    .reduce<TPager>((ac, v, index, list) => {
+      if (post.slug !== v.slug) return ac;
+
+      const prev = list[index - 1];
+      const next = list[index + 1];
+
+      ac.prev = prev && { title: prev.title, slug: prev.slug };
+      ac.next = next && { title: next.title, slug: next.slug };
+
+      return ac;
+    }, {});
 }

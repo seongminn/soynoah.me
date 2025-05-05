@@ -1,13 +1,11 @@
-type Item = {
+export type Item = {
   title: string;
   url: string;
 };
 
-type Items = Item & {
+export type Items = Item & {
   items: Items[];
 };
-
-export type TableOfContents = Items[];
 
 interface Content {
   content: string;
