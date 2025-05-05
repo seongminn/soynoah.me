@@ -33,6 +33,23 @@
     --colors-accent: hsl(173 80% 36%);
     --colors-ring: 0 0 0 2px var(--colors-gray-50), 0 0 0 4px var(--colors-accent),
       0 0 0 6px rgba(26, 26, 26, 0.06);
+
+    --colors-blur-gradient: linear-gradient(
+      180deg,
+      #fff 0,
+      hsla(0, 0%, 100%, 0.738) 19%,
+      hsla(0, 0%, 100%, 0.541) 34%,
+      hsla(0, 0%, 100%, 0.382) 47%,
+      hsla(0, 0%, 100%, 0.278) 56.5%,
+      hsla(0, 0%, 100%, 0.194) 65%,
+      hsla(0, 0%, 100%, 0.126) 73%,
+      hsla(0, 0%, 100%, 0.075) 80.2%,
+      hsla(0, 0%, 100%, 0.042) 86.1%,
+      hsla(0, 0%, 100%, 0.021) 91%,
+      hsla(0, 0%, 100%, 0.008) 95.2%,
+      hsla(0, 0%, 100%, 0.002) 98.2%,
+      hsla(0, 0%, 100%, 0)
+    );
   }
 
   .dark {
@@ -61,6 +78,23 @@
     --colors-accent: hsl(173 80% 36%);
     --colors-ring: 0 0 0 2px var(--colors-gray-50), 0 0 0 4px var(--colors-accent),
       0 0 0 6px rgba(26, 26, 26, 0.06);
+
+    --colors-blur-gradient: linear-gradient(
+      180deg,
+      hsl(0 0% 8.5%),
+      hsla(0, 0%, 8.5%, 0.738) 19%,
+      hsla(0, 0%, 8.5%, 0.541) 34%,
+      hsla(0, 0%, 8.5%, 0.382) 47%,
+      hsla(0, 0%, 8.5%, 0.278) 56.5%,
+      hsla(0, 0%, 8.5%, 0.194) 65%,
+      hsla(0, 0%, 8.5%, 0.126) 73%,
+      hsla(0, 0%, 8.5%, 0.075) 80.2%,
+      hsla(0, 0%, 8.5%, 0.042) 86.1%,
+      hsla(0, 0%, 8.5%, 0.021) 91%,
+      hsla(0, 0%, 8.5%, 0.008) 95.2%,
+      hsla(0, 0%, 8.5%, 0.002) 98.2%,
+      hsla(0, 0%, 8.5%, 0)
+    );
   }
 }
 
@@ -130,23 +164,20 @@
     left: 0;
     right: 0;
     height: 8rem;
-    background: linear-gradient(
-      180deg,
-      #fff 0,
-      hsla(0, 0%, 100%, 0.738) 19%,
-      hsla(0, 0%, 100%, 0.541) 34%,
-      hsla(0, 0%, 100%, 0.382) 47%,
-      hsla(0, 0%, 100%, 0.278) 56.5%,
-      hsla(0, 0%, 100%, 0.194) 65%,
-      hsla(0, 0%, 100%, 0.126) 73%,
-      hsla(0, 0%, 100%, 0.075) 80.2%,
-      hsla(0, 0%, 100%, 0.042) 86.1%,
-      hsla(0, 0%, 100%, 0.021) 91%,
-      hsla(0, 0%, 100%, 0.008) 95.2%,
-      hsla(0, 0%, 100%, 0.002) 98.2%,
-      hsla(0, 0%, 100%, 0)
-    );
+    background: var(--colors-blur-gradient);
   }
+
+  /* .blur-layer {
+    mask-image: linear-gradient(to bottom, var(--colors-gray-50) 25%, transparent);
+    backdrop-filter: blur(5px);
+    z-index: 9;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 8rem;
+    pointer-events: none;
+  } */
 }
 
 @layer components {

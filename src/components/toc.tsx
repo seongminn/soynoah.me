@@ -2,16 +2,12 @@
 
 import { useEffect, useMemo, useState } from 'react';
 import NextLink from 'next/link';
-import { useRouter } from 'next/navigation';
 
 import { cn } from '~//libs/utils';
 import { Items } from '~//utils/toc';
 
-import { IconButton } from './ui/icon-button';
 import Link from './ui/link';
-import { Icons } from './icons';
-import { BackButton } from './back-button';
-import { Sidebar } from './side-bar';
+import { Sidebar } from './sidebar';
 
 type TableOfContents = Items[];
 interface TocProps {
@@ -19,7 +15,6 @@ interface TocProps {
 }
 
 export default function Toc({ toc }: TocProps) {
-  const router = useRouter();
   const itemIds = useMemo(
     () => toc.flatMap(item => [item.url, ...item.items.map(id => id.url)]),
     [toc],
@@ -29,8 +24,9 @@ export default function Toc({ toc }: TocProps) {
 
   return (
     <Sidebar>
-      <BackButton className="mb-4" />
-      <Tree toc={toc} activeId={activeHeading} />
+      <nav>
+        <Tree toc={toc} activeId={activeHeading} />
+      </nav>
     </Sidebar>
   );
 }
@@ -74,18 +70,18 @@ function Tree({ toc, level = 1, activeId }: TreeProps) {
     toc.length > 0 &&
     level < 3 && (
       <ul
-        className={cn('m-0 flex list-none flex-col gap-1 text-ellipsis', {
-          'pl-4': level !== 1,
+        className={cn('m-0 flex list-none flex-col gap-2 text-ellipsis', {
+          'pl-2': level !== 1,
         })}
       >
         {toc.map(item => (
-          <li key={item.url}>
+          <li key={item.url} className="flex flex-col gap-2">
             <Link asChild>
               <NextLink
                 scroll={true}
                 href={`#${item.url}`}
                 className={cn(
-                  'line-clamp-1 overflow-hidden text-ellipsis text-sm no-underline',
+                  'line-clamp-1 overflow-hidden text-ellipsis text-[13px] no-underline',
                   item.url === activeId && 'text-body',
                 )}
               >

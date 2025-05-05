@@ -51,10 +51,6 @@ export default function Pager({ pager }: PagerProps) {
   );
 }
 
-interface TPost {
-  post: Post;
-}
-
 export function getPager({ post }: { post: Post }) {
   return allPosts
     .sort((a, b) => (time.isBefore(a.date, b.date) ? -1 : 1))

@@ -12,8 +12,6 @@ import Pager, { getPager } from '~/components/pager';
 import Toc from '~/components/toc';
 import getTableOfContents from '~/utils/toc';
 
-import * as time from '~//libs/time';
-
 type PageProps = {
   params: { slug: string };
 };

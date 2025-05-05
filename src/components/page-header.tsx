@@ -1,11 +1,11 @@
+import { ComponentPropsWithoutRef, forwardRef } from 'react';
+import { Slot } from '@radix-ui/react-slot';
 import { Post } from 'contentlayer/generated';
 
-import { Heading } from './ui/heading';
-import { ComponentPropsWithoutRef, forwardRef } from 'react';
-import { cn } from '~/libs/utils';
-import { Slot } from '@radix-ui/react-slot';
-
 import * as time from '~/libs/time';
+import { cn } from '~/libs/utils';
+
+import { Heading } from './ui/heading';
 
 interface PageHeaderProps extends ComponentPropsWithoutRef<'div'> {}
 
@@ -30,6 +30,7 @@ const Title = forwardRef<HTMLHeadingElement, TitleProps>(
     );
   },
 );
+Title.displayName = 'PageHeader.Title';
 
 /* ---- Description ---- */
 
@@ -52,6 +53,7 @@ const Description = forwardRef<HTMLParagraphElement, DescriptionProps>(
     );
   },
 );
+Description.displayName = 'PageHeader.Description';
 
 /* ---- Date ---- */
 
@@ -71,6 +73,7 @@ const Date = forwardRef<HTMLTimeElement, DateProps>(({ date, className, ...props
     </time>
   );
 });
+Date.displayName = 'PageHeader.Date';
 
 export const PageHeader = Object.assign(Root, {
   Title,

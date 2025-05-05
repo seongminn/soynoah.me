@@ -2,11 +2,10 @@ import { Metadata } from 'next';
 import NextLink from 'next/link';
 import { allPosts } from 'contentlayer/generated';
 
-import Link from '~//components/ui/link';
-import * as time from '~//libs/time';
-import { BackButton } from '~/components/back-button';
 import { PageHeader } from '~/components/page-header';
-import { Sidebar } from '~/components/side-bar';
+import { Sidebar } from '~/components/sidebar';
+import Link from '~/components/ui/link';
+import * as time from '~/libs/time';
 
 export default function Page() {
   const posts = getSortedPostsByYears(allPosts);
@@ -21,9 +20,7 @@ export default function Page() {
       <hr className="mb-7 mt-4" />
 
       <section className="relative">
-        <Sidebar>
-          <BackButton className="mb-4" />
-        </Sidebar>
+        <Sidebar />
 
         <ul className="flex flex-col gap-2">
           {Object.entries(posts)
