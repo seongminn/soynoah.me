@@ -41,11 +41,9 @@ export default function Page({ params }: PageProps) {
         <Toc toc={toc} />
       </section>
 
-      <footer>
-        <hr className="mb-7 mt-4" />
-        <Pager pager={pager} />
-        <Giscus />
-      </footer>
+      <hr className="mb-7 mt-4" />
+      <Pager pager={pager} />
+      <Giscus />
     </>
   );
 }

@@ -8,6 +8,7 @@ import GoogleAnalytics from '~//libs/google-analytics';
 import { site } from '~/site';
 
 import Providers from './providers';
+import { Footer } from '~/components/site-footer';
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
@@ -16,10 +17,13 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body>
         <Providers storageKey="soynoah-theme" attribute="class">
           <div className="relative flex min-h-dvh flex-col">
-            {/* <Header /> */}
             <div className="blur-layer"></div>
 
-            <main className="container relative mx-auto max-w-content">{children}</main>
+            <main className="container relative mx-auto min-h-[calc(100vh-7rem-20px)] max-w-content">
+              {children}
+            </main>
+
+            <Footer />
           </div>
         </Providers>
       </body>

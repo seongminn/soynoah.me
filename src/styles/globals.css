@@ -152,7 +152,6 @@
     padding-left: var(--body-margin-left);
     padding-right: var(--body-margin-right);
     padding-top: var(--blur-height);
-    padding-bottom: calc(var(--page-top) * 3 / 2);
   }
 
   .blur-layer {
