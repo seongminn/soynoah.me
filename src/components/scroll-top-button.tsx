@@ -1,23 +1,28 @@
 'use client';
 
-import { ComponentProps } from 'react';
+import { ComponentPropsWithoutRef, forwardRef } from 'react';
 
 import { cn } from '~//libs/utils';
 
-import Button from './ui/button';
+import { IconButton } from './ui/icon-button';
 import { Icons } from './icons';
 
-export default function ScrollTopButton({ className, ...props }: ComponentProps<'button'>) {
-  const scrollToTop = () => window.scrollTo({ top: 0, behavior: 'smooth' });
+interface ScrollTopButtonProps extends Partial<ComponentPropsWithoutRef<typeof IconButton>> {}
 
-  return (
-    <Button
-      onClick={scrollToTop}
-      className={cn('mt-2 h-6 w-6 p-1', className)}
-      aria-label="scroll to top"
-      {...props}
-    >
-      <Icons.up className="h-4 w-4" />
-    </Button>
-  );
-}
+export const ScrollTopButton = forwardRef<HTMLButtonElement, ScrollTopButtonProps>(
+  ({ label = 'Scroll to top', className, ...props }, ref) => {
+    const scrollToTop = () => window.scrollTo({ top: 0, behavior: 'smooth' });
+
+    return (
+      <IconButton
+        ref={ref}
+        label={label}
+        onClick={scrollToTop}
+        className={cn('mt-2 h-6 w-6 p-1', className)}
+        {...props}
+      >
+        <Icons.up className="h-4 w-4" />
+      </IconButton>
+    );
+  },
+);

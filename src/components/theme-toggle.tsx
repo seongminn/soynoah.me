@@ -2,7 +2,7 @@
 
 import { useTheme } from 'next-themes';
 
-import IconButton from './ui/icon-button';
+import { IconButton } from './ui/icon-button';
 import { Icons } from './icons';
 
 export default function ThemeToggle() {
@@ -11,7 +11,6 @@ export default function ThemeToggle() {
   return (
     <div>
       <IconButton
-        // label={`Toggle ${theme === 'light' ? 'dark' : 'light'} theme`}
         label="Toggle theme"
         aria-live="polite"
         onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')}

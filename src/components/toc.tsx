@@ -7,9 +7,11 @@ import { useRouter } from 'next/navigation';
 import { cn } from '~//libs/utils';
 import { Items } from '~//utils/toc';
 
-import IconButton from './ui/icon-button';
+import { IconButton } from './ui/icon-button';
 import Link from './ui/link';
 import { Icons } from './icons';
+import { BackButton } from './back-button';
+import { Sidebar } from './side-bar';
 
 type TableOfContents = Items[];
 interface TocProps {
@@ -26,19 +28,10 @@ export default function Toc({ toc }: TocProps) {
   const activeHeading = useActiveHeading(itemIds);
 
   return (
-    <aside className="absolute -top-page left-0 h-[calc(100%+var(--page-top))] max-w-[10rem] -translate-x-52 transition-opacity duration-100 lg:pointer-events-none lg:hidden lg:opacity-0">
-      <nav className="sticky top-0 pt-page">
-        <IconButton
-          label="Back to posts"
-          onClick={() => router.replace('/posts')}
-          className={'mb-4'}
-        >
-          <Icons.back className="h-4 w-4" />
-        </IconButton>
-
-        <Tree toc={toc} activeId={activeHeading} />
-      </nav>
-    </aside>
+    <Sidebar>
+      <BackButton className="mb-4" />
+      <Tree toc={toc} activeId={activeHeading} />
+    </Sidebar>
   );
 }
 
