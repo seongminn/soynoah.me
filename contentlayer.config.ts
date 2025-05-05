@@ -101,8 +101,7 @@ export default makeSource({
               return;
             }
 
-            preElement.properties['__withMeta__'] =
-              node.children.at(0).tagName === 'div';
+            preElement.properties['__withMeta__'] = node.children.at(0).tagName === 'div';
             preElement.properties['__rawstring__'] = node.__rawstring__;
           }
         });

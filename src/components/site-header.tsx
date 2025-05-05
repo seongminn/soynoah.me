@@ -2,9 +2,9 @@
 
 import { usePathname } from 'next/navigation';
 
-import Link from '~/components/ui/link';
-import { site } from '~/configs/site';
-import { cn } from '~/libs/utils';
+import Link from '~//components/ui/link';
+import { cn } from '~//libs/utils';
+import { site } from '~/site';
 
 import ThemeToggle from './theme-toggle';
 

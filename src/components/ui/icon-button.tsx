@@ -1,6 +1,6 @@
 import { ComponentPropsWithoutRef } from 'react';
 
-import { cn } from '~/libs/utils';
+import { cn } from '~//libs/utils';
 
 import Button from './button';
 

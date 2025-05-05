@@ -3,7 +3,7 @@
 import { ComponentProps } from 'react';
 import { useMDXComponent } from 'next-contentlayer/hooks';
 
-import { cn } from '~/libs/utils';
+import { cn } from '~//libs/utils';
 
 import Link, { LinkProps } from './ui/link';
 import CopyButton from './copy-button';

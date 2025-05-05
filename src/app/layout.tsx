@@ -3,9 +3,9 @@ import '~/styles/globals.css';
 import { Metadata } from 'next';
 import { GeistMono } from 'geist/font/mono';
 
+import GoogleAnalytics from '~//libs/google-analytics';
 // import Header from '~/components/site-header';
-import { site } from '~/configs/site';
-import GoogleAnalytics from '~/libs/google-analytics';
+import { site } from '~/site';
 
 import Providers from './providers';
 

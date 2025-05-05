@@ -1,7 +1,7 @@
 import { ComponentPropsWithoutRef } from 'react';
 import { Slot } from '@radix-ui/react-slot';
 
-import { cn } from '~/libs/utils';
+import { cn } from '~//libs/utils';
 
 interface HeadingProps extends ComponentPropsWithoutRef<'h1'> {
   asChild?: boolean;

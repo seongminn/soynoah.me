@@ -4,8 +4,8 @@ import { useEffect, useMemo, useState } from 'react';
 import NextLink from 'next/link';
 import { useRouter } from 'next/navigation';
 
-import { cn } from '~/libs/utils';
-import { Items } from '~/utils/toc';
+import { cn } from '~//libs/utils';
+import { Items } from '~//utils/toc';
 
 import IconButton from './ui/icon-button';
 import Link from './ui/link';

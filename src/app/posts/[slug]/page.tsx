@@ -4,13 +4,13 @@ import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { allPosts } from 'contentlayer/generated';
 
-import BackButton from '~/components/back-button';
-import Giscus from '~/components/giscus';
-import Mdx from '~/components/mdx-component';
-import PageHeader from '~/components/page-header';
-import Pager, { getPager } from '~/components/pager';
-import Toc from '~/components/toc';
-import getTableOfContents from '~/utils/toc';
+import BackButton from '~//components/back-button';
+import Giscus from '~//components/giscus';
+import Mdx from '~//components/mdx-component';
+import PageHeader from '~//components/page-header';
+import Pager, { getPager } from '~//components/pager';
+import Toc from '~//components/toc';
+import getTableOfContents from '~//utils/toc';
 
 type PageProps = {
   params: {

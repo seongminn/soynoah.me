@@ -2,7 +2,7 @@
 
 import { ComponentProps } from 'react';
 
-import { cn } from '~/libs/utils';
+import { cn } from '~//libs/utils';
 
 import Button from './ui/button';
 import { Icons } from './icons';

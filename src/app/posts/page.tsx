@@ -2,8 +2,8 @@ import { Metadata } from 'next';
 import NextLink from 'next/link';
 import { allPosts } from 'contentlayer/generated';
 
-import Link from '~/components/ui/link';
-import * as time from '~/libs/time';
+import Link from '~//components/ui/link';
+import * as time from '~//libs/time';
 
 export default function Page() {
   const posts = getSortedPostsByYears(allPosts);

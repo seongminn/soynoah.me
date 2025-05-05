@@ -1,4 +1,4 @@
-import { site } from '~/configs/site';
+import { site } from '~/site';
 
 export default function robots() {
   return {
