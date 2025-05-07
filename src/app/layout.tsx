@@ -4,11 +4,10 @@ import { Metadata } from 'next';
 import { GeistMono } from 'geist/font/mono';
 
 import GoogleAnalytics from '~//libs/google-analytics';
-// import Header from '~/components/site-header';
+import { Footer } from '~/components/site-footer';
 import { site } from '~/site';
 
 import Providers from './providers';
-import { Footer } from '~/components/site-footer';
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
@@ -34,7 +33,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 export const metadata: Metadata = {
   title: {
     default: site.title,
-    template: `%s | ${site.title}`,
+    template: `%s ⋅ ${site.title}`,
   },
   metadataBase: new URL(site.url),
   description: site.description,
