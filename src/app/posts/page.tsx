@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import NextLink from 'next/link';
 import { allPosts } from 'contentlayer/generated';
 
+import { BackButton } from '~/components/back-button';
 import { PageHeader } from '~/components/page-header';
 import { Sidebar } from '~/components/sidebar';
 import Link from '~/components/ui/link';
@@ -12,6 +13,8 @@ export default function Page() {
 
   return (
     <>
+      <BackButton className="-ml-2 mb-8 hidden lg:inline-flex" />
+
       <PageHeader>
         <PageHeader.Title>기록</PageHeader.Title>
         <PageHeader.Description>기록을 보관하는 공간</PageHeader.Description>

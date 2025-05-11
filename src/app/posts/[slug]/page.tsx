@@ -26,7 +26,7 @@ export default function Page({ params }: PageProps) {
 
   return (
     <>
-      <BackButton className="mb-8 hidden lg:inline-flex" />
+      <BackButton className="-ml-2 mb-8 hidden lg:inline-flex" />
 
       <PageHeader>
         <PageHeader.Title>{post.title}</PageHeader.Title>

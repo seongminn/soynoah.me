@@ -18,7 +18,7 @@ export const Sidebar = ({ className, children, ...props }: SidebarProps) => {
     >
       <div className="sticky top-0 pt-page">
         <div className="mb-4 mt-2 flex items-center gap-2">
-          <BackButton />
+          <BackButton className="-ml-1.5" />
           <ThemeToggle />
         </div>
 
