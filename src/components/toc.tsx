@@ -4,7 +4,7 @@ import { useEffect, useMemo, useState } from 'react';
 import NextLink from 'next/link';
 
 import { cn } from '~//libs/utils';
-import { Items } from '~//utils/toc';
+import type { Items } from '~//utils/toc';
 
 import Link from './ui/link';
 import { Sidebar } from './sidebar';

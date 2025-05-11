@@ -1,6 +1,6 @@
 import '~/styles/globals.css';
 
-import { Metadata } from 'next';
+import type { Metadata } from 'next';
 import { GeistMono } from 'geist/font/mono';
 
 import GoogleAnalytics from '~//libs/google-analytics';

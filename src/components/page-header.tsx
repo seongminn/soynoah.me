@@ -1,6 +1,7 @@
-import { ComponentPropsWithoutRef, forwardRef } from 'react';
+import type { ComponentPropsWithoutRef } from 'react';
+import { forwardRef } from 'react';
 import { Slot } from '@radix-ui/react-slot';
-import { Post } from 'contentlayer/generated';
+import type { Post } from 'contentlayer/generated';
 
 import * as time from '~/libs/time';
 import { cn } from '~/libs/utils';

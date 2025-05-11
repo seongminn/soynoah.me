@@ -1,5 +1,6 @@
 import Link from 'next/link';
-import { allPosts, Post } from 'contentlayer/generated';
+import type { Post } from 'contentlayer/generated';
+import { allPosts } from 'contentlayer/generated';
 
 import * as time from '~//libs/time';
 
