@@ -24,7 +24,21 @@ module.exports = {
     },
   },
   rules: {
+    // typescript
     '@typescript-eslint/no-var-requires': 'off',
+    '@typescript-eslint/no-explicit-any': 'off',
+    '@typescript-eslint/consistent-type-assertions': 'warn',
+    '@typescript-eslint/consistent-type-imports': 'warn',
+
+    'no-unused-vars': 'off',
+    '@typescript-eslint/no-unused-vars': [
+      'warn',
+      {
+        argsIgnorePattern: '^_',
+        varsIgnorePattern: '^_',
+        ignoreRestSiblings: true,
+      },
+    ],
 
     // react
     'react/prop-types': 0,

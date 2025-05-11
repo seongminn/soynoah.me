@@ -1,6 +1,7 @@
 'use client';
 
-import { HTMLAttributes, useEffect, useRef, useState } from 'react';
+import type { HTMLAttributes } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { useTheme } from 'next-themes';
 
 export default function Giscus(props: HTMLAttributes<HTMLElement>) {
