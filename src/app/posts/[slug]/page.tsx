@@ -35,7 +35,7 @@ export default function Page({ params }: PageProps) {
 
       <hr className="mb-7 mt-4" />
 
-      <section className="relative">
+      <section className="relative py-2">
         <Mdx code={post.body.code} />
 
         <Toc toc={toc} />
