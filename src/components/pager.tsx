@@ -1,11 +1,11 @@
-import NextLink from 'next/link';
 import type { Post } from 'contentlayer/generated';
 import { allPosts } from 'contentlayer/generated';
+import NextLink from 'next/link';
 
-import * as time from '~//libs/time';
+import * as time from '~/libs/time';
 
-import Link from './ui/link';
 import { Icons } from './icons';
+import Link from './ui/link';
 
 export type TPager = {
   prev?: {

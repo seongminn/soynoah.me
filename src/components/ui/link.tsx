@@ -1,7 +1,7 @@
-import type { ComponentPropsWithoutRef } from 'react';
 import { Slot } from '@radix-ui/react-slot';
+import type { ComponentPropsWithoutRef } from 'react';
 
-import { cn } from '~//libs/utils';
+import { cn } from '~/libs/utils';
 
 export interface LinkProps extends ComponentPropsWithoutRef<'a'> {
   asChild?: boolean;

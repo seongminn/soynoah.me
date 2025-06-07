@@ -1,13 +1,13 @@
 'use client';
 
-import { useEffect, useMemo, useState } from 'react';
 import NextLink from 'next/link';
+import { useEffect, useMemo, useState } from 'react';
 
-import { cn } from '~//libs/utils';
 import type { Items } from '~//utils/toc';
+import { cn } from '~/libs/utils';
 
-import Link from './ui/link';
 import { Sidebar } from './sidebar';
+import Link from './ui/link';
 
 type TableOfContents = Items[];
 interface TocProps {
@@ -16,7 +16,7 @@ interface TocProps {
 
 export default function Toc({ toc }: TocProps) {
   const itemIds = useMemo(
-    () => toc.flatMap(item => [item.url, ...item.items.map(id => id.url)]),
+    () => toc.flatMap((item) => [item.url, ...item.items.map((id) => id.url)]),
     [toc],
   );
 
@@ -38,8 +38,8 @@ function useActiveHeading(itemIds: string[]) {
 
   useEffect(() => {
     const observer = new IntersectionObserver(
-      entries => {
-        const active = entries.find(entry => entry.isIntersecting);
+      (entries) => {
+        const active = entries.find((entry) => entry.isIntersecting);
 
         if (active) setActiveId(active.target.id);
       },
@@ -47,12 +47,12 @@ function useActiveHeading(itemIds: string[]) {
     );
 
     const elements = itemIds
-      .map(id => document.getElementById(id))
+      .map((id) => document.getElementById(id))
       .filter((element): element is HTMLElement => element !== null);
 
-    elements.forEach(element => observer.observe(element));
+    elements.forEach((element) => observer.observe(element));
 
-    return () => elements.forEach(element => observer.unobserve(element));
+    return () => elements.forEach((element) => observer.unobserve(element));
   }, [itemIds]);
 
   return activeId;
@@ -74,7 +74,7 @@ function Tree({ toc, level = 1, activeId }: TreeProps) {
           'pl-2': level !== 1,
         })}
       >
-        {toc.map(item => (
+        {toc.map((item) => (
           <li key={item.url} className="flex flex-col gap-2">
             <Link asChild>
               <NextLink

@@ -1,7 +1,7 @@
-import type { ComponentPropsWithoutRef } from 'react';
-import { forwardRef } from 'react';
 import { Slot } from '@radix-ui/react-slot';
 import type { Post } from 'contentlayer/generated';
+import type { ComponentPropsWithoutRef } from 'react';
+import { forwardRef } from 'react';
 
 import * as time from '~/libs/time';
 import { cn } from '~/libs/utils';
@@ -58,26 +58,28 @@ Description.displayName = 'PageHeader.Description';
 
 /* ---- Date ---- */
 
-interface DateProps extends ComponentPropsWithoutRef<'time'> {
+interface PublishDateProps extends ComponentPropsWithoutRef<'time'> {
   date: Post['date'];
 }
 
-const Date = forwardRef<HTMLTimeElement, DateProps>(({ date, className, ...props }, ref) => {
-  return (
-    <time
-      ref={ref}
-      dateTime={time.format(date, 'YYYY-MM-DD')}
-      className={cn('font-sans text-[13px] leading-7 text-second', className)}
-      {...props}
-    >
-      {time.format(date, 'YYYY. MM. DD')}
-    </time>
-  );
-});
-Date.displayName = 'PageHeader.Date';
+const PublishDate = forwardRef<HTMLTimeElement, PublishDateProps>(
+  ({ date, className, ...props }, ref) => {
+    return (
+      <time
+        ref={ref}
+        dateTime={time.format(date, 'YYYY-MM-DD')}
+        className={cn('font-sans text-[13px] leading-7 text-second', className)}
+        {...props}
+      >
+        {time.format(date, 'YYYY. MM. DD')}
+      </time>
+    );
+  },
+);
+PublishDate.displayName = 'PageHeader.PublishDate';
 
 export const PageHeader = Object.assign(Root, {
   Title,
   Description,
-  Date,
+  PublishDate,
 });

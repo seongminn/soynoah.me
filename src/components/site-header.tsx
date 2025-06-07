@@ -3,7 +3,7 @@
 import { usePathname } from 'next/navigation';
 
 import Link from '~//components/ui/link';
-import { cn } from '~//libs/utils';
+import { cn } from '~/libs/utils';
 import { site } from '~/site';
 
 import ThemeToggle from './theme-toggle';
@@ -18,7 +18,7 @@ export default function Header() {
           <Link href="/" className="font-semibold text-body no-underline">
             {site.title}
           </Link>
-          {site.menus.map(menu => {
+          {site.menus.map((menu) => {
             const isCurrentPath = pathname.startsWith(menu.path);
 
             return (
@@ -38,7 +38,7 @@ export default function Header() {
         </nav>
         <ThemeToggle />
       </div>
-      <div className="blur-layer"></div>
+      <div className="blur-layer" />
     </header>
   );
 }

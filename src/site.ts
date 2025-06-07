@@ -1,17 +1,17 @@
 export const site = {
-  title: `soynoah`,
-  description: `배운 것을 기록하고 생각을 공유하는 공간입니다.`,
-  url: `https://soynoah.me`,
+  title: 'soynoah',
+  description: '배운 것을 기록하고 생각을 공유하는 공간입니다.',
+  url: 'https://soynoah.me',
   author: {
-    name: `Seongmin Choi`,
+    name: 'Seongmin Choi',
     bio: '',
     contact: {
-      email: `mailto:berry9901@gmail.com`,
-      github: `https://github.com/seongminn`,
-      linkedin: `https://www.linkedin.com/in/%EC%84%B1%EB%AF%BC-%EC%B5%9C-4b8a57272/`,
-      medium: ``,
-      facebook: ``,
-      twitter: ``,
+      email: 'mailto:berry9901@gmail.com',
+      github: 'https://github.com/seongminn',
+      linkedin: 'https://www.linkedin.com/in/%EC%84%B1%EB%AF%BC-%EC%B5%9C-4b8a57272/',
+      medium: '',
+      facebook: '',
+      twitter: '',
     },
   },
   menus: [

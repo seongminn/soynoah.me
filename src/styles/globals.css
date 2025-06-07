@@ -1,4 +1,4 @@
-@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css');
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css");
 
 @tailwind base;
 @tailwind components;
@@ -30,8 +30,8 @@
     --text-disabled: var(--colors-gray-600);
 
     --colors-accent: hsl(173 80% 36%);
-    --colors-ring: 0 0 0 2px var(--colors-gray-50), 0 0 0 4px var(--colors-accent),
-      0 0 0 6px rgba(26, 26, 26, 0.06);
+    --colors-ring: 0 0 0 2px var(--colors-gray-50), 0 0 0 4px var(--colors-accent), 0 0 0 6px
+      rgba(26, 26, 26, 0.06);
 
     --colors-blur-gradient: linear-gradient(
       180deg,
@@ -75,8 +75,8 @@
     --text-disabled: var(--colors-gray-600);
 
     --colors-accent: hsl(173 80% 36%);
-    --colors-ring: 0 0 0 2px var(--colors-gray-50), 0 0 0 4px var(--colors-accent),
-      0 0 0 6px rgba(26, 26, 26, 0.06);
+    --colors-ring: 0 0 0 2px var(--colors-gray-50), 0 0 0 4px var(--colors-accent), 0 0 0 6px
+      rgba(26, 26, 26, 0.06);
 
     --colors-blur-gradient: linear-gradient(
       180deg,
@@ -100,8 +100,8 @@
 /* ---- font ---- */
 @layer base {
   :root {
-    --font-sans: 'Pretendard Variable';
-    --font-serif: 'AritaBuri';
+    --font-sans: "Pretendard Variable";
+    --font-serif: "AritaBuri";
   }
 }
 
@@ -154,7 +154,7 @@
   }
 
   .blur-layer {
-    content: '';
+    content: "";
     pointer-events: none;
     z-index: 9;
     position: fixed;
@@ -222,23 +222,23 @@
     @apply underline decoration-gray-400 decoration-1 underline-offset-4 duration-200 ease-in-out;
     @apply hover:decoration-gray-600 hover:duration-100;
   } */
-  a[rel='noopener noreferrer'][target='_blank']::before,
-  .mdx a[rel='noopener noreferrer'][target='_blank']::before {
+  a[rel="noopener noreferrer"][target="_blank"]::before,
+  .mdx a[rel="noopener noreferrer"][target="_blank"]::before {
     @apply absolute -inset-x-1 bottom-0.5 top-0 -z-10 rounded transition-colors;
-    content: '';
+    content: "";
   }
-  a[rel='noopener noreferrer'][target='_blank']::before {
+  a[rel="noopener noreferrer"][target="_blank"]::before {
     @apply -right-0.5;
   }
-  a[rel='noopener noreferrer'][target='_blank']::after {
+  a[rel="noopener noreferrer"][target="_blank"]::after {
     @apply m-0 inline-block h-3.5 w-3.5 fill-transparent;
-    content: '';
+    content: "";
     background: url('data:image/svg+xml;utf8,<svg color="%23464646" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M6 18L18 6m0 0H9m9 0v9"/></svg>');
     background-repeat: no-repeat;
     background-size: cover;
   }
-  .dark a[rel='noopener noreferrer'][target='_blank']::after {
-    content: '';
+  .dark a[rel="noopener noreferrer"][target="_blank"]::after {
+    content: "";
     background: url('data:image/svg+xml;utf8,<svg color="%23B0B0B0" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M6 18L18 6m0 0H9m9 0v9"/></svg>');
     background-repeat: no-repeat;
     background-size: cover;

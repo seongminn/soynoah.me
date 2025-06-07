@@ -3,10 +3,10 @@
 import type { ComponentPropsWithoutRef } from 'react';
 import { forwardRef } from 'react';
 
-import { cn } from '~//libs/utils';
+import { cn } from '~/libs/utils';
 
-import { IconButton } from './ui/icon-button';
 import { Icons } from './icons';
+import { IconButton } from './ui/icon-button';
 
 interface ScrollTopButtonProps extends Partial<ComponentPropsWithoutRef<typeof IconButton>> {}
 

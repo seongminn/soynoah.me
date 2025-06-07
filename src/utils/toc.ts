@@ -14,9 +14,9 @@ interface Content {
 export default function getTableOfContents({ content }: Content) {
   return content
     .split('\n')
-    .filter(line => line.match(/(^#{1,3})\s/))
+    .filter((line) => line.match(/(^#{1,3})\s/))
     .reduce<Items[]>((ac, heading) => {
-      const nac = [...ac];
+      const nac = ac.concat();
       const removeMdx = heading
         .replace(/^##*\s/, '') // remove heading
         .replace(/[*,~]{2,}/g, '') // remove markdown

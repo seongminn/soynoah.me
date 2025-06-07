@@ -3,28 +3,25 @@
 import type { ComponentPropsWithoutRef } from 'react';
 import { forwardRef, useEffect, useState } from 'react';
 
-import { cn } from '~//libs/utils';
+import { cn } from '~/libs/utils';
 
-import { IconButton } from './ui/icon-button';
 import { Icons } from './icons';
+import { IconButton } from './ui/icon-button';
 
 interface CopyButtonProps extends Partial<ComponentPropsWithoutRef<typeof IconButton>> {
   text: string;
 }
 
 export const CopyButton = forwardRef<HTMLButtonElement, CopyButtonProps>(
-  ({ label = 'Copy contents', text, className, ...props }, ref) => {
+  ({ label = 'Copy', text, className, ...props }, ref) => {
     const [hasCopied, setHasCopied] = useState(false);
 
     async function copy() {
       await navigator.clipboard.writeText(text);
 
       setHasCopied(true);
-    }
-
-    useEffect(() => {
       setTimeout(() => setHasCopied(false), 2000);
-    }, [hasCopied]);
+    }
 
     return (
       <IconButton

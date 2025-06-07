@@ -1,10 +1,10 @@
 import '~/styles/globals.css';
 
-import type { Metadata } from 'next';
 import { GeistMono } from 'geist/font/mono';
+import type { Metadata } from 'next';
 
-import GoogleAnalytics from '~//libs/google-analytics';
 import { Footer } from '~/components/site-footer';
+import GoogleAnalytics from '~/libs/google-analytics';
 import { site } from '~/site';
 
 import Providers from './providers';
@@ -16,7 +16,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body>
         <Providers storageKey="soynoah-theme" attribute="class">
           <div className="relative flex min-h-dvh flex-col">
-            <div className="blur-layer"></div>
+            <div className="blur-layer" />
 
             <main className="container relative mx-auto min-h-[calc(100vh-7rem-20px)] max-w-content">
               {children}
@@ -69,5 +69,5 @@ export const metadata: Metadata = {
       sizes: '32x32',
     },
   },
-  manifest: `/site.webmanifest`,
+  manifest: '/site.webmanifest',
 };

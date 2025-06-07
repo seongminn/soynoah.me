@@ -2,8 +2,8 @@
 
 import { useTheme } from 'next-themes';
 
-import { IconButton } from './ui/icon-button';
 import { Icons } from './icons';
+import { IconButton } from './ui/icon-button';
 
 export default function ThemeToggle() {
   const { theme, setTheme } = useTheme();

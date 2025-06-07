@@ -1,8 +1,8 @@
 import '~/styles/mdx.css';
 
+import { allPosts } from 'contentlayer/generated';
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
-import { allPosts } from 'contentlayer/generated';
 
 import { BackButton } from '~/components/back-button';
 import Giscus from '~/components/giscus';
@@ -30,7 +30,7 @@ export default function Page({ params }: PageProps) {
 
       <PageHeader>
         <PageHeader.Title>{post.title}</PageHeader.Title>
-        <PageHeader.Date date={post.date} />
+        <PageHeader.PublishDate date={post.date} />
       </PageHeader>
 
       <hr className="mb-7 mt-4" />
@@ -49,12 +49,12 @@ export default function Page({ params }: PageProps) {
 }
 
 export function generateStaticParams() {
-  return allPosts.map(post => ({ slug: post.slug }));
+  return allPosts.map((post) => ({ slug: post.slug }));
 }
 
 function getPostsByParams({ params }: PageProps) {
   const slug = params.slug;
-  const post = allPosts.find(post => post.slug === slug);
+  const post = allPosts.find((post) => post.slug === slug);
 
   return post;
 }

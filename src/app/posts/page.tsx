@@ -1,6 +1,6 @@
+import { allPosts } from 'contentlayer/generated';
 import type { Metadata } from 'next';
 import NextLink from 'next/link';
-import { allPosts } from 'contentlayer/generated';
 
 import { BackButton } from '~/components/back-button';
 import { PageHeader } from '~/components/page-header';
@@ -34,7 +34,7 @@ export default function Page() {
                   {year}
                 </time>
                 <ul className="flex flex-1 flex-col gap-1">
-                  {posts.map(post => (
+                  {posts.map((post) => (
                     <>
                       <li key={post.slug} className="leading-7">
                         <Link asChild>
