@@ -46,7 +46,7 @@ const Description = forwardRef<HTMLParagraphElement, DescriptionProps>(
     return (
       <Component
         ref={ref}
-        className={cn('font-sans text-[13px] leading-7 text-second', className)}
+        className={cn('font-sans text-[13px] text-second leading-7', className)}
         {...props}
       >
         {children}
@@ -68,7 +68,7 @@ const PublishDate = forwardRef<HTMLTimeElement, PublishDateProps>(
       <time
         ref={ref}
         dateTime={time.format(date, 'YYYY-MM-DD')}
-        className={cn('font-sans text-[13px] leading-7 text-second', className)}
+        className={cn('font-sans text-[13px] text-second leading-7', className)}
         {...props}
       >
         {time.format(date, 'YYYY. MM. DD')}

@@ -5,7 +5,7 @@ import NextLink from 'next/link';
 import { BackButton } from '~/components/back-button';
 import { PageHeader } from '~/components/page-header';
 import { Sidebar } from '~/components/sidebar';
-import Link from '~/components/ui/link';
+import { Link } from '~/components/ui/link';
 import * as time from '~/libs/time';
 
 export default function Page() {
@@ -20,7 +20,7 @@ export default function Page() {
         <PageHeader.Description>기록을 보관하는 공간</PageHeader.Description>
       </PageHeader>
 
-      <hr className="mb-7 mt-4" />
+      <hr className="mt-4 mb-7" />
 
       <section className="relative">
         <Sidebar />
@@ -42,14 +42,12 @@ export default function Page() {
                             href={`posts/${post.slug}`}
                             className="group flex flex-1 items-center py-1.5 no-underline"
                           >
-                            <div className="flex w-full flex-col justify-between">
-                              <span className="flex-1 font-medium text-second transition-colors group-hover:text-gray-900">
-                                {post.title}
-                              </span>
-                            </div>
+                            <span className="flex w-full flex-1 flex-col justify-between font-medium text-second transition-colors group-hover:text-gray-900">
+                              {post.title}
+                            </span>
                             <time
                               dateTime={time.format(post.date, 'YYYY-MM-DD')}
-                              className="shrink-0 text-sm text-second group-hover:text-body"
+                              className="shrink-0 text-second text-sm group-hover:text-body"
                             >
                               {time.format(post.date, 'MM.DD')}
                             </time>

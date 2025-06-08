@@ -29,7 +29,7 @@ export const CopyButton = forwardRef<HTMLButtonElement, CopyButtonProps>(
         label={label}
         onClick={copy}
         className={cn(
-          'absolute right-3 top-3 z-10 h-6 w-6 border border-gray-200 bg-gray-150 p-1 hover:bg-gray-200 [&>svg]:text-second',
+          'absolute top-3 right-3 z-10 h-6 w-6 border border-gray-200 bg-gray-150 p-1 hover:bg-gray-200 [&>svg]:text-second',
           className,
         )}
         {...props}

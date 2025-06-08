@@ -5,7 +5,7 @@ import NextLink from 'next/link';
 import * as time from '~/libs/time';
 
 import { Icons } from './icons';
-import Link from './ui/link';
+import { Link } from './ui/link';
 
 export type TPager = {
   prev?: {
@@ -24,7 +24,7 @@ interface PagerProps {
 
 export default function Pager({ pager }: PagerProps) {
   return (
-    <div className="text-tx mb-24 flex items-center justify-between gap-1 text-sm">
+    <div className="mb-24 flex items-center justify-between gap-1 text-sm text-tx">
       {pager.prev && (
         <Link asChild>
           <NextLink

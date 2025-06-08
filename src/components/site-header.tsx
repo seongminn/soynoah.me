@@ -2,7 +2,7 @@
 
 import { usePathname } from 'next/navigation';
 
-import Link from '~//components/ui/link';
+import { Link } from '~//components/ui/link';
 import { cn } from '~/libs/utils';
 import { site } from '~/site';
 
@@ -12,8 +12,8 @@ export default function Header() {
   const pathname = usePathname();
 
   return (
-    <header className="sticky left-0 top-0 z-10 mx-auto my-0 h-page w-full bg-page">
-      <div className="container mx-auto grid h-full max-w-content grid-cols-[1fr,auto] items-center py-0">
+    <header className="sticky top-0 left-0 z-10 mx-auto my-0 h-page w-full bg-page">
+      <div className="container mx-auto grid h-full max-w-content grid-cols-[1fr_auto] items-center py-0">
         <nav className="mr-2 flex flex-1 items-center gap-4 pr-2" aria-label="Main">
           <Link href="/" className="font-semibold text-body no-underline">
             {site.title}

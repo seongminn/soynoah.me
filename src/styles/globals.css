@@ -1,11 +1,17 @@
 @import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css");
+@import url("https://fonts.googleapis.com/css2?family=Recursive:wght@300..1000&display=swap");
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@layer theme, base, components, utilities;
+
+@import "./utilities.css";
+@import "./prose.css";
+
+@import "tailwindcss";
+
+@config '../../tailwind.config.ts';
 
 /* -- colors --- */
-@layer base {
+@layer theme {
   :root {
     --colors-gray-50: hsl(0 0% 99%);
     --colors-gray-100: hsl(0 0% 97.3%);
@@ -98,15 +104,16 @@
 }
 
 /* ---- font ---- */
-@layer base {
+@layer theme {
   :root {
     --font-sans: "Pretendard Variable";
     --font-serif: "AritaBuri";
+    --font-mono: "Recursive";
   }
 }
 
 /* ---- space ---- */
-@layer base {
+@layer theme {
   :root {
     --xl: 1350px;
     --lg: 1024px;
@@ -123,14 +130,16 @@
   }
 }
 
-@screen md {
-  :root {
-    --blur-height: 48px;
+@layer theme {
+  @media (700px >= width) {
+    :root {
+      --blur-height: 48px;
+    }
   }
-}
 
-/* ---- layout ---- */
-@layer utilities {
+  /* ---- layout ---- */
+}
+@layer base {
   html {
     scroll-behavior: smooth;
     scroll-padding-top: var(--header-height);
@@ -146,39 +155,9 @@
 
     padding-bottom: env(safe-area-inset-bottom);
   }
-
-  .container {
-    padding-left: var(--body-margin-left);
-    padding-right: var(--body-margin-right);
-    padding-top: var(--blur-height);
-  }
-
-  .blur-layer {
-    content: "";
-    pointer-events: none;
-    z-index: 9;
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 8rem;
-    background: var(--colors-blur-gradient);
-  }
-
-  /* .blur-layer {
-    mask-image: linear-gradient(to bottom, var(--colors-gray-50) 25%, transparent);
-    backdrop-filter: blur(5px);
-    z-index: 9;
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 8rem;
-    pointer-events: none;
-  } */
 }
 
-@layer components {
+@layer base {
   *,
   *::before,
   *::after {
@@ -191,7 +170,7 @@
   }
 
   * {
-    @apply border-border text-body focus-visible:outline-none;
+    @apply border-border text-body focus-visible:outline-hidden;
   }
 
   ::selection {
@@ -212,36 +191,8 @@
   }
 
   mark {
-    @apply mx-0.5 rounded-sm bg-selection font-medium text-body;
+    @apply mx-0.5 rounded-xs bg-selection font-medium text-body;
     padding: 3px 5px;
-  }
-
-  /* a[rel='noopener noreferrer'][target='_blank'],
-  .mdx a[rel='noopener noreferrer'][target='_blank'] {
-    @apply relative inline-block break-all text-second;
-    @apply underline decoration-gray-400 decoration-1 underline-offset-4 duration-200 ease-in-out;
-    @apply hover:decoration-gray-600 hover:duration-100;
-  } */
-  a[rel="noopener noreferrer"][target="_blank"]::before,
-  .mdx a[rel="noopener noreferrer"][target="_blank"]::before {
-    @apply absolute -inset-x-1 bottom-0.5 top-0 -z-10 rounded transition-colors;
-    content: "";
-  }
-  a[rel="noopener noreferrer"][target="_blank"]::before {
-    @apply -right-0.5;
-  }
-  a[rel="noopener noreferrer"][target="_blank"]::after {
-    @apply m-0 inline-block h-3.5 w-3.5 fill-transparent;
-    content: "";
-    background: url('data:image/svg+xml;utf8,<svg color="%23464646" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M6 18L18 6m0 0H9m9 0v9"/></svg>');
-    background-repeat: no-repeat;
-    background-size: cover;
-  }
-  .dark a[rel="noopener noreferrer"][target="_blank"]::after {
-    content: "";
-    background: url('data:image/svg+xml;utf8,<svg color="%23B0B0B0" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M6 18L18 6m0 0H9m9 0v9"/></svg>');
-    background-repeat: no-repeat;
-    background-size: cover;
   }
 
   /* ---- scrollbar ---- */
@@ -285,5 +236,31 @@
   ::-webkit-scrollbar-corner,
   ::-webkit-resizer {
     display: none;
+  }
+}
+
+@layer theme {
+  :root {
+    --token-constant: oklch(53.18% 0.2399 256.9900584162342);
+    --token-string: oklch(51.75% 0.1453 147.65);
+    --token-comment: var(--colors-gray-800);
+    --token-keyword: oklch(53.5% 0.2058 2.84);
+    --token-parameter: oklch(52.79% 0.1496 54.65);
+    --token-function: oklch(47.18% 0.2579 304);
+    --token-string-expression: oklch(51.75% 0.1453 147.65);
+    --token-punctuation: hsla(0, 0%, 9%, 1);
+    --token-link: oklch(51.75% 0.1453 147.65);
+
+    .dark {
+      --token-constant: oklch(71.7% 0.1648 250.79360374054167);
+      --token-string: oklch(73.1% 0.2158 148.29);
+      --token-comment: var(--colors-gray-800);
+      --token-keyword: oklch(69.36% 0.2223 3.91);
+      --token-parameter: oklch(77.21% 0.1991 64.28);
+      --token-function: oklch(69.87% 0.2037 309.51);
+      --token-string-expression: oklch(73.1% 0.2158 148.29);
+      --token-punctuation: hsla(0, 0%, 93%, 1);
+      --token-link: oklch(73.1% 0.2158 148.29);
+    }
   }
 }

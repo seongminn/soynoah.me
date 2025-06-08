@@ -7,7 +7,7 @@ import type { Items } from '~//utils/toc';
 import { cn } from '~/libs/utils';
 
 import { Sidebar } from './sidebar';
-import Link from './ui/link';
+import { Link } from './ui/link';
 
 type TableOfContents = Items[];
 interface TocProps {

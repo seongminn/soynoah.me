@@ -60,6 +60,9 @@
         "noLabelWithoutControl": "off",
         "noSvgWithoutTitle": "off",
         "useAltText": "off"
+      },
+      "nursery": {
+        "useSortedClasses": "warn"
       }
     }
   }

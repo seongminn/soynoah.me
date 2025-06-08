@@ -1,13 +1,13 @@
 import type { Config } from 'tailwindcss';
 
 const config: Config = {
-  darkMode: ['class'],
+  darkMode: 'class',
   content: ['./src/**/*.{js,ts,jsx,tsx,mdx}'],
   theme: {
     fontFamily: {
       sans: ['var(--font-sans)', 'sans'],
       serif: ['var(--font-serif)', 'sans-serif'],
-      mono: ['var(--font-geist-mono)', 'ui-monospace'],
+      mono: ['var(--font-mono), var(--font-geist-mono)', 'ui-monospace'],
     },
     screens: {
       xl: { max: '1280px' },

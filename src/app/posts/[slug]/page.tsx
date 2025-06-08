@@ -1,5 +1,3 @@
-import '~/styles/mdx.css';
-
 import { allPosts } from 'contentlayer/generated';
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
@@ -33,7 +31,7 @@ export default function Page({ params }: PageProps) {
         <PageHeader.PublishDate date={post.date} />
       </PageHeader>
 
-      <hr className="mb-7 mt-4" />
+      <hr className="mt-4 mb-7" />
 
       <section className="relative py-2">
         <Mdx code={post.body.code} />
@@ -41,7 +39,7 @@ export default function Page({ params }: PageProps) {
         <Toc toc={toc} />
       </section>
 
-      <hr className="mb-7 mt-4" />
+      <hr className="mt-4 mb-7" />
       <Pager pager={pager} />
       <Giscus />
     </>
