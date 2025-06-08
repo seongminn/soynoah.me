@@ -1,5 +1,5 @@
 {
-  "$schema": "https://biomejs.dev/schemas/1.9.4/schema.json",
+  "$schema": "https://biomejs.dev/schemas/2.0.0-beta.6/schema.json",
   "vcs": {
     "enabled": true,
     "clientKind": "git",
@@ -15,7 +15,29 @@
     "lineWidth": 100
   },
 
-  "organizeImports": { "enabled": true },
+  "assist": {
+    "actions": {
+      "source": {
+        "organizeImports": {
+          "level": "on",
+          "options": {
+            "groups": [
+              ":URL:",
+              ":BLANK_LINE:",
+              [":NODE:", ":BUN:"],
+              ":BLANK_LINE:",
+              [":PACKAGE:", ":PACKAGE_WITH_PROTOCOL:"],
+              ":BLANK_LINE:",
+              ":ALIAS:",
+              ":BLANK_LINE:",
+              ":PATH:",
+              ":BLANK_LINE:"
+            ]
+          }
+        }
+      }
+    }
+  },
 
   "javascript": {
     "formatter": { "quoteStyle": "single" }
@@ -27,7 +49,7 @@
 
   "linter": {
     "enabled": true,
-    "ignore": ["public", "node_modules", "dist", ".vscode"],
+    "includes": ["**", "!**/public", "!**/node_modules", "!**/dist", "!**/.vscode"],
     "rules": {
       "recommended": true,
       "style": {
@@ -36,7 +58,16 @@
         "noUnusedTemplateLiteral": "warn",
         "useTemplate": "warn",
         "useImportType": "error",
-        "useExportType": "error"
+        "useExportType": "error",
+        "noParameterAssign": "error",
+        "useAsConstAssertion": "error",
+        "useDefaultParameterLast": "error",
+        "useEnumInitializers": "error",
+        "useSelfClosingElements": "error",
+        "useSingleVarDeclarator": "error",
+        "useNumberNamespace": "error",
+        "noInferrableTypes": "error",
+        "noUselessElse": "error"
       },
       "complexity": {
         "useLiteralKeys": "off",

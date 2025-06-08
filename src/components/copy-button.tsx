@@ -1,7 +1,7 @@
 'use client';
 
 import type { ComponentPropsWithoutRef } from 'react';
-import { forwardRef, useEffect, useState } from 'react';
+import { forwardRef, useState } from 'react';
 
 import { cn } from '~/libs/utils';
 

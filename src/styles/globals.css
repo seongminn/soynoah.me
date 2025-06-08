@@ -238,29 +238,3 @@
     display: none;
   }
 }
-
-@layer theme {
-  :root {
-    --token-constant: oklch(53.18% 0.2399 256.9900584162342);
-    --token-string: oklch(51.75% 0.1453 147.65);
-    --token-comment: var(--colors-gray-800);
-    --token-keyword: oklch(53.5% 0.2058 2.84);
-    --token-parameter: oklch(52.79% 0.1496 54.65);
-    --token-function: oklch(47.18% 0.2579 304);
-    --token-string-expression: oklch(51.75% 0.1453 147.65);
-    --token-punctuation: hsla(0, 0%, 9%, 1);
-    --token-link: oklch(51.75% 0.1453 147.65);
-
-    .dark {
-      --token-constant: oklch(71.7% 0.1648 250.79360374054167);
-      --token-string: oklch(73.1% 0.2158 148.29);
-      --token-comment: var(--colors-gray-800);
-      --token-keyword: oklch(69.36% 0.2223 3.91);
-      --token-parameter: oklch(77.21% 0.1991 64.28);
-      --token-function: oklch(69.87% 0.2037 309.51);
-      --token-string-expression: oklch(73.1% 0.2158 148.29);
-      --token-punctuation: hsla(0, 0%, 93%, 1);
-      --token-link: oklch(73.1% 0.2158 148.29);
-    }
-  }
-}

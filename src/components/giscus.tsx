@@ -10,7 +10,7 @@ export default function Giscus(props: HTMLAttributes<HTMLElement>) {
   const { resolvedTheme } = useTheme();
   const theme = resolvedTheme === 'dark' ? 'noborder_dark' : 'noborder_light';
 
-  // biome-ignore lint/correctness/useExhaustiveDependencies: <explanation>
+  // biome-ignore lint/correctness/useExhaustiveDependencies: prevent re-load giscus
   useEffect(() => {
     const iframe = ref.current;
 

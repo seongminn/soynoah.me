@@ -1,7 +1,7 @@
 import {
   type ComputedFields,
-  type FieldDefs,
   defineDocumentType,
+  type FieldDefs,
   makeSource,
 } from 'contentlayer/source-files';
 import rehypeAutolinkHeadings from 'rehype-autolink-headings';

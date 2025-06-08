@@ -12,14 +12,14 @@ interface ScrollTopButtonProps extends Partial<ComponentPropsWithoutRef<typeof I
 
 export const ScrollTopButton = forwardRef<HTMLButtonElement, ScrollTopButtonProps>(
   ({ label = 'Scroll to top', className, ...props }, ref) => {
-    const scrollToTop = () => window.scrollTo({ top: 0, behavior: 'smooth' });
+    const scrollToTop = () => window.scrollTo({ behavior: 'smooth', top: 0 });
 
     return (
       <IconButton
-        ref={ref}
+        className={cn('mt-2 h-6 w-6 p-1', className)}
         label={label}
         onClick={scrollToTop}
-        className={cn('mt-2 h-6 w-6 p-1', className)}
+        ref={ref}
         {...props}
       >
         <Icons.up className="h-4 w-4" />
