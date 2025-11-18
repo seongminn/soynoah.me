@@ -16,7 +16,7 @@ export const Link = forwardRef<HTMLAnchorElement, LinkProps>(
       <Component
         ref={ref}
         className={cn(
-          'ease block break-all rounded-xs text-second ring-accent ring-shadow ring-offset-2 transition-colors duration-100 hover:text-body hover:decoration-gray-800 focus-visible:text-body focus-visible:ring-2',
+          'ease inline-block break-all rounded-xs text-second ring-accent ring-shadow ring-offset-2 transition-colors duration-100 hover:text-body hover:decoration-gray-800 focus-visible:text-body focus-visible:ring-2',
           className,
         )}
         {...props}

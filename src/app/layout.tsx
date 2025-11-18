@@ -2,16 +2,24 @@ import '~/styles/globals.css';
 
 import { GeistMono } from 'geist/font/mono';
 import type { Metadata } from 'next';
+import localFont from 'next/font/local';
 
 import { Footer } from '~/components/site-footer';
 import GoogleAnalytics from '~/libs/google-analytics';
+import { cn } from '~/libs/utils';
 import { site } from '~/site';
 
 import Providers from './providers';
 
+const font = localFont({
+  src: '../../public/fonts/Eulyoo1945-Regular.woff2',
+  display: 'swap',
+  variable: '--font-serif',
+});
+
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="ko" className={GeistMono.variable} suppressHydrationWarning>
+    <html lang="ko" className={cn(font.variable, GeistMono.variable)} suppressHydrationWarning>
       <head>{process.env.NODE_ENV === 'production' && <GoogleAnalytics />}</head>
       <body>
         <Providers storageKey="soynoah-theme" attribute="class">

@@ -12,7 +12,7 @@ interface PageHeaderProps extends ComponentPropsWithoutRef<'div'> {}
 
 const Root = ({ className, children, ...props }: PageHeaderProps) => {
   return (
-    <div className={cn('mb-7 font-sans', className)} {...props}>
+    <div className={cn('mb-7', className)} {...props}>
       {children}
     </div>
   );
@@ -46,7 +46,7 @@ const Description = forwardRef<HTMLParagraphElement, DescriptionProps>(
     return (
       <Component
         ref={ref}
-        className={cn('font-sans text-[13px] text-second leading-7', className)}
+        className={cn('text-[14px] text-second leading-7', className)}
         {...props}
       >
         {children}
@@ -68,7 +68,7 @@ const PublishDate = forwardRef<HTMLTimeElement, PublishDateProps>(
       <time
         ref={ref}
         dateTime={time.format(date, 'YYYY-MM-DD')}
-        className={cn('font-sans text-[13px] text-second leading-7', className)}
+        className={cn('text-[14px] text-second leading-7', className)}
         {...props}
       >
         {time.format(date, 'YYYY. MM. DD')}

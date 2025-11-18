@@ -35,9 +35,9 @@ export default function Giscus(props: HTMLAttributes<HTMLElement>) {
 
     const giscusScript = document.createElement('script');
 
-    Object.entries(giscusAttributes).forEach(([key, value]) =>
-      giscusScript.setAttribute(key, value),
-    );
+    Object.entries(giscusAttributes).forEach(([key, value]) => {
+      giscusScript.setAttribute(key, value);
+    });
 
     iframe.appendChild(giscusScript);
 

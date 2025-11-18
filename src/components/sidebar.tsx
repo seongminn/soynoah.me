@@ -2,9 +2,6 @@ import type { ComponentProps } from 'react';
 
 import { cn } from '~/libs/utils';
 
-import { BackButton } from './back-button';
-import ThemeToggle from './theme-toggle';
-
 interface SidebarProps extends ComponentProps<'aside'> {}
 
 export const Sidebar = ({ className, children, ...props }: SidebarProps) => {
@@ -16,11 +13,11 @@ export const Sidebar = ({ className, children, ...props }: SidebarProps) => {
       )}
       {...props}
     >
-      <div className="sticky top-0 pt-page">
-        <div className="mt-2 mb-4 flex items-center gap-2">
+      <div className="sticky top-0 mt-3 pt-page">
+        {/* <div className="mt-2 mb-4 flex items-center gap-2">
           <BackButton className="-ml-1.5" />
           <ThemeToggle />
-        </div>
+        </div> */}
 
         {children}
       </div>

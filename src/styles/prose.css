@@ -67,7 +67,7 @@
   }
 
   .prose p {
-    @apply text-sm leading-7 tracking-normal;
+    @apply text-[15px] leading-7 tracking-normal;
     /* font-feature-settings: 'kern', 'frac', 'kern', 'ss02'; */
   }
 
@@ -77,7 +77,7 @@
   }
 
   .prose em {
-    @apply font-sans not-italic;
+    @apply font-serif not-italic;
   }
 
   .prose del {
@@ -85,11 +85,11 @@
   }
 
   .prose a {
-    @apply relative break-all underline decoration-gray-800 decoration-1 underline-offset-[2.5px] transition-[color,text-decoration-color] duration-200 ease-[ease] hover:text-body hover:decoration-gray-800;
+    @apply relative break-all inline-block decoration-dashed decoration-[#fff9a8] decoration-1 underline-offset-[2.5px] transition-[color,text-decoration-color] duration-200 ease-[ease] hover:text-body hover:decoration-gray-800;
   }
 
   .prose blockquote {
-    @apply relative font-sans text-second;
+    @apply relative font-serif text-second;
     quotes: "“" "”" "‘" "’";
     --quote-offset: 2px;
   }
@@ -124,7 +124,7 @@
   }
 
   .prose li {
-    @apply list-item leading-7;
+    @apply list-item text-[15px] leading-7;
   }
 
   .prose li::marker {
@@ -166,7 +166,7 @@
   }
 
   .prose hr {
-    @apply h-[1px] border-none bg-gray-500;
+    @apply h-px border-none bg-gray-500;
   }
 
   .prose table {
@@ -175,11 +175,11 @@
   }
 
   .prose th {
-    @apply px-4 pb-1 text-left font-semibold [&[align=center]]:text-center [&[align=right]]:text-right;
+    @apply px-4 pb-1 text-left font-semibold [[align=center]]:text-center [[align=right]]:text-right;
   }
 
   .prose td {
-    @apply border-l px-4 py-2 text-left align-text-top [&[align=center]]:text-center [&[align=right]]:text-right;
+    @apply border-l px-4 py-2 text-left align-text-top [[align=center]]:text-center [[align=right]]:text-right;
   }
 
   .prose td:first-child {
@@ -196,7 +196,7 @@
 
   .prose img + em,
   .prose img + em p {
-    @apply mt-2 inline-block font-sans text-sm not-italic leading-5 text-gray-900;
+    @apply mt-2 inline-block font-serif text-sm not-italic leading-5 text-gray-900;
   }
 
   .prose img {
@@ -260,7 +260,8 @@
   }
 
   [data-chars-id] span {
-    color: inherit !important;
+    color: inherit;
+    /* color: inherit !important; */
   }
 
   [data-chars-id="v"] {

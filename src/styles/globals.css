@@ -8,7 +8,7 @@
 
 @import "tailwindcss";
 
-@config '../../tailwind.config.ts';
+@config "../../tailwind.config.ts";
 
 /* -- colors --- */
 @layer theme {
@@ -35,9 +35,8 @@
     --text-second: var(--colors-gray-800);
     --text-disabled: var(--colors-gray-600);
 
-    --colors-accent: hsl(173 80% 36%);
-    --colors-ring: 0 0 0 2px var(--colors-gray-50), 0 0 0 4px var(--colors-accent), 0 0 0 6px
-      rgba(26, 26, 26, 0.06);
+    --colors-accent: #ffc107;
+    --colors-ring: var(--colors-accent);
 
     --colors-blur-gradient: linear-gradient(
       180deg,
@@ -80,9 +79,8 @@
     --text-second: var(--colors-gray-800);
     --text-disabled: var(--colors-gray-600);
 
-    --colors-accent: hsl(173 80% 36%);
-    --colors-ring: 0 0 0 2px var(--colors-gray-50), 0 0 0 4px var(--colors-accent), 0 0 0 6px
-      rgba(26, 26, 26, 0.06);
+    --colors-accent: #ffc107;
+    --colors-ring: var(--colors-accent);
 
     --colors-blur-gradient: linear-gradient(
       180deg,
@@ -107,7 +105,6 @@
 @layer theme {
   :root {
     --font-sans: "Pretendard Variable";
-    --font-serif: "AritaBuri";
     --font-mono: "Recursive";
   }
 }
@@ -124,7 +121,7 @@
     --page-header: 64px;
     --page-top: calc(var(--blur-height) + (var(--page-header)));
     --page-width: 1200px;
-    --content-width: 700px;
+    --content-width: 730px;
     --body-margin-left: max(24px, env(safe-area-inset-left));
     --body-margin-right: max(24px, env(safe-area-inset-right));
   }
@@ -150,7 +147,7 @@
 
   body {
     @apply m-0 min-h-screen p-0;
-    @apply font-sans text-sm leading-normal tracking-normal antialiased;
+    @apply font-serif text-base leading-7 tracking-normal antialiased;
     @apply bg-page text-second;
 
     padding-bottom: env(safe-area-inset-bottom);
@@ -165,8 +162,6 @@
 
     --tw-ring-offset-width: 2px;
     --tw-ring-color: var(--colors-accent);
-    --tw-shadow: 0 0 0 6px rgba(26, 26, 26, 0.06);
-    --tw-shadow-colored: 0 0 0 6px rgba(26, 26, 26, 0.06);
   }
 
   * {
@@ -183,7 +178,7 @@
   }
 
   em {
-    @apply font-sans font-bold not-italic text-body;
+    @apply font-serif font-bold not-italic text-body;
   }
 
   del {

@@ -50,9 +50,14 @@ function useActiveHeading(itemIds: string[]) {
       .map((id) => document.getElementById(id))
       .filter((element): element is HTMLElement => element !== null);
 
-    elements.forEach((element) => observer.observe(element));
+    elements.forEach((element) => {
+      observer.observe(element);
+    });
 
-    return () => elements.forEach((element) => observer.unobserve(element));
+    return () =>
+      elements.forEach((element) => {
+        observer.unobserve(element);
+      });
   }, [itemIds]);
 
   return activeId;
@@ -81,7 +86,7 @@ function Tree({ toc, level = 1, activeId }: TreeProps) {
                 scroll={true}
                 href={`#${item.url}`}
                 className={cn(
-                  'line-clamp-1 overflow-hidden text-ellipsis text-[13px] no-underline',
+                  'line-clamp-1 overflow-hidden text-ellipsis text-sm no-underline',
                   item.url === activeId && 'text-body',
                 )}
               >

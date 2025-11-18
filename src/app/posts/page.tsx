@@ -29,30 +29,28 @@ export default function Page() {
           {Object.entries(posts)
             .reverse()
             .map(([year, posts]) => (
-              <li key={year} className="flex justify-between gap-8 font-sans">
-                <time dateTime={year} className="py-1.5 leading-7">
+              <li key={year} className="flex justify-between gap-8">
+                <time dateTime={year} className="py-1.5 text-[15px] leading-7">
                   {year}
                 </time>
                 <ul className="flex flex-1 flex-col gap-1">
                   {posts.map((post) => (
                     <>
                       <li key={post.slug} className="leading-7">
-                        <Link asChild>
-                          <NextLink
-                            href={`posts/${post.slug}`}
-                            className="group flex flex-1 items-center py-1.5 no-underline"
+                        <NextLink
+                          href={`posts/${post.slug}`}
+                          className="group flex flex-1 items-center py-1.5 no-underline"
+                        >
+                          <span className="flex w-full flex-1 flex-col justify-between font-medium text-[15px] text-second transition-colors group-hover:text-gray-900">
+                            {post.title}
+                          </span>
+                          <time
+                            dateTime={time.format(post.date, 'YYYY-MM-DD')}
+                            className="shrink-0 text-[15px] text-second group-hover:text-body"
                           >
-                            <span className="flex w-full flex-1 flex-col justify-between font-medium text-second transition-colors group-hover:text-gray-900">
-                              {post.title}
-                            </span>
-                            <time
-                              dateTime={time.format(post.date, 'YYYY-MM-DD')}
-                              className="shrink-0 text-second text-sm group-hover:text-body"
-                            >
-                              {time.format(post.date, 'MM.DD')}
-                            </time>
-                          </NextLink>
-                        </Link>
+                            {time.format(post.date, 'MM.DD')}
+                          </time>
+                        </NextLink>
                       </li>
                     </>
                   ))}
