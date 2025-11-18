@@ -42,5 +42,9 @@
     "tailwindcss": "^4.1.8",
     "typescript": "^5",
     "unist-util-visit": "^5.0.0"
+  },
+
+  "engines": {
+    "node": ">=22"
   }
 }
