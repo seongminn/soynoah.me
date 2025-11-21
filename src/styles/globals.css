@@ -106,6 +106,8 @@
   :root {
     --font-sans: "Pretendard Variable";
     --font-mono: "Recursive";
+
+    --grid-line-color: #0000000f;
   }
 }
 
@@ -162,6 +164,43 @@
 
     --tw-ring-offset-width: 2px;
     --tw-ring-color: var(--colors-accent);
+  }
+
+  :root {
+    --grid-line-color: #0000000f;
+  }
+
+  body {
+    color: #000c;
+    word-wrap: break-word;
+    font-kerning: normal;
+    -moz-font-feature-settings: "kern", "liga", "clig", "calt";
+    -ms-font-feature-settings: "kern", "liga", "clig", "calt";
+    -webkit-font-feature-settings: "kern", "liga", "clig", "calt";
+    font-feature-settings: "kern", "liga", "clig", "calt";
+    background-image:
+      linear-gradient(to right, var(--grid-line-color) 1px, transparent 1px),
+      linear-gradient(to bottom, var(--grid-line-color) 1px, transparent 1px);
+    background-size: 48px 48px;
+    background-position: 0 0;
+    font-weight: 400;
+    position: relative;
+  }
+
+  body:before {
+    content: "";
+    pointer-events: none;
+    background: radial-gradient(
+      70% 40% at 50% 35%,
+      #0000 0% 20%,
+      #ffffff26 35%,
+      #ffffff59 50%,
+      #ffffffa6 70%,
+      #ffffffe6 90%,
+      #fffffffa 100%
+    );
+    position: fixed;
+    inset: 0;
   }
 
   * {
