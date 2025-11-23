@@ -4,8 +4,8 @@ export const Footer = () => {
   const currentYear = getCurrentYear();
 
   return (
-    <footer className="container mx-auto my-14 flex max-w-content items-center justify-between bg-page !py-0">
-      <span className="text-sm text-gray-500">soynoah © {currentYear}</span>
+    <footer className="container mx-auto my-14 flex max-w-content items-center justify-between bg-page py-0!">
+      <span className="text-gray-500 text-sm">soynoah © {currentYear}</span>
     </footer>
   );
 };

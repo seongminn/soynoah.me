@@ -1,8 +1,6 @@
-import '~/styles/mdx.css';
-
+import { allPosts } from 'contentlayer/generated';
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
-import { allPosts } from 'contentlayer/generated';
 
 import { BackButton } from '~/components/back-button';
 import Giscus from '~/components/giscus';
@@ -26,22 +24,23 @@ export default function Page({ params }: PageProps) {
 
   return (
     <>
-      <BackButton className="-ml-2 mb-8 hidden lg:inline-flex" />
+      <BackButton path="/posts" className="mb-default inline-flex" />
+      {/* <Link className="mb-8 hidden lg:inline-flex" href="./posts">
+        뒤로 가기
+      </Link> */}
 
       <PageHeader>
         <PageHeader.Title>{post.title}</PageHeader.Title>
-        <PageHeader.Date date={post.date} />
+        <PageHeader.PublishDate date={post.date} />
       </PageHeader>
 
-      <hr className="mb-7 mt-4" />
-
-      <section className="relative py-2">
+      <section className="relative">
         <Mdx code={post.body.code} />
 
         <Toc toc={toc} />
       </section>
 
-      <hr className="mb-7 mt-4" />
+      <hr className="mt-4 mb-7" />
       <Pager pager={pager} />
       <Giscus />
     </>
@@ -49,12 +48,12 @@ export default function Page({ params }: PageProps) {
 }
 
 export function generateStaticParams() {
-  return allPosts.map(post => ({ slug: post.slug }));
+  return allPosts.map((post) => ({ slug: post.slug }));
 }
 
 function getPostsByParams({ params }: PageProps) {
   const slug = params.slug;
-  const post = allPosts.find(post => post.slug === slug);
+  const post = allPosts.find((post) => post.slug === slug);
 
   return post;
 }

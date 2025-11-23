@@ -1,7 +1,7 @@
 import {
-  ComputedFields,
+  type ComputedFields,
   defineDocumentType,
-  FieldDefs,
+  type FieldDefs,
   makeSource,
 } from 'contentlayer/source-files';
 import rehypeAutolinkHeadings from 'rehype-autolink-headings';
@@ -21,17 +21,17 @@ const fields: FieldDefs = {
 };
 
 const computedFields: ComputedFields = {
-  readingTime: { type: 'json', resolve: doc => doc.body.raw },
+  readingTime: { type: 'json', resolve: (doc) => doc.body.raw },
   slug: {
     type: 'string',
-    resolve: doc => doc._raw.flattenedPath,
+    resolve: (doc) => doc._raw.flattenedPath,
   },
 };
 
 export const Post = defineDocumentType(() => ({
   name: 'Post',
   contentType: 'mdx',
-  filePathPattern: `**/*.mdx`,
+  filePathPattern: '**/*.mdx',
   fields,
   computedFields,
 }));
@@ -43,8 +43,8 @@ export default makeSource({
     remarkPlugins: [remarkGfm, remarkBreaks],
     rehypePlugins: [
       rehypeSlug,
-      () => tree => {
-        visit(tree, node => {
+      () => (tree) => {
+        visit(tree, (node) => {
           if (node?.type === 'element' && node?.tagName === 'pre') {
             const [codeEl] = node.children;
             if (codeEl.tagName !== 'code') {
@@ -88,8 +88,8 @@ export default makeSource({
           theme: 'css-variables',
         },
       ],
-      () => tree => {
-        visit(tree, node => {
+      () => (tree) => {
+        visit(tree, (node) => {
           if (node?.type === 'element' && node?.tagName === 'div') {
             if (!('data-rehype-pretty-code-fragment' in node.properties)) {
               return;

@@ -7,7 +7,7 @@ interface DockProps extends ComponentProps<'div'> {}
 export default function Dock({ children, ...props }: DockProps) {
   return (
     <div
-      className="fixed bottom-0 left-1/2 flex -translate-x-1/2 -translate-y-1/2 items-center gap-4 rounded-2xl border border-gray-200 bg-gray-50 p-1.5 shadow-lg"
+      className="-translate-x-1/2 -translate-y-1/2 fixed bottom-0 left-1/2 flex items-center gap-4 rounded-2xl border border-gray-200 bg-gray-50 p-1.5 shadow-lg"
       {...props}
     >
       {children}

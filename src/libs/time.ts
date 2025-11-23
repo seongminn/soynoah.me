@@ -2,7 +2,7 @@ import 'dayjs/locale/ko';
 
 import dayjs from 'dayjs';
 
-export const format = (date: string, format: string = 'YYYY-MM-DD') => {
+export const format = (date: string, format = 'YYYY-MM-DD') => {
   return dayjs(date).format(format);
 };
 

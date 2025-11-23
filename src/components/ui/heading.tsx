@@ -1,8 +1,8 @@
+import { Slot } from '@radix-ui/react-slot';
 import type { ComponentPropsWithoutRef } from 'react';
 import { forwardRef } from 'react';
-import { Slot } from '@radix-ui/react-slot';
 
-import { cn } from '~//libs/utils';
+import { cn } from '~/libs/utils';
 
 interface HeadingProps extends ComponentPropsWithoutRef<'h1'> {
   asChild?: boolean;
@@ -14,7 +14,7 @@ export const Heading = forwardRef<HTMLHeadingElement, HeadingProps>(
     const Component = asChild ? Slot : as;
 
     return (
-      <Component ref={ref} className={cn('text-base font-semibold', className)}>
+      <Component ref={ref} className={cn('font-semibold text-base', className)}>
         {children}
       </Component>
     );

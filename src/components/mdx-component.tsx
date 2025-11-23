@@ -1,13 +1,13 @@
 'use client';
 
-import type { ComponentProps } from 'react';
 import { useMDXComponent } from 'next-contentlayer/hooks';
+import type { ComponentProps } from 'react';
 
-import { cn } from '~//libs/utils';
+import { cn } from '~/libs/utils';
 
-import type { LinkProps } from './ui/link';
-import Link from './ui/link';
 import { CopyButton } from './copy-button';
+import type { LinkProps } from './ui/link';
+import { Link } from './ui/link';
 
 interface MDXProps {
   code: string;
@@ -39,7 +39,7 @@ export default function Mdx({ code }: MDXProps) {
   const MDXComponent = useMDXComponent(code);
 
   return (
-    <article className="mdx">
+    <article className="prose">
       <MDXComponent components={components} />
     </article>
   );

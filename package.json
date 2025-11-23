@@ -6,7 +6,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "bunx biome check"
   },
   "dependencies": {
     "@radix-ui/react-slot": "^1.2.0",
@@ -21,25 +21,16 @@
     "tailwind-merge": "^2.2.0"
   },
   "devDependencies": {
+    "@biomejs/biome": "^2.3.5",
+    "@tailwindcss/postcss": "^4.1.8",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
-    "@typescript-eslint/eslint-plugin": "^6.15.0",
-    "@typescript-eslint/parser": "^6.15.0",
-    "autoprefixer": "^10.0.1",
     "contentlayer": "^0.3.4",
-    "eslint": "^8.56.0",
-    "eslint-config-next": "14.0.4",
-    "eslint-config-prettier": "^9.1.0",
-    "eslint-import-resolver-typescript": "^3.6.1",
-    "eslint-plugin-jsx-a11y": "^6.8.0",
-    "eslint-plugin-prettier": "^5.1.1",
-    "eslint-plugin-react-hooks": "^4.6.0",
-    "eslint-plugin-simple-import-sort": "^10.0.0",
     "next-contentlayer": "^0.3.4",
     "postcss": "^8.5.3",
     "prettier": "^3.1.1",
-    "prettier-plugin-tailwindcss": "^0.6.11",
+    "prettier-plugin-tailwindcss": "^0.6.12",
     "reading-time": "^1.5.0",
     "rehype-autolink-headings": "^7.1.0",
     "rehype-external-links": "^3.0.0",
@@ -48,9 +39,12 @@
     "remark-breaks": "^4.0.0",
     "remark-gfm": "^3.0.1",
     "shiki": "^0.14.7",
-    "tailwindcss": "^3.4.17",
+    "tailwindcss": "^4.1.8",
     "typescript": "^5",
     "unist-util-visit": "^5.0.0"
   },
-  "packageManager": "pnpm@10.10.0"
+
+  "engines": {
+    "node": ">=22"
+  }
 }

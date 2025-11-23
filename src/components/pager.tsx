@@ -1,21 +1,15 @@
-import NextLink from 'next/link';
 import type { Post } from 'contentlayer/generated';
 import { allPosts } from 'contentlayer/generated';
+import NextLink from 'next/link';
 
-import * as time from '~//libs/time';
+import * as time from '~/libs/time';
 
-import Link from './ui/link';
 import { Icons } from './icons';
+import { Link } from './ui/link';
 
 export type TPager = {
-  prev?: {
-    title: string;
-    slug: string;
-  };
-  next?: {
-    title: string;
-    slug: string;
-  };
+  prev?: { title: string; slug: string };
+  next?: { title: string; slug: string };
 };
 
 interface PagerProps {
@@ -24,7 +18,7 @@ interface PagerProps {
 
 export default function Pager({ pager }: PagerProps) {
   return (
-    <div className="text-tx mb-24 flex items-center justify-between gap-1 text-sm">
+    <div className="mb-24 grid grid-cols-2 items-center gap-1 text-sm text-tx">
       {pager.prev && (
         <Link asChild>
           <NextLink

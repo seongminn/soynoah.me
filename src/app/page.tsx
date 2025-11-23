@@ -1,7 +1,6 @@
 import Image from 'next/image';
 
-import { Icons } from '~//components/icons';
-import Link from '~//components/ui/link';
+import { Link } from '~//components/ui/link';
 
 export default function Page() {
   return (
@@ -12,28 +11,22 @@ export default function Page() {
         width="160"
         height="160"
         priority={true}
-        className="mb-10 h-40 w-40 rounded-full object-cover"
+        className="mb-default h-42 w-42 rounded-full object-cover"
       />
-      <h1 className="mb-3 font-sans">안녕하세요. 신입 프론트엔드 개발자 최성민입니다.</h1>
+      <h1 className="mb-default font-serif">안녕하세요. 프론트엔드 개발자 최성민입니다.</h1>
 
-      <div className="mb-2 font-sans">
-        내가 만든 웹사이트가 사용자들에게 편리함을 제공하고, 나아가 행복을 전달할 수 있다는 점에
-        보람을 느껴 프론트엔드 개발자의 꿈을 갖게 되었습니다.
+      <div className="mb-default text-pretty break-keep font-serif">
+        디자인 시스템 개발자로서 개발자들에게 편의를 제공하고, 이를 넘어 누구나 웹서비스를 불편함
+        없이 사용할 수 있도록 한다 는 것에 뿌듯함을 느낍니다. 최근에는 안정적인 제품을 만드는 것에
+        관심이 많습니다. 그래서 테스트에 대해 학습하고, 시스템에 적용하고자 노력하고 있습니다.
       </div>
 
-      <ul className="mb-5 list-outside list-disc pl-4">
-        <li className="list-item leading-7 marker:text-gray-300">
-          기술적으로 고민하는 것을 즐거워하고, 이를 통해 성능을 개선하기 위해 노력합니다.
-        </li>
-        <li className="list-item leading-7 marker:text-gray-300">지식을 나누는 것을 좋아합니다.</li>
-        <li className="list-item leading-7 marker:text-gray-300">
-          상호존중하며 원활하게 소통하는 방법에 대해 고민하는 것을 좋아합니다.
-        </li>
-      </ul>
-
-      <Link href="posts" className="inline-flex items-center gap-1">
+      <Link
+        href="posts"
+        className="group inline-flex items-center gap-1 underline decoration-1 decoration-gray-300 underline-offset-4"
+      >
         게시물 보러 가기
-        <Icons.link className="h-4 w-4 fill-gray-800 duration-150 ease-in" />
+        {/* <Icons.link className="h-4 w-4 fill-second duration-150 ease-in group-hover:fill-body" /> */}
       </Link>
     </>
   );

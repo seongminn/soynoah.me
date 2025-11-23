@@ -1,8 +1,8 @@
 'use client';
 
+import { useTheme } from 'next-themes';
 import type { HTMLAttributes } from 'react';
 import { useEffect, useRef, useState } from 'react';
-import { useTheme } from 'next-themes';
 
 export default function Giscus(props: HTMLAttributes<HTMLElement>) {
   const ref = useRef<HTMLIFrameElement>(null);
@@ -10,6 +10,7 @@ export default function Giscus(props: HTMLAttributes<HTMLElement>) {
   const { resolvedTheme } = useTheme();
   const theme = resolvedTheme === 'dark' ? 'noborder_dark' : 'noborder_light';
 
+  // biome-ignore lint/correctness/useExhaustiveDependencies: prevent re-load giscus
   useEffect(() => {
     const iframe = ref.current;
 
@@ -34,15 +35,13 @@ export default function Giscus(props: HTMLAttributes<HTMLElement>) {
 
     const giscusScript = document.createElement('script');
 
-    Object.entries(giscusAttributes).forEach(([key, value]) =>
-      giscusScript.setAttribute(key, value),
-    );
+    Object.entries(giscusAttributes).forEach(([key, value]) => {
+      giscusScript.setAttribute(key, value);
+    });
 
     iframe.appendChild(giscusScript);
 
     setMounted(true);
-
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   useEffect(() => {
