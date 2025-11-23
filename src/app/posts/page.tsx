@@ -5,7 +5,6 @@ import NextLink from 'next/link';
 import { BackButton } from '~/components/back-button';
 import { PageHeader } from '~/components/page-header';
 import { Sidebar } from '~/components/sidebar';
-import { Link } from '~/components/ui/link';
 import * as time from '~/libs/time';
 
 export default function Page() {
@@ -13,46 +12,42 @@ export default function Page() {
 
   return (
     <>
-      <BackButton className="-ml-2 mb-8 hidden lg:inline-flex" />
+      <BackButton path="/" className="mb-default inline-flex" />
 
       <PageHeader>
         <PageHeader.Title>기록</PageHeader.Title>
         <PageHeader.Description>기록을 보관하는 공간</PageHeader.Description>
       </PageHeader>
 
-      <hr className="mt-4 mb-7" />
-
       <section className="relative">
         <Sidebar />
 
-        <ul className="flex flex-col gap-1">
+        <ul className="flex flex-col gap-xs">
           {Object.entries(posts)
             .reverse()
             .map(([year, posts]) => (
-              <li key={year} className="flex justify-between gap-8">
-                <time dateTime={year} className="py-1.5 text-[15px] leading-7">
+              <li key={year} className="flex justify-between gap-xs">
+                <time dateTime={year} className="text-base leading-7">
                   {year}
                 </time>
-                <ul className="flex flex-1 flex-col gap-1">
+                <ul className="flex flex-1 flex-col gap-xs">
                   {posts.map((post) => (
-                    <>
-                      <li key={post.slug} className="leading-7">
-                        <NextLink
-                          href={`posts/${post.slug}`}
-                          className="group flex flex-1 items-center py-1.5 no-underline"
+                    <li key={post.slug}>
+                      <NextLink
+                        href={`posts/${post.slug}`}
+                        className="group flex flex-1 items-center gap-default no-underline"
+                      >
+                        <time
+                          dateTime={time.format(post.date, 'YYYY-MM-DD')}
+                          className="shrink-0 text-base text-second leading-7 group-hover:text-body"
                         >
-                          <span className="flex w-full flex-1 flex-col justify-between font-medium text-[15px] text-second transition-colors group-hover:text-gray-900">
-                            {post.title}
-                          </span>
-                          <time
-                            dateTime={time.format(post.date, 'YYYY-MM-DD')}
-                            className="shrink-0 text-[15px] text-second group-hover:text-body"
-                          >
-                            {time.format(post.date, 'MM.DD')}
-                          </time>
-                        </NextLink>
-                      </li>
-                    </>
+                          {time.format(post.date, 'MM.DD')}
+                        </time>
+                        <span className="flex w-full flex-1 flex-col justify-between font-medium text-base text-second leading-7 transition-colors group-hover:text-gray-900">
+                          {post.title}
+                        </span>
+                      </NextLink>
+                    </li>
                   ))}
                 </ul>
               </li>

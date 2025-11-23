@@ -1,5 +1,6 @@
 import { allPosts } from 'contentlayer/generated';
 import type { Metadata } from 'next';
+import Link from 'next/link';
 import { notFound } from 'next/navigation';
 
 import { BackButton } from '~/components/back-button';
@@ -24,16 +25,17 @@ export default function Page({ params }: PageProps) {
 
   return (
     <>
-      <BackButton className="-ml-2 mb-8 hidden lg:inline-flex" />
+      <BackButton path="/posts" className="mb-default inline-flex" />
+      {/* <Link className="mb-8 hidden lg:inline-flex" href="./posts">
+        뒤로 가기
+      </Link> */}
 
       <PageHeader>
         <PageHeader.Title>{post.title}</PageHeader.Title>
         <PageHeader.PublishDate date={post.date} />
       </PageHeader>
 
-      <hr className="mt-4 mb-7" />
-
-      <section className="relative py-2">
+      <section className="relative">
         <Mdx code={post.body.code} />
 
         <Toc toc={toc} />

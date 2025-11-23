@@ -8,14 +8,8 @@ import { Icons } from './icons';
 import { Link } from './ui/link';
 
 export type TPager = {
-  prev?: {
-    title: string;
-    slug: string;
-  };
-  next?: {
-    title: string;
-    slug: string;
-  };
+  prev?: { title: string; slug: string };
+  next?: { title: string; slug: string };
 };
 
 interface PagerProps {
@@ -24,7 +18,7 @@ interface PagerProps {
 
 export default function Pager({ pager }: PagerProps) {
   return (
-    <div className="mb-24 flex items-center justify-between gap-1 text-sm text-tx">
+    <div className="mb-24 grid grid-cols-2 items-center gap-1 text-sm text-tx">
       {pager.prev && (
         <Link asChild>
           <NextLink

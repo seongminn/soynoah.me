@@ -23,9 +23,9 @@ const Root = ({ className, children, ...props }: PageHeaderProps) => {
 interface TitleProps extends ComponentPropsWithoutRef<typeof Heading> {}
 
 const Title = forwardRef<HTMLHeadingElement, TitleProps>(
-  ({ as = 'h1', children, ...props }, ref) => {
+  ({ as = 'h1', className, children, ...props }, ref) => {
     return (
-      <Heading as={as} ref={ref} {...props}>
+      <Heading as={as} ref={ref} className={cn('text-lg', className)} {...props}>
         {children}
       </Heading>
     );
@@ -44,11 +44,7 @@ const Description = forwardRef<HTMLParagraphElement, DescriptionProps>(
     const Component = asChild ? Slot : 'p';
 
     return (
-      <Component
-        ref={ref}
-        className={cn('text-[14px] text-second leading-7', className)}
-        {...props}
-      >
+      <Component ref={ref} className={cn('text-second text-sm leading-7', className)} {...props}>
         {children}
       </Component>
     );
@@ -68,7 +64,7 @@ const PublishDate = forwardRef<HTMLTimeElement, PublishDateProps>(
       <time
         ref={ref}
         dateTime={time.format(date, 'YYYY-MM-DD')}
-        className={cn('text-[14px] text-second leading-7', className)}
+        className={cn('text-second text-sm leading-7', className)}
         {...props}
       >
         {time.format(date, 'YYYY. MM. DD')}
