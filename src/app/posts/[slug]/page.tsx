@@ -1,6 +1,5 @@
 import { allPosts } from 'contentlayer/generated';
 import type { Metadata } from 'next';
-import Link from 'next/link';
 import { notFound } from 'next/navigation';
 
 import { BackButton } from '~/components/back-button';
