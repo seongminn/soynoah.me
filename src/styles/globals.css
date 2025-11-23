@@ -9,7 +9,7 @@
 :root {
   --page-background: var(--color-gray-50);
   --text-body: var(--color-gray-900);
-  --text-second: var(--color-gray-800);
+  --text-second: var(--color-gray-700);
   --text-disabled: var(--color-gray-600);
 
   /* --grid-line-color: #7575750f; */

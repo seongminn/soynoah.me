@@ -17,7 +17,7 @@ export default function Page() {
 
       <PageHeader>
         <PageHeader.Title>기록</PageHeader.Title>
-        <PageHeader.Description>기록을 보관하는 공간</PageHeader.Description>
+        <PageHeader.Description>이것저것 끄적끄적</PageHeader.Description>
       </PageHeader>
 
       <section className="relative">
@@ -40,14 +40,14 @@ export default function Page() {
                       >
                         <time
                           dateTime={time.format(post.date, 'YYYY-MM-DD')}
-                          className="shrink-0 text-base text-second leading-7 group-hover:text-body"
+                          className="shrink-0 text-base text-body leading-7 group-hover:text-body"
                         >
                           {time.format(post.date, 'MM.DD')}
                         </time>
 
                         <Icons.right aria-hidden="true" className="h-3 w-3" />
 
-                        <span className="flex w-full flex-1 flex-col justify-between font-medium text-base text-second leading-7 transition-colors group-hover:text-gray-900">
+                        <span className="flex w-full flex-1 flex-col justify-between font-medium text-base text-body leading-7 transition-colors group-hover:text-gray-900">
                           {post.title}
                         </span>
                       </NextLink>
