@@ -12,8 +12,11 @@
   --text-second: var(--color-gray-700);
   --text-disabled: var(--color-gray-600);
 
-  /* --grid-line-color: #7575750f; */
-  --grid-line-color: #e4382e0f;
+  /* --color-grid-line: #7575750f; */
+  /* --color-grid-line: oklab(60% 0.2 0.1 / 0.03); */
+  --color-accent: oklch(0.7 0.2 28.5);
+  --color-grid-line: color-mix(in oklab, var(--color-accent) 8%, transparent 95%);
+  --color-code-block: color-mix(in oklab, var(--color-accent) 5%, transparent 95%);
 
   --color-blur-gradient: linear-gradient(
     180deg,
@@ -39,28 +42,70 @@
   --sm: 700px;
 
   /* -- Layout & Spacing -- */
-  --blur-height: 112px;
-  --page-header: 64px;
-  --page-top: calc(var(--blur-height) + (var(--page-header)));
-  --page-width: 1200px;
-  --content-width: 728px;
-  --body-margin-left: max(28px, env(safe-area-inset-left));
-  --body-margin-right: max(28px, env(safe-area-inset-right));
   --grid-size: 28px;
 
-  /* Typography */
-  --text-base: 15px;
+  --blur-height: calc(var(--grid-size) * 4);
+  --page-width: calc(var(--grid-size) * 40);
+  --content-width: calc(var(--grid-size) * 26);
+  --body-margin-left: max(var(--grid-size), env(safe-area-inset-left));
+  --body-margin-right: max(var(--grid-size), env(safe-area-inset-right));
 }
 
-@media (728px >= width) {
+@media (727px >= width) {
   :root {
     --blur-height: 56px;
   }
 }
+@theme {
+  /* -- Colors -- */
+  --color-gray-50: hsl(0deg, 0%, 100%);
+  --color-gray-100: hsl(0deg, 0%, 93%);
+  --color-gray-150: hsl(0deg, 0%, 86%);
+  --color-gray-200: hsl(0deg, 0%, 79%);
+  --color-gray-250: hsl(0deg, 0%, 71%);
+  --color-gray-300: hsl(0deg, 0%, 64%);
+  --color-gray-400: hsl(0deg, 0%, 56%);
+  --color-gray-500: hsl(0deg, 0%, 48%);
+  --color-gray-600: hsl(0deg, 0%, 39%);
+  --color-gray-700: hsl(0deg, 0%, 30%);
+  --color-gray-800: hsl(0deg, 0%, 20%);
+  --color-gray-900: hsl(0deg, 0%, 9%);
+
+  --color-selection: hsla(0, 0%, 0%, 0.075);
+  --color-border: hsla(0, 0%, 0%, 0.09);
+  --color-ring: var(--color-accent);
+
+  /* -- Fonts -- */
+  --font-mono: "Recursive", monospace;
+
+  /* -- Custom Colors -- */
+  --color-page: var(--page-background);
+  --color-body: var(--text-body);
+  --color-second: var(--text-second);
+  --color-disabled: var(--text-disabled);
+
+  /* -- Breakpoints */
+  --breakpoint-*: initial;
+  --breakpoint-xl: 1280px;
+  --breakpoint-lg: 1074px;
+  --breakpoint-md: 700px;
+  --breakpoint-sm: 640px;
+
+  /* -- Spacings -- */
+  --spacing-blur-height: var(--blur-height);
+  --spacing-page: var(--page-width);
+  --spacing-content: var(--content-width);
+
+  --spacing-xs: calc(var(--grid-size) / 2);
+  --spacing-sm: calc(var(--grid-size) / 1.5);
+  --spacing-default: var(--grid-size);
+  --spacing-lg: calc(var(--grid-size) * 1.5);
+  --spacing-xl: calc(var(--grid-size) * 2);
+}
 
 .dark {
-  --color-gray-50: oklch(0.1987 0 0);
-  --color-gray-100: oklch(0.2267 0 0);
+  --color-gray-50: hsl(0, 0%, 9%);
+  --color-gray-100: hsl(0, 0%, 11%);
   --color-gray-150: hsl(0 0% 13.6%);
   --color-gray-200: hsl(0 0% 15.8%);
   --color-gray-250: hsl(0 0% 17.9%);
@@ -74,13 +119,11 @@
 
   --color-selection: hsla(0, 0%, 100%, 0.077);
   --color-border: hsla(0, 0%, 100%, 0.1);
+
   --page-background: var(--color-gray-50);
   --text-body: var(--color-gray-900);
   --text-second: var(--color-gray-800);
   --text-disabled: var(--color-gray-600);
-
-  --color-accent: oklch(0.6779 0.2097 28.51);
-  --color-ring: var(--color-accent);
 
   --color-blur-gradient: linear-gradient(
     180deg,
@@ -100,72 +143,8 @@
   );
 }
 
-@theme {
-  /* -- Colors -- */
-  /* --color-gray-50: hsl(0 0% 99%);
-  --color-gray-100: hsl(0 0% 97.3%);
-  --color-gray-150: hsl(0 0% 95.1%);
-  --color-gray-200: hsl(0 0% 93%);
-  --color-gray-250: hsl(0 0% 90.9%);
-  --color-gray-300: hsl(0 0% 88.7%);
-  --color-gray-400: hsl(0 0% 85.8%);
-  --color-gray-500: hsl(0 0% 78%);
-  --color-gray-600: hsl(0 0% 56.1%);
-  --color-gray-700: hsl(0 0% 52.3%);
-  --color-gray-800: hsl(0 0% 43.5%);
-  --color-gray-900: hsl(0 0% 9%); */
-  --color-gray-50: hsl(0deg, 0%, 100%);
-  --color-gray-100: hsl(0deg, 0%, 93%);
-  --color-gray-150: hsl(0deg, 0%, 86%);
-  --color-gray-200: hsl(0deg, 0%, 79%);
-  --color-gray-250: hsl(0deg, 0%, 71%);
-  --color-gray-300: hsl(0deg, 0%, 64%);
-  --color-gray-400: hsl(0deg, 0%, 56%);
-  --color-gray-500: hsl(0deg, 0%, 48%);
-  --color-gray-600: hsl(0deg, 0%, 39%);
-  --color-gray-700: hsl(0deg, 0%, 30%);
-  --color-gray-800: hsl(0deg, 0%, 20%);
-  --color-gray-900: hsl(0deg, 0%, 9%);
+/* --- Base --- */
 
-  --color-selection: hsla(0, 0%, 0%, 0.075);
-  --color-border: hsla(0, 0%, 0%, 0.09);
-  --color-accent: oklch(0.6779 0.2097 28.51);
-  --color-ring: var(--color-accent);
-
-  /* -- Fonts -- */
-  --font-sans: "Pretendard Variable", sans-serif;
-  --font-mono: "Recursive", monospace;
-
-  /* -- Custom Colors -- */
-  --color-page: var(--page-background);
-  --color-body: var(--text-body);
-  --color-second: var(--text-second);
-  --color-disabled: var(--text-disabled);
-
-  /* -- Breakpoints */
-  --breakpoint-*: initial;
-  --breakpoint-xl: 1280px;
-  --breakpoint-lg: 1074px;
-  --breakpoint-md: 700px;
-  --breakpoint-sm: 640px;
-
-  /* -- Spacings -- */
-  --spacing-page-header: 64px;
-  --spacing-blur-height: 128px;
-  --spacing-page-top: var(--page-top);
-  --spacing-page: var(--page-width);
-  --spacing-content: var(--content-width);
-
-  --spacing-xs: calc(var(--grid-size) / 2);
-  --spacing-sm: calc(var(--grid-size) / 1.5);
-  --spacing-default: var(--grid-size);
-  --spacing-lg: calc(var(--grid-size) * 1.5);
-  --spacing-xl: calc(var(--grid-size) * 2);
-}
-
-/* -------------------------------------------------------------------------- */
-/*                                    Base                                    */
-/* -------------------------------------------------------------------------- */
 @layer base {
   *,
   *::before,
@@ -194,14 +173,16 @@
     font-feature-settings: "kern", "liga", "clig", "calt";
     padding-bottom: env(safe-area-inset-bottom);
     background-image:
-      linear-gradient(to right, var(--grid-line-color) 1px, transparent 1px),
-      linear-gradient(to bottom, var(--grid-line-color) 1px, transparent 1px);
+      linear-gradient(to right, var(--color-grid-line) 1px, transparent 1px),
+      linear-gradient(to bottom, var(--color-grid-line) 1px, transparent 1px);
     background-size: var(--grid-size) var(--grid-size);
     background-position: 0 0;
   }
 
   body:before {
     content: "";
+    position: fixed;
+    inset: 0;
     pointer-events: none;
     background: radial-gradient(
       70% 40% at 50% 35%,
@@ -212,8 +193,6 @@
       #ffffffe6 90%,
       #fffffffa 100%
     );
-    position: fixed;
-    inset: 0;
   }
 
   ::selection {

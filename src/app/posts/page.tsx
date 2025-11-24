@@ -88,10 +88,10 @@ function getSortedPostsByYears(posts: typeof allPosts) {
 export const generateMetadata = (): Metadata => {
   return {
     title: '기록',
-    description: '기록을 보관하는 공간',
+    description: '이것저것 끄적끄적',
     openGraph: {
       title: '기록',
-      description: '기록을 보관하는 공간',
+      description: '이것저것 끄적끄적',
       type: 'website',
       locale: 'ko_KR',
     },

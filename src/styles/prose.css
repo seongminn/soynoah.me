@@ -27,7 +27,7 @@
   @apply w-full text-second;
 
   --shiki-color-text: var(--text-second);
-  --shiki-color-background: var(--color-gray-100);
+  --shiki-color-background: var(--color-code-block);
   --shiki-token-constant: var(--token-constant);
   --shiki-token-string: var(--token-string);
   --shiki-token-comment: var(--color-gray-800);
@@ -229,8 +229,7 @@
   }
 
   & [data-rehype-pretty-code-fragment] pre {
-    /* box-shadow: 0 0 0 1px var(--color-gray-200); */
-    @apply px-2 bg-[#e4382e0f]! overflow-hidden;
+    @apply px-2 overflow-hidden;
   }
 
   & [data-rehype-pretty-code-title] {

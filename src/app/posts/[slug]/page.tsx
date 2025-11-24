@@ -7,8 +7,9 @@ import Giscus from '~/components/giscus';
 import Mdx from '~/components/mdx-component';
 import { PageHeader } from '~/components/page-header';
 import Pager, { getPager } from '~/components/pager';
-import Toc from '~/components/toc';
-import getTableOfContents from '~/utils/toc';
+
+// import Toc from '~/components/toc';
+// import getTableOfContents from '~/utils/toc';
 
 type PageProps = {
   params: { slug: string };
@@ -19,15 +20,12 @@ export default function Page({ params }: PageProps) {
 
   if (!post) notFound();
 
-  const toc = getTableOfContents({ content: post.body.raw });
+  // const toc = getTableOfContents({ content: post.body.raw });
   const pager = getPager({ post });
 
   return (
     <>
       <BackButton path="/posts" className="mb-default inline-flex" />
-      {/* <Link className="mb-8 hidden lg:inline-flex" href="./posts">
-        뒤로 가기
-      </Link> */}
 
       <PageHeader>
         <PageHeader.Title>{post.title}</PageHeader.Title>
@@ -37,7 +35,7 @@ export default function Page({ params }: PageProps) {
       <section className="relative">
         <Mdx code={post.body.code} />
 
-        <Toc toc={toc} />
+        {/* <Toc toc={toc} /> */}
       </section>
 
       <hr className="mt-4 mb-7" />
