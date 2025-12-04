@@ -30,7 +30,7 @@
   --shiki-color-background: var(--color-code-block);
   --shiki-token-constant: var(--token-constant);
   --shiki-token-string: var(--token-string);
-  --shiki-token-comment: var(--color-gray-800);
+  --shiki-token-comment: var(--color-gray-400);
   --shiki-token-keyword: var(--token-keyword);
   --shiki-token-parameter: var(--token-parameter);
   --shiki-token-function: var(--token-function);
@@ -39,7 +39,7 @@
   --shiki-token-link: var(--token-link);
 
   & > * {
-    @apply mb-7;
+    @apply mb-7 break-keep;
   }
 
   & > :first-child {
@@ -52,11 +52,11 @@
   }
 
   & > :where(h1, h2) {
-    @apply mt-16 text-base;
+    @apply mt-14 text-base;
   }
 
   & > :where(h3, h4) {
-    @apply mt-16 text-base;
+    @apply mt-14 text-base;
   }
 
   & > :where(h1, h2) + :where(h3, h4) {
@@ -83,7 +83,7 @@
   }
 
   & a {
-    @apply relative break-all inline-block decoration-dashed decoration-[#fff9a8] decoration-1 underline-offset-[2.5px] transition-[color,text-decoration-color] duration-200 ease-[ease] hover:text-body hover:decoration-gray-800;
+    @apply relative break-keep inline decoration-dashed decoration-[#fff9a8] decoration-1 underline-offset-[2.5px] transition-[color,text-decoration-color] duration-200 ease-[ease] hover:text-body hover:decoration-gray-800;
   }
 
   /* Blockquotes */
