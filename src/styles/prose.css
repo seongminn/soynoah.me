@@ -83,7 +83,7 @@
   }
 
   & a {
-    @apply relative break-keep inline decoration-dashed decoration-[#fff9a8] decoration-1 underline-offset-[2.5px] transition-[color,text-decoration-color] duration-200 ease-[ease] hover:text-body hover:decoration-gray-800;
+    @apply relative break-keep underline inline decoration-dashed decoration-gray-400 decoration-1 underline-offset-[2.5px] transition-[color,text-decoration-color] duration-200 ease-[ease] hover:text-body hover:decoration-body;
   }
 
   /* Blockquotes */

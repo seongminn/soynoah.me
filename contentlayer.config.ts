@@ -12,6 +12,8 @@ import remarkBreaks from 'remark-breaks';
 import remarkGfm from 'remark-gfm';
 import { visit } from 'unist-util-visit';
 
+import remarkPs from './src/libs/remark-ps';
+
 const fields: FieldDefs = {
   title: { type: 'string', required: true },
   description: { type: 'string', required: true },
@@ -40,7 +42,7 @@ export default makeSource({
   contentDirPath: 'contents',
   documentTypes: [Post],
   mdx: {
-    remarkPlugins: [remarkGfm, remarkBreaks],
+    remarkPlugins: [remarkGfm, remarkBreaks, remarkPs],
     rehypePlugins: [
       rehypeSlug,
       () => (tree) => {
