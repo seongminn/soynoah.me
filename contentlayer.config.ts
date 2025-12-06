@@ -12,7 +12,7 @@ import remarkBreaks from 'remark-breaks';
 import remarkGfm from 'remark-gfm';
 import { visit } from 'unist-util-visit';
 
-import remarkPs from './src/libs/remark-ps';
+import remarkPs from './src/libs/remark-note';
 
 const fields: FieldDefs = {
   title: { type: 'string', required: true },
