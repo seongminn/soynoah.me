@@ -36,7 +36,7 @@ export default function Page() {
                     <li key={post.slug}>
                       <NextLink
                         href={`posts/${post.slug}`}
-                        className="group flex flex-1 items-center gap-xs no-underline"
+                        className="group flex flex-1 items-start gap-xs no-underline"
                       >
                         <time
                           dateTime={time.format(post.date, 'YYYY-MM-DD')}
@@ -45,7 +45,9 @@ export default function Page() {
                           {time.format(post.date, 'MM.DD')}
                         </time>
 
-                        <Icons.right aria-hidden="true" className="h-3 w-3" />
+                        <div className="flex h-7 w-7 items-center justify-center">
+                          <Icons.right aria-hidden="true" className="h-3 w-3" />
+                        </div>
 
                         <span className="flex w-full flex-1 flex-col justify-between font-medium text-base text-body leading-7 transition-colors group-hover:text-gray-900">
                           {post.title}

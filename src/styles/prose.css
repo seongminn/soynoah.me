@@ -70,8 +70,8 @@
 
   /* Inline Elements */
   & b,
-  & strong:not:has(code) {
-    @apply bg-gray-400 p-0.5 font-semibold;
+  & strong:not(:has(code)) {
+    @apply font-semibold text-body;
   }
 
   & em {

@@ -12,7 +12,7 @@ import Pager, { getPager } from '~/components/pager';
 // import getTableOfContents from '~/utils/toc';
 
 type PageProps = {
-  params: { slug: string };
+  params: { slug: string[] };
 };
 
 export default function Page({ params }: PageProps) {
@@ -46,11 +46,11 @@ export default function Page({ params }: PageProps) {
 }
 
 export function generateStaticParams() {
-  return allPosts.map((post) => ({ slug: post.slug }));
+  return allPosts.map((post) => ({ slug: post.slug.split('/') }));
 }
 
 function getPostsByParams({ params }: PageProps) {
-  const slug = params.slug;
+  const slug = params.slug.join('/');
   const post = allPosts.find((post) => post.slug === slug);
 
   return post;
