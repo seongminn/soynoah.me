@@ -1,7 +1,7 @@
 import type { ComponentPropsWithoutRef } from 'react';
 import { forwardRef } from 'react';
 
-import { cn } from '~/libs/utils';
+import { cn } from '~/utils/cn';
 
 import { Button } from './button';
 

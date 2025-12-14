@@ -4,7 +4,7 @@ import type { ComponentPropsWithoutRef } from 'react';
 import { forwardRef } from 'react';
 
 import * as time from '~/libs/time';
-import { cn } from '~/libs/utils';
+import { cn } from '~/utils/cn';
 
 import { Heading } from './ui/heading';
 

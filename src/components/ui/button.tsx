@@ -2,7 +2,7 @@ import { Slot } from '@radix-ui/react-slot';
 import type { ComponentPropsWithoutRef } from 'react';
 import { forwardRef } from 'react';
 
-import { cn } from '~/libs/utils';
+import { cn } from '~/utils/cn';
 
 interface ButtonProps extends ComponentPropsWithoutRef<'button'> {
   asChild?: boolean;

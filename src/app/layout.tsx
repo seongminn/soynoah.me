@@ -6,8 +6,8 @@ import localFont from 'next/font/local';
 
 import { Footer } from '~/components/site-footer';
 import GoogleAnalytics from '~/libs/google-analytics';
-import { cn } from '~/libs/utils';
 import { site } from '~/site';
+import { cn } from '~/utils/cn';
 
 import Providers from './providers';
 

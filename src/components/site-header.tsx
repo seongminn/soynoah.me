@@ -3,8 +3,8 @@
 import { usePathname } from 'next/navigation';
 
 import { Link } from '~//components/ui/link';
-import { cn } from '~/libs/utils';
 import { site } from '~/site';
+import { cn } from '~/utils/cn';
 
 import ThemeToggle from './theme-toggle';
 
