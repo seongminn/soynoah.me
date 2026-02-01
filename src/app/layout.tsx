@@ -1,5 +1,6 @@
 import '~/styles/globals.css';
 
+import { Analytics } from '@vercel/analytics/next';
 import { GeistMono } from 'geist/font/mono';
 import type { Metadata } from 'next';
 import localFont from 'next/font/local';
@@ -33,6 +34,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             <Footer />
           </div>
         </Providers>
+
+        <Analytics mode="production" />
       </body>
     </html>
   );

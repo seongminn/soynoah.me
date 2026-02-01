@@ -311,4 +311,9 @@
       @apply opacity-100;
     }
   }
+
+  /* Figures */
+  & figcaption * {
+    @apply text-sm text-second;
+  }
 }

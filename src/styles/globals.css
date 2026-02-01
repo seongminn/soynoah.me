@@ -35,6 +35,16 @@
     hsla(0, 0%, 100%, 0)
   );
 
+  --background-gradient: radial-gradient(
+    70% 40% at 50% 35%,
+    #0000 0% 20%,
+    #ffffff26 35%,
+    #ffffff59 50%,
+    #ffffffa6 70%,
+    #ffffffe6 90%,
+    #fffffffa 100%
+  );
+
   /* -- Breakpoint */
   --xl: 1350px;
   --lg: 1024px;
@@ -56,6 +66,7 @@
     --blur-height: 56px;
   }
 }
+
 @theme {
   /* -- Colors -- */
   --color-gray-50: hsl(0deg, 0%, 100%);
@@ -141,6 +152,16 @@
     hsla(0, 0%, 8.5%, 0.002) 98.2%,
     hsla(0, 0%, 8.5%, 0)
   );
+
+  --background-gradient: radial-gradient(
+    70% 40% at 50% 35%,
+    #0000 0% 20%,
+    #00000026 35%,
+    #00000059 50%,
+    #000000a6 70%,
+    #000000e6 90%,
+    #000000fa 100%
+  );
 }
 
 /* --- Base --- */
@@ -150,6 +171,7 @@
   *::before,
   *::after {
     box-sizing: border-box;
+    --tw-ring-offset-color: var(--color-page);
     --tw-ring-offset-width: 2px;
     --tw-ring-color: var(--color-accent);
   }
@@ -184,15 +206,7 @@
     position: fixed;
     inset: 0;
     pointer-events: none;
-    background: radial-gradient(
-      70% 40% at 50% 35%,
-      #0000 0% 20%,
-      #ffffff26 35%,
-      #ffffff59 50%,
-      #ffffffa6 70%,
-      #ffffffe6 90%,
-      #fffffffa 100%
-    );
+    background: var(--background-gradient);
   }
 
   ::selection {
