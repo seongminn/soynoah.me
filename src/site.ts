@@ -9,9 +9,7 @@ export const site = {
       email: 'mailto:berry9901@gmail.com',
       github: 'https://github.com/seongminn',
       linkedin: 'https://www.linkedin.com/in/%EC%84%B1%EB%AF%BC-%EC%B5%9C-4b8a57272/',
-      medium: '',
-      facebook: '',
-      twitter: '',
+      resume: 'https://drive.google.com/file/d/18Cq2_e4bapagRwwkzXU-PaRwxIx-BZDD/view?usp=sharing',
     },
   },
   menus: [

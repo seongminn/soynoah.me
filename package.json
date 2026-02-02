@@ -9,6 +9,7 @@
     "lint": "bunx biome check"
   },
   "dependencies": {
+    "@base-ui/react": "^1.1.0",
     "@radix-ui/react-slot": "^1.2.0",
     "@vercel/analytics": "^1.6.1",
     "clsx": "^2.1.0",
