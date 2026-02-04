@@ -58,10 +58,8 @@ React 18에 도입된 **Suspense**와 **Error Boundary**를 활용하여 선언�
 ```tsx showLineNumbers
 export default function PostPage() {
   return (
-    <ErrorBoundary fallback={props => <ErrorFallback {...props} />}>
-      <PostListFetcher>
-        {({ postList }) => <PostList {...postList} />}
-      </PostListFetcher>
+    <ErrorBoundary fallback={(props) => <ErrorFallback {...props} />}>
+      <PostListFetcher>{({ postList }) => <PostList {...postList} />}</PostListFetcher>
     </ErrorBoundary>
   );
 }

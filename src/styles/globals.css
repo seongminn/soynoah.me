@@ -1,6 +1,6 @@
-@import "tailwindcss";
-@import "./utilities.css";
-@import "./prose.css";
+@import 'tailwindcss';
+@import './utilities.css';
+@import './prose.css';
 
 /* -------------------------------------------------------------------------- */
 /*                                    Theme                                   */
@@ -87,7 +87,7 @@
   --color-ring: var(--color-accent);
 
   /* -- Fonts -- */
-  --font-mono: "Recursive", monospace;
+  --font-mono: 'Recursive', monospace;
 
   /* -- Custom Colors -- */
   --color-page: var(--page-background);
@@ -194,7 +194,7 @@
     @apply font-serif text-base leading-7 antialiased;
 
     font-kerning: normal;
-    font-feature-settings: "kern", "liga", "clig", "calt";
+    font-feature-settings: 'kern', 'liga', 'clig', 'calt';
     padding-bottom: env(safe-area-inset-bottom);
     background-image:
       linear-gradient(to right, var(--color-grid-line) 1px, transparent 1px),
@@ -204,7 +204,7 @@
   }
 
   body:before {
-    content: "";
+    content: '';
     position: fixed;
     inset: 0;
     pointer-events: none;

@@ -89,7 +89,7 @@
   /* Blockquotes */
   & blockquote {
     @apply relative font-serif text-second;
-    quotes: "“" "”" "‘" "’";
+    quotes: '“' '”' '‘' '’';
     --quote-offset: 2px;
   }
 
@@ -156,11 +156,11 @@
 
   & ol li:before {
     @apply inline-flex select-none items-center justify-end text-right text-gray-900;
-    content: counter(basics-ol) ". ";
+    content: counter(basics-ol) '. ';
     counter-increment: basics-ol;
     min-width: var(--counter-space);
     margin-right: var(--counter-space);
-    font-feature-settings: "tnum" 1;
+    font-feature-settings: 'tnum' 1;
     letter-spacing: -0.05em;
     line-height: normal;
   }
@@ -262,11 +262,11 @@
     content: counter(line);
   }
 
-  & code[data-line-numbers-max-digits="2"] > [data-line]::before {
+  & code[data-line-numbers-max-digits='2'] > [data-line]::before {
     width: 1.5rem;
   }
 
-  & code[data-line-numbers-max-digits="3"] > [data-line]::before {
+  & code[data-line-numbers-max-digits='3'] > [data-line]::before {
     width: 2.5rem;
   }
 
@@ -282,19 +282,19 @@
     color: inherit;
   }
 
-  & [data-chars-id="v"] {
+  & [data-chars-id='v'] {
     @apply font-semibold text-gray-50;
     border-bottom-color: rgb(249 168 212);
     background-color: #9f123980;
   }
 
-  & [data-chars-id="s"] {
+  & [data-chars-id='s'] {
     @apply font-semibold text-gray-50;
     border-bottom-color: rgb(202 138 4);
     background-color: #854d0e80;
   }
 
-  & [data-chars-id="i"] {
+  & [data-chars-id='i'] {
     @apply font-semibold text-gray-50;
     border-bottom-color: rgb(147 51 234);
     background-color: #6b21a880;

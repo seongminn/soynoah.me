@@ -1,14 +1,14 @@
-import type { ComponentProps } from 'react';
+import type { ComponentProps } from "react";
 
-import { cn } from '~/utils/cn';
+import { cn } from "~/utils/cn";
 
-interface SidebarProps extends ComponentProps<'aside'> {}
+interface SidebarProps extends ComponentProps<"aside"> {}
 
 export const Sidebar = ({ className, children, ...props }: SidebarProps) => {
   return (
     <aside
       className={cn(
-        '-top-page -translate-x-44 absolute left-0 h-[calc(100%+var(--page-top))] max-w-36 transition-opacity duration-100 lg:pointer-events-none lg:hidden lg:opacity-0',
+        "-top-page -translate-x-44 absolute left-0 h-[calc(100%+var(--page-top))] max-w-36 transition-opacity duration-100 lg:pointer-events-none lg:hidden lg:opacity-0",
         className,
       )}
       {...props}

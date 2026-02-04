@@ -5,7 +5,7 @@
 }
 
 @utility blur-layer {
-  content: "";
+  content: '';
   pointer-events: none;
   z-index: 9;
   position: fixed;
