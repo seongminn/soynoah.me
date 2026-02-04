@@ -81,17 +81,14 @@ function Tree({ toc, level = 1, activeId }: TreeProps) {
       >
         {toc.map((item) => (
           <li key={item.url} className="flex flex-col gap-2">
-            <Link asChild>
-              <NextLink
-                scroll={true}
-                href={`#${item.url}`}
-                className={cn(
-                  'line-clamp-1 overflow-hidden text-ellipsis text-sm no-underline',
-                  item.url === activeId && 'text-body',
-                )}
-              >
-                {item.title}
-              </NextLink>
+            <Link
+              render={<NextLink scroll={true} href={`#${item.url}`} />}
+              className={cn(
+                'line-clamp-1 overflow-hidden text-ellipsis text-sm no-underline',
+                item.url === activeId && 'text-body',
+              )}
+            >
+              {item.title}
             </Link>
             {item.items.length ? (
               <Tree toc={item.items} level={level + 1} activeId={activeId} />

@@ -1,23 +1,26 @@
-import { Slot } from '@radix-ui/react-slot';
+import { useRender } from '@base-ui/react';
 import type { ComponentPropsWithoutRef } from 'react';
 import { forwardRef } from 'react';
 
 import { cn } from '~/utils/cn';
 
 interface HeadingProps extends ComponentPropsWithoutRef<'h1'> {
-  asChild?: boolean;
-  as?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
+  render?: useRender.RenderProp;
 }
 
 export const Heading = forwardRef<HTMLHeadingElement, HeadingProps>(
-  ({ asChild, as = 'h1', className, children }, ref) => {
-    const Component = asChild ? Slot : as;
+  ({ render, className, ...props }, ref) => {
+    const defaultProps: useRender.ElementProps<'h1'> = {
+      className: cn('font-semibold text-base', className),
+      ...props,
+    };
 
-    return (
-      <Component ref={ref} className={cn('font-semibold text-base', className)}>
-        {children}
-      </Component>
-    );
+    return useRender({
+      ref,
+      render,
+      defaultTagName: 'h1',
+      props: defaultProps,
+    });
   },
 );
 Heading.displayName = 'Heading';

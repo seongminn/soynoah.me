@@ -36,19 +36,19 @@ export default function Page() {
                     <li key={post.slug}>
                       <NextLink
                         href={`posts/${post.slug}`}
-                        className="group flex flex-1 items-start gap-xs no-underline"
+                        className="group grid grid-cols-[auto_auto_1fr] items-start gap-xs no-underline"
                       >
                         <time
                           dateTime={time.format(post.date, 'YYYY-MM-DD')}
-                          className="shrink-0 text-base text-body leading-7 group-hover:text-body"
+                          className="shrink-0 text-base text-body tabular-nums leading-7 group-hover:text-body"
                         >
                           {time.format(post.date, 'MM.DD')}
                         </time>
 
-                        {/* <div className="flex h-7 w-7 items-center justify-center group-hover:translate-x-0.5 transition-transform">
+                        <div className="flex h-7 w-7 items-center justify-center transition-transform group-hover:translate-x-0.5">
                           <Icons.right aria-hidden="true" className="h-3 w-3" />
-                        </div> */}
-                        <div className="flex h-7 w-7 items-center justify-center">
+                        </div>
+                        {/* <div className="flex h-7 w-7 items-center justify-center">
                           <Icons.right
                             aria-hidden="true"
                             className="group-hover:-translate-x-0.5 h-3 w-3 transition-transform"
@@ -57,7 +57,7 @@ export default function Page() {
                             aria-hidden="true"
                             className="absolute flex h-3 w-3 items-center justify-center transition-transform group-hover:translate-x-0.5"
                           />
-                        </div>
+                        </div> */}
 
                         <span className="flex w-full flex-1 flex-col justify-between font-medium text-base text-body leading-7 transition-colors group-hover:text-gray-900">
                           {post.title}

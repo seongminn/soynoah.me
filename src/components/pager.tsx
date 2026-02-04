@@ -20,31 +20,25 @@ export default function Pager({ pager }: PagerProps) {
   return (
     <div className="mb-24 grid grid-cols-2 items-center gap-1 text-sm text-tx">
       {pager.prev && (
-        <Link asChild>
-          <NextLink
-            scroll={false}
-            href={pager.prev.slug}
-            className="group line-clamp-1 inline-flex items-center no-underline"
-          >
-            <Icons.left className="mr-2 h-5 w-5 text-disabled transition-colors group-hover:text-body" />
-            <span className="line-clamp-1 overflow-hidden text-ellipsis text-second transition-colors group-hover:text-body">
-              {pager.prev.title}
-            </span>
-          </NextLink>
+        <Link
+          render={<NextLink scroll={false} href={pager.prev.slug} />}
+          className="group line-clamp-1 inline-flex items-center no-underline"
+        >
+          <Icons.left className="mr-2 h-5 w-5 text-disabled transition-colors group-hover:text-body" />
+          <span className="line-clamp-1 overflow-hidden text-ellipsis text-second transition-colors group-hover:text-body">
+            {pager.prev.title}
+          </span>
         </Link>
       )}
       {pager.next && (
-        <Link asChild>
-          <NextLink
-            scroll={false}
-            href={pager.next.slug}
-            className="group ml-auto inline-flex items-center text-right no-underline"
-          >
-            <span className="line-clamp-1 overflow-hidden text-ellipsis text-second transition-colors group-hover:text-body">
-              {pager.next.title}
-            </span>
-            <Icons.right className="ml-2 h-5 w-5 text-disabled transition-colors group-hover:text-body" />
-          </NextLink>
+        <Link
+          render={<NextLink scroll={false} href={pager.next.slug} />}
+          className="group ml-auto inline-flex items-center text-right no-underline"
+        >
+          <span className="line-clamp-1 overflow-hidden text-ellipsis text-second transition-colors group-hover:text-body">
+            {pager.next.title}
+          </span>
+          <Icons.right className="ml-2 h-5 w-5 text-disabled transition-colors group-hover:text-body" />
         </Link>
       )}
     </div>

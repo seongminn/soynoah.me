@@ -1,4 +1,4 @@
-import { Slot } from '@radix-ui/react-slot';
+import { useRender } from '@base-ui/react';
 import type { Post } from 'contentlayer/generated';
 import type { ComponentPropsWithoutRef } from 'react';
 import { forwardRef } from 'react';
@@ -23,9 +23,9 @@ const Root = ({ className, children, ...props }: PageHeaderProps) => {
 interface TitleProps extends ComponentPropsWithoutRef<typeof Heading> {}
 
 const Title = forwardRef<HTMLHeadingElement, TitleProps>(
-  ({ as = 'h1', className, children, ...props }, ref) => {
+  ({ className, children, ...props }, ref) => {
     return (
-      <Heading as={as} ref={ref} className={cn('text-lg', className)} {...props}>
+      <Heading ref={ref} className={cn('text-lg', className)} {...props}>
         {children}
       </Heading>
     );
@@ -36,18 +36,22 @@ Title.displayName = 'PageHeader.Title';
 /* ---- Description ---- */
 
 interface DescriptionProps extends ComponentPropsWithoutRef<'p'> {
-  asChild?: boolean;
+  render?: useRender.RenderProp;
 }
 
 const Description = forwardRef<HTMLParagraphElement, DescriptionProps>(
-  ({ asChild, className, children, ...props }, ref) => {
-    const Component = asChild ? Slot : 'p';
+  ({ render, className, children, ...props }, ref) => {
+    const defaultProps: useRender.ElementProps<'p'> = {
+      className: cn('text-second text-sm leading-7', className),
+      ...props,
+    };
 
-    return (
-      <Component ref={ref} className={cn('text-second text-sm leading-7', className)} {...props}>
-        {children}
-      </Component>
-    );
+    return useRender({
+      ref,
+      render,
+      defaultTagName: 'p',
+      props: defaultProps,
+    });
   },
 );
 Description.displayName = 'PageHeader.Description';
