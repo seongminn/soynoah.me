@@ -205,7 +205,7 @@
 
   /* Code Blocks */
   & code:not(pre code) {
-    @apply inline-block rounded bg-gray-100 px-1 font-mono text-xs leading-5;
+    @apply inline-block rounded bg-gray-100 text-gray-700 px-1 font-mono text-xs leading-5;
   }
 
   & pre {
@@ -313,6 +313,7 @@
   }
 
   /* Figures */
+  & figcaption,
   & figcaption * {
     @apply text-sm text-second;
   }
