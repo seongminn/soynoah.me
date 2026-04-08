@@ -222,7 +222,7 @@
   }
 
   em {
-    @apply font-serif font-bold not-italic text-body;
+    @apply font-serif font-bold text-body not-italic;
   }
 
   del {

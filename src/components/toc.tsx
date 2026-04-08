@@ -84,7 +84,7 @@ function Tree({ toc, level = 1, activeId }: TreeProps) {
             <Link
               render={<NextLink scroll={true} href={`#${item.url}`} />}
               className={cn(
-                'line-clamp-1 overflow-hidden text-ellipsis text-sm no-underline',
+                'line-clamp-1 overflow-hidden text-sm text-ellipsis no-underline',
                 item.url === activeId && 'text-body',
               )}
             >

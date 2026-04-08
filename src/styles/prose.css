@@ -48,7 +48,7 @@
 
   /* Headings */
   & > :where(h1, h2, h3, h4) {
-    @apply no-underline scroll-mt-24 font-semibold leading-7;
+    @apply scroll-mt-24 leading-7 font-semibold no-underline;
   }
 
   & > :where(h1, h2) {
@@ -79,11 +79,11 @@
   }
 
   & del {
-    @apply italic text-gray-500;
+    @apply text-gray-500 italic;
   }
 
   & a {
-    @apply relative break-keep underline inline decoration-dashed decoration-gray-400 decoration-1 underline-offset-[2.5px] transition-[color,text-decoration-color] duration-200 ease-[ease] hover:text-body hover:decoration-body;
+    @apply relative inline break-keep underline decoration-gray-400 decoration-dashed decoration-1 underline-offset-[2.5px] transition-[color,text-decoration-color] duration-200 ease-[ease] hover:text-body hover:decoration-body;
   }
 
   /* Blockquotes */
@@ -155,7 +155,7 @@
   }
 
   & ol li:before {
-    @apply inline-flex select-none items-center justify-end text-right text-gray-900;
+    @apply inline-flex items-center justify-end text-right text-gray-900 select-none;
     content: counter(basics-ol) '. ';
     counter-increment: basics-ol;
     min-width: var(--counter-space);
@@ -200,12 +200,12 @@
 
   & img + em,
   & img + em p {
-    @apply mt-2 inline-block font-serif text-sm not-italic leading-5 text-gray-900;
+    @apply mt-2 inline-block font-serif text-sm leading-5 text-gray-900 not-italic;
   }
 
   /* Code Blocks */
   & code:not(pre code) {
-    @apply inline-block rounded bg-gray-100 text-gray-700 px-1 font-mono text-xs leading-5;
+    @apply inline-block rounded bg-gray-100 px-1 font-mono text-xs leading-5 text-gray-700;
   }
 
   & pre {
@@ -229,7 +229,7 @@
   }
 
   & [data-rehype-pretty-code-fragment] pre {
-    @apply px-2 overflow-hidden;
+    @apply overflow-hidden px-2;
   }
 
   & [data-rehype-pretty-code-title] {

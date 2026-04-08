@@ -40,7 +40,7 @@ export default function Page() {
                       >
                         <time
                           dateTime={time.format(post.date, 'YYYY-MM-DD')}
-                          className="shrink-0 text-base text-body tabular-nums leading-7 group-hover:text-body"
+                          className="shrink-0 text-base leading-7 text-body tabular-nums group-hover:text-body"
                         >
                           {time.format(post.date, 'MM.DD')}
                         </time>
@@ -59,7 +59,7 @@ export default function Page() {
                           />
                         </div> */}
 
-                        <span className="flex w-full flex-1 flex-col justify-between font-medium text-base text-body leading-7 transition-colors group-hover:text-gray-900">
+                        <span className="flex w-full flex-1 flex-col justify-between text-base leading-7 font-medium text-body transition-colors group-hover:text-gray-900">
                           {post.title}
                         </span>
                       </NextLink>

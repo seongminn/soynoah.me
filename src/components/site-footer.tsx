@@ -5,7 +5,7 @@ export const Footer = () => {
 
   return (
     <footer className="container mx-auto my-14 flex max-w-content items-center justify-between py-0!">
-      <span className="text-disabled text-sm">soynoah © {currentYear}</span>
+      <span className="text-sm text-disabled">soynoah © {currentYear}</span>
     </footer>
   );
 };

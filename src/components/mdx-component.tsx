@@ -34,7 +34,7 @@ const components = {
     <Link target={target} className={cn(!target && 'text-body', className)} {...props} />
   ),
   note: ({ className, ...props }: ComponentProps<'aside'>) => (
-    <aside className={cn('text-disabled italic *:text-disabled *:text-sm', className)} {...props} />
+    <aside className={cn('text-disabled italic *:text-sm *:text-disabled', className)} {...props} />
   ),
 };
 

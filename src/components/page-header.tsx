@@ -42,7 +42,7 @@ interface DescriptionProps extends ComponentPropsWithoutRef<'p'> {
 const Description = forwardRef<HTMLParagraphElement, DescriptionProps>(
   ({ render, className, ...props }, ref) => {
     const defaultProps: useRender.ElementProps<'p'> = {
-      className: cn('text-second text-sm leading-7', className),
+      className: cn('text-sm leading-7 text-second', className),
       ...props,
     };
 
@@ -68,7 +68,7 @@ const PublishDate = forwardRef<HTMLTimeElement, PublishDateProps>(
       <time
         ref={ref}
         dateTime={time.format(date, 'YYYY-MM-DD')}
-        className={cn('text-second text-sm leading-7', className)}
+        className={cn('text-sm leading-7 text-second', className)}
         {...props}
       >
         {time.format(date, 'YYYY. MM. DD')}

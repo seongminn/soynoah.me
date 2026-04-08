@@ -18,7 +18,7 @@ interface PagerProps {
 
 export default function Pager({ pager }: PagerProps) {
   return (
-    <div className="mb-24 grid grid-cols-2 items-center gap-1 text-sm text-tx">
+    <div className="text-tx mb-24 grid grid-cols-2 items-center gap-1 text-sm">
       {pager.prev && (
         <Link
           render={<NextLink scroll={false} href={pager.prev.slug} />}

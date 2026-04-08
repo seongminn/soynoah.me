@@ -27,7 +27,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <div className="relative flex min-h-dvh flex-col">
             <div className="blur-layer" />
 
-            <main className="container relative mx-auto min-h-[calc(100vh-7rem-20px)] max-w-content">
+            <main className="relative container mx-auto min-h-[calc(100vh-7rem-20px)] max-w-content">
               {children}
             </main>
 

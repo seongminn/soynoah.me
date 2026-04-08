@@ -8,7 +8,7 @@ export const Sidebar = ({ className, children, ...props }: SidebarProps) => {
   return (
     <aside
       className={cn(
-        '-top-page -translate-x-44 absolute left-0 h-[calc(100%+var(--page-top))] max-w-36 transition-opacity duration-100 lg:pointer-events-none lg:hidden lg:opacity-0',
+        'absolute -top-page left-0 h-[calc(100%+var(--page-top))] max-w-36 -translate-x-44 transition-opacity duration-100 lg:pointer-events-none lg:hidden lg:opacity-0',
         className,
       )}
       {...props}

@@ -15,11 +15,11 @@ export default function ThemeToggle() {
       onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')}
     >
       <Icons.sun
-        className="dark:-rotate-90 h-4 w-4 rotate-0 scale-100 transition-all dark:scale-0"
+        className="h-4 w-4 scale-100 rotate-0 transition-all dark:scale-0 dark:-rotate-90"
         aria-hidden="true"
       />
       <Icons.moon
-        className="absolute box-border h-4 w-4 rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100"
+        className="absolute box-border h-4 w-4 scale-0 rotate-90 transition-all dark:scale-100 dark:rotate-0"
         aria-hidden="true"
       />
     </IconButton>

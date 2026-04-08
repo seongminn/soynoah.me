@@ -11,7 +11,7 @@ interface HeadingProps extends ComponentPropsWithoutRef<'h1'> {
 export const Heading = forwardRef<HTMLHeadingElement, HeadingProps>(
   ({ render, className, ...props }, ref) => {
     const defaultProps: useRender.ElementProps<'h1'> = {
-      className: cn('font-semibold text-base', className),
+      className: cn('text-base font-semibold', className),
       ...props,
     };
 
