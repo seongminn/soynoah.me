@@ -4,16 +4,24 @@ import { forwardRef } from 'react';
 
 import { cn } from '~/utils/cn';
 
+import { Interaction } from './interaction';
+
 interface ButtonProps extends ComponentPropsWithoutRef<'button'> {
   render?: useRender.RenderProp;
 }
 
 export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
-  ({ render, className, ...props }, ref) => {
+  ({ render, className, children: childrenProp, ...props }, ref) => {
     const defaultProps: useRender.ElementProps<'button'> = {
       className: cn(
-        'inline-flex cursor-pointer items-center justify-center whitespace-nowrap rounded-md px-3 py-2 font-medium text-second text-sm ring-accent ring-shadow ring-offset-2 transition-colors hover:bg-gray-100 focus-visible:outline-hidden focus-visible:ring-2 disabled:pointer-events-none disabled:opacity-50',
+        'group ring-accent ring-shadow relative inline-flex cursor-pointer items-center justify-center rounded-md px-3 py-2 text-sm font-medium whitespace-nowrap text-second ring-offset-2 transition-colors disabled:pointer-events-none disabled:opacity-50',
         className,
+      ),
+      children: (
+        <>
+          {childrenProp}
+          <Interaction />
+        </>
       ),
       ...props,
     };
