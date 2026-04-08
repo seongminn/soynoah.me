@@ -4,29 +4,28 @@
   "jsxSingleQuote": false,
 
   // sort imports
-  "experimentalSortImports": {
+  "sortImports": {
     "groups": [
-      ["side-effect"],
-      ["builtin"],
-      ["external", "type-external"],
-      ["internal", "type-internal"],
-      ["parent", "type-parent"],
-      ["sibling", "type-sibling"],
-      ["index", "type-index"]
+      "side_effect",
+      ["type-import", "value-builtin", "value-external"],
+      ["type-internal", "value-internal"],
+      ["type-parent", "value-parent"],
+      ["type-sibling", "value-sibling"],
+      ["type-index", "value-index"],
+      "unknown"
     ],
     "order": "asc"
   },
 
   // sort tailwindcss classes
-  "experimentalTailwindcss": {
-    "stylesheet": "./path/to/stylesheet.css",
-    "attributes": ["class", "className"],
+  "sortTailwindcss": {
+    "stylesheet": "./src/styles/globals.css",
     "functions": ["clsx", "cn"],
     "preserveWhitespace": true
   },
 
   // sort package.json fields
-  "experimentalSortPackageJson": {
+  "sortPackageJson": {
     "sortScripts": true
   },
 
