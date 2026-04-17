@@ -12,7 +12,7 @@ export const Link = forwardRef<HTMLAnchorElement, LinkProps>(
   ({ render, className, ...props }, ref) => {
     const defaultProps: useRender.ElementProps<'a'> = {
       className: cn(
-        'ease ring-accent ring-shadow inline-block rounded-xs break-all text-second ring-offset-2 transition-colors duration-100 hover:text-body hover:decoration-gray-800 focus-visible:text-body focus-visible:ring-2',
+        'ease ring-accent ring-shadow inline-block cursor-pointer break-all text-second ring-offset-2 transition-colors duration-100 hover:text-body hover:decoration-gray-800 focus-visible:text-body focus-visible:ring-2',
         className,
       ),
       ...props,

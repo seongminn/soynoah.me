@@ -45,9 +45,9 @@ export default function Page() {
                           {time.format(post.date, 'MM.DD')}
                         </time>
 
-                        <div className="flex h-7 w-7 items-center justify-center transition-transform group-hover:translate-x-0.5">
+                        <span className="flex h-7 w-7 items-center justify-center transition-transform group-hover:translate-x-0.5">
                           <Icons.right aria-hidden="true" className="h-3 w-3" />
-                        </div>
+                        </span>
                         {/* <div className="flex h-7 w-7 items-center justify-center">
                           <Icons.right
                             aria-hidden="true"

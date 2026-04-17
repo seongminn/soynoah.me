@@ -32,7 +32,7 @@ export default function Page() {
           render={
             <NextLink
               href="posts"
-              className="inline-flex items-center underline decoration-gray-300 decoration-1 underline-offset-4"
+              className="mb-1 inline-flex items-center gap-2 border-b border-dotted border-b-second whitespace-nowrap hover:border-b-body"
             >
               Posts
             </NextLink>
@@ -43,7 +43,7 @@ export default function Page() {
           href={site.author.contact.resume}
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex items-center underline decoration-gray-300 decoration-1 underline-offset-4"
+          className="mb-1 inline-flex items-center gap-2 border-b border-dotted border-b-second whitespace-nowrap hover:border-b-body"
         >
           Resume
         </Link>
