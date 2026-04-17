@@ -18,7 +18,7 @@ export const BackButton = forwardRef<HTMLButtonElement, BackButtonProps>(
   ({ path, className, ...props }, ref) => {
     const router = useRouter();
     const handleClick = () => {
-      if (path) router.replace(path);
+      if (path) router.push(path);
       else router.back();
     };
 
