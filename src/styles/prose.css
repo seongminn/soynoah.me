@@ -83,7 +83,8 @@
   }
 
   & a {
-    @apply relative inline break-keep underline decoration-gray-400 decoration-dashed decoration-1 underline-offset-[2.5px] transition-[color,text-decoration-color] duration-200 ease-[ease] hover:text-body hover:decoration-body;
+    @apply relative inline break-keep text-second underline decoration-second decoration-dotted decoration-1 underline-offset-[2.5px] transition-[color,text-decoration-color] duration-200 ease-[ease] hover:text-body hover:decoration-body;
+    /* @apply relative inline break-keep text-second underline decoration-second decoration-dashed decoration-1 underline-offset-[2.5px] transition-[color,text-decoration-color] duration-200 ease-[ease] hover:text-body hover:decoration-body; */
   }
 
   /* Blockquotes */
